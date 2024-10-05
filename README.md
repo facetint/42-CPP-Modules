@@ -1,8 +1,8 @@
 # 42-CPP-Modules
 
-<table width="100%" height="600px" align="center" style="font-size: 18px; border-collapse: collapse;">
+<table width="100%" height="600px" align="center" style="font-size: 18px; border-collapse: collapse; text-align: center;">
 <tr>
-<td style="padding: 20px; margin: 0; text-align: center; border: 1px solid #ccc;">
+<td style="padding: 20px; border: 1px solid #ccc;">
 
 |                  CPP-Modules                                |
 |-------------------------------------------------------------|
