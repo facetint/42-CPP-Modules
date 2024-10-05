@@ -1,6 +1,6 @@
 # 42-CPP-Modules
 
-<table width="100%" height="600px" align="center" style="font-size: 18px; border-collapse: collapse; text-align: center;">
+<table width="800px" height="600px" align="center" style="font-size: 18px; border-collapse: collapse; text-align: center;">
 <tr>
 <td style="padding: 20px; border: 1px solid #ccc;">
 
