@@ -1,33 +1,14 @@
 # 42-CPP-Modules
 
-<table width="800px" height="600px" align="center" style="font-size: 18px; border-collapse: collapse; text-align: center;">
-<tr>
-<td style="padding: 20px; border: 1px solid #ccc;">
+## CPP Modules
 
-|                  CPP-Modules                                |
-|-------------------------------------------------------------|
-| [CPP-Modules-00][module_00]                                 |    
-| [CPP-Modules-01][module_01]                                 |
-| [CPP-Modules-02][module_02]                                 |
-| [CPP-Modules-03][module_03]                                 |
-| [CPP-Modules-04][module_04]                                 |
-| [CPP-Modules-05][module_05]                                 |
-| [CPP-Modules-06][module_06]                                 |
-| [CPP-Modules-07][module_07]                                 |
-| [CPP-Modules-08][module_08]                                 |
-| [CPP-Modules-09][module_09]                                 |
-
-</td>
-</tr>
-</table>
-
-[module_00]: https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-00
-[module_01]: https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-01
-[module_02]: https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-02
-[module_03]: https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-03
-[module_04]: https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-04
-[module_05]: https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-05
-[module_06]: https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-06
-[module_07]: https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-07
-[module_08]: https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-08
-[module_09]: https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-09
+- **CPP-Modules-00**: [CPP-Modules-00](https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-00)  
+- **CPP-Modules-01**: [CPP-Modules-01](https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-01)  
+- **CPP-Modules-02**: [CPP-Modules-02](https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-02)  
+- **CPP-Modules-03**: [CPP-Modules-03](https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-03)  
+- **CPP-Modules-04**: [CPP-Modules-04](https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-04)  
+- **CPP-Modules-05**: [CPP-Modules-05](https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-05)  
+- **CPP-Modules-06**: [CPP-Modules-06](https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-06)  
+- **CPP-Modules-07**: [CPP-Modules-07](https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-07)  
+- **CPP-Modules-08**: [CPP-Modules-08](https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-08)  
+- **CPP-Modules-09**: [CPP-Modules-09](https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-09)  
