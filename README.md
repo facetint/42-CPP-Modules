@@ -16,6 +16,6 @@
 
 
 
-# Or you can access the Projects in this way ⤵️ ⤵️ ⤵️
+## In the second way you can also access the projects in this way ⤵️ ⤵️ ⤵️
 
 <img width="320" alt="Ekran Resmi 2024-10-05 21 41 17" src="https://github.com/user-attachments/assets/a273b32e-09d4-4cf5-8733-c4e2fb91a073">
