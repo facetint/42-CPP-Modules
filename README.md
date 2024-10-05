@@ -1,8 +1,8 @@
 # 42-CPP-Modules
 
-<table width="400px" height="400px" align="center" style="font-size: 18px;">
-<tr style="display:flex; justify-content:space-around; padding:0;">
-<td style="padding:0; margin:0;">
+<table width="800px" height="400px" align="center" style="font-size: 18px;">
+<tr>
+<td style="padding: 0; margin: 0;">
 
 |                  CPP-Modules                                |
 |-------------------------------------------------------------|
