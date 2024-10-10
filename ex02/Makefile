@@ -6,7 +6,7 @@
 #    By: facetint <facetint@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/08 19:58:21 by facetint          #+#    #+#              #
-#    Updated: 2024/10/10 21:05:43 by facetint         ###   ########.fr        #
+#    Updated: 2024/10/10 22:53:16 by facetint         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
-SRCS = main.cpp
+SRCS = ./main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
