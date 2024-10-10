@@ -6,18 +6,25 @@
 /*   By: facetint <facetint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 15:10:24 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/08 18:54:04 by facetint         ###   ########.fr       */
+/*   Updated: 2024/10/10 23:27:31 by facetint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int main() {
+int main(int ac, char **av) {
 
-    std::string level;
-    std::cout << "Please enter the level of complaint (debug/info/warning/error): ";
-    std::cin >> level;
     Harl harl;
-    harl.complain(level);
+
+    if (ac == 2 && (std::string(av[1]) == "DEBUG" ||
+                    std::string(av[1]) == "INFO" ||
+                    std::string(av[1]) == "WARNING" ||
+                    std::string(av[1]) == "ERROR")) {
+        harl.complain(av[1]);
+    }
+    else
+    {
+        std::cout << "Usage: ./harlFilter [DEBUG|INFO|WARNING|ERROR]" << std::endl;
+    }
     return 0;
 }
