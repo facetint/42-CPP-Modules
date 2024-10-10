@@ -6,13 +6,13 @@
 #    By: facetint <facetint@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/08 19:58:21 by facetint          #+#    #+#              #
-#    Updated: 2024/10/08 19:58:22 by facetint         ###   ########.fr        #
+#    Updated: 2024/10/10 21:05:43 by facetint         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Brain
 
-CCXX = c++
+CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
@@ -23,7 +23,7 @@ OBJS = $(SRCS:.cpp=.o)
 all: $(NAME)
 
 $(NAME):
-	$(CCXX) $(CXXFLAGS) $(SRCS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(SRCS) -o $(NAME)
 
 clean:
 	$(RM) $(OBJS)
