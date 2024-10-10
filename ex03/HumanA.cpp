@@ -6,7 +6,7 @@
 /*   By: facetint <facetint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 05:42:57 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/08 20:04:40 by facetint         ###   ########.fr       */
+/*   Updated: 2024/10/10 21:07:16 by facetint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,5 @@ HumanA::~HumanA()
 }
 void HumanA::attack()
 {
-    if  ((this) != NULL)
     std::cout << this->_name << " attacks with their " << this->_weapon.getType() << std::endl;
 }
