@@ -6,7 +6,7 @@
 /*   By: facetint <facetint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 19:46:33 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/10 19:46:34 by facetint         ###   ########.fr       */
+/*   Updated: 2024/10/10 20:00:32 by facetint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,11 @@ int main(int ac, char **av)
             return 1;
         }
         std::string s2 = av[3];
+        if (s1 == s2)
+        {
+            std::cout << "The strings are the same" << std::endl;
+            return 1;
+        }
         std::string file = av[1];
         std::string line;
         std::ofstream output_file(file + ".replace");
