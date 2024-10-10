@@ -6,13 +6,13 @@
 #    By: facetint <facetint@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/09 16:48:35 by facetint          #+#    #+#              #
-#    Updated: 2024/10/09 16:48:36 by facetint         ###   ########.fr        #
+#    Updated: 2024/10/10 20:59:55 by facetint         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Harl
 
-CCXX = c++
+CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
@@ -23,10 +23,7 @@ OBJS = $(SRCS:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CCXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
-
-%.o: %.cpp
-	$(CCXX) $(CXXFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	$(RM) $(OBJS)
