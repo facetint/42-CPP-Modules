@@ -6,7 +6,7 @@
 /*   By: facetint <facetint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 14:55:13 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/09 16:47:29 by facetint         ###   ########.fr       */
+/*   Updated: 2024/10/10 20:56:57 by facetint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,13 @@ void Harl::error(void) {
 void Harl::complain(std::string level)
 {
     void (Harl::*complaints[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-    std::string levels[4] = {"debug", "info", "warning", "error"};
-    for (int i = 0; i < 4; i++)
-    {
-        if (level == levels[i])
-            (this->*complaints[i])();
-    }
+    std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+    
+    int i = 0;
+    while (!levels[i].empty() && level.compare(levels[i]))
+		i++;
+
+    if (!levels[i].empty())
+        (this->*complaints[i])();
+
 }
