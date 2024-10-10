@@ -6,17 +6,18 @@
 /*   By: facetint <facetint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 15:10:24 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/08 20:19:11 by facetint         ###   ########.fr       */
+/*   Updated: 2024/10/10 20:56:05 by facetint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int main() {
+int main()
+{
     Harl h1;
 
-    h1.complain("debug");
-    h1.complain("info");
-    h1.complain("error");
-    h1.complain("warning");
+    h1.complain("DEBUG");
+    h1.complain("INFO");
+    h1.complain("ERROR");
+    h1.complain("WARNING");
 }
