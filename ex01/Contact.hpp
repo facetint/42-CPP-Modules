@@ -4,7 +4,7 @@
 #include <string>
 #include <iostream>
 
-class Contack
+class Contact
 {
     private:
     std::string     name;
