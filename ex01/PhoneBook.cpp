@@ -6,7 +6,7 @@
 /*   By: facetint <facetint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 05:05:55 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/11 05:05:56 by facetint         ###   ########.fr       */
+/*   Updated: 2024/10/11 05:20:26 by facetint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -184,7 +184,9 @@ void PhoneBook::printPhoneBook(int i) const
 	}
 	if (contacts[i].getNickName().length() > 10)
 	{
-		std::cout << contacts[i].getNickName().substr(0,9) << ".|" << std::endl;
+		std::cout << contacts[i].getNickName().substr(0,
+													  9)
+				  << ".|" << std::endl;
 	}
 	else
 	{
