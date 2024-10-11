@@ -1,100 +1,80 @@
 #include "PhoneBook.hpp"
+#include <cstdlib>
+#include <iomanip>
 
-void    PhoneBook::addFirstName(void)
+static bool checkName(std::string input)
 {
-    std::string  input;
-
-    std::cout << "First Name: " ;
-    getline(std::cin, input);
-    if (input.empty())
-    {
-        std::cout << "First Name is empty" << std::endl;
-        return true;
-    }
-    for(int i = 0; i < input.length(); i++)
-    {
-        if (isdigit(input[i]))
-        {
-            std::cout << "First Name is not valid" << std::endl;
-            return true;
-        }
-    }
-    return false;
-}
-static  bool addLastName(std::string  input)
-{
-    std::cout << "Last Name: " ;
-    getline(std::cin, input);
-    if (input.empty())
-    {
-        std::cout << "Last Name is empty" << std::endl;
-        return true;
-    }
-    for(int i = 0; i < input.length(); i++)
-    {
-        if (isdigit(input[i]))
-        {
-            std::cout << "Last Name is not valid" << std::endl;
-            return true;
-        }
-    }
-    return false;
-}
-void    PhoneBook::add(void)
-{
-    std::string  input;
-
-        addFirstName(input);
-        addLastName(input);
-        addNickname(input);
-        addPhoneNumber(input);
-        addDarkSecret(input);
-    
-        std::cout << "PhoneBook is full" << std::endl;
+	if (input.empty())
+	{
+		std::cout << GREEN_COLOR << "First Name is empty" << RESET << std::endl;
+		return (true);
+	}
+	for (size_t i = 0; i < input.length(); ++i)
+	{
+		if (isdigit(input[i]))
+		{
+			std::cout << BLUE_COLOR << "Name must be only letters" << RESET << std::endl;
+			return (true);
+		}
+	}
+	return (false);
 }
 
-void    PhoneBook::addhj()
+static bool checkNickName(std::string input)
 {
-    std::string  input;
-      
-    {
-        std::cout << "Name: " ;
-        getline(std::cin, input);
-        if (controlName(input))
-            contacts->setname(input);
-    }
-    {
-        std::cout << "Last Name: " ;
-        getline(std::cin, input);
-    }
-    {
-        std::cout << "Nick Name: " ;
-        getline(std::cin, input);
-    }
-    {
-        std::cout << "Phone Number :" ;
-        getline(std::cin, input);
-    }
-    {
-        std::cout << "Darkest Secret : " ;
-        getline(std::cin, input);
-    }
-    std::cout << "User added to PhoneBook" << std::endl;
+	if (input.empty())
+	{
+		std::cout << GREEN_COLOR << "Nick Name is empty" << RESET << std::endl;
+		return (true);
+	}
+	return (false);
+}
+static bool checkDarkestSecret(std::string input)
+{
+	if (input.empty())
+	{
+		std::cout << GREEN_COLOR << "Darkest Secret is empty" << RESET << std::endl;
+		return (true);
+	}
+	return (false);
+}
+static bool checkPhoneNumber(std::string input)
+{
+	if (input.empty())
+	{
+		std::cout << GREEN_COLOR << "Phone Number is empty" << RESET << std::endl;
+		return (true);
+	}
+	if (input.length() != 10)
+	{
+		std::cout << BLUE_COLOR << "Phone number must be 10 digits" << RESET << std::endl;
+		return (true);
+	}
+	for (size_t i = 0; i < input.length(); ++i)
+	{
+		if (isalpha(input[i]))
+		{
+			std::cout << BLUE_COLOR << "Phone number must be only numbers" << RESET << std::endl;
+			return (true);
+		}
+	}
+	return (false);
 }
 
-void    PhoneBook::printUserInformation(int i)
+static bool checkSearchIndex(std::string input)
 {
-    std::cout << "Name: " << contacts[i].getname() << std::endl;
-    std::cout << "Last Name: " << contacts[i].getlastName() << std::endl;
-    std::cout << "Nick Name: " << contacts[i].getnickName() << std::endl;
-    std::cout << "Phone Number: " << contacts[i].getphoneNumber() << std::endl;
-    std::cout << "Darkest Secret: " << contacts[i].getphoneNumber() << std::endl;
+	if (input.empty())
+	{
+		std::cout << GREEN_COLOR "Index is empty" << RESET << std::endl;
+		return (true);
+	}
+	for (int i = 0; input[i]; i++)
+	{
+		if (isalpha(input[i]))
+		{
+			std::cout << RED_COLOR << "False Index !" << RESET << std::endl;
+			return (true);
+		}
+	}
+	return (false);
 }
-void    PhoneBook::searchContact()
-{
-    std::string searchInput;
-    std::cout << "Enter name to search: ";
-    getline(std::cin, searchInput);
-
-}
-
