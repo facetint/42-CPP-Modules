@@ -129,3 +129,54 @@ void PhoneBook::addContact(void)
 	i++;
 	index = i;
 }
+
+void PhoneBook::printUserInformation(int i) const
+{
+	i -= 1;
+	if ((i >= index || i < 0) || i >= 8)
+	{
+		std::cout << RED_COLOR << "Invalid index" << RESET << std::endl;
+		;
+		return;
+	}
+	std::cout << "Name: " << contacts[i].getFirstName() << std::endl;
+	std::cout << "Last Name: " << contacts[i].getLastName() << std::endl;
+	std::cout << "Nick Name: " << contacts[i].getNickName() << std::endl;
+	std::cout << "Phone Number: " << contacts[i].getPhoneNumber() << std::endl;
+	std::cout << "Darkest Secret: " << contacts[i].getDarkestSecret() << std::endl;
+}
+void PhoneBook::printPhoneBook(int i) const
+{
+	if (i == 0)
+	{
+		std::cout << "  INDEX" << "       NAME" << "     LASTNAME" << "   NICKNAME"
+				  << std::endl;
+		std::cout << "----------*----------*----------*----------*" << std::endl;
+	}
+	std::cout << std::setw(10) << i + 1 << "|";
+	if (contacts[i].getFirstName().length() > 10)
+	{
+		std::cout << contacts[i].getFirstName().substr(0, 9) << ".|";
+	}
+	else
+	{
+		std::cout << std::setw(10) << contacts[i].getFirstName() << "|";
+	}
+	if (contacts[i].getLastName().length() > 10)
+	{
+		std::cout << contacts[i].getLastName().substr(0, 9) << ".|";
+	}
+	else
+	{
+		std::cout << std::setw(10) << contacts[i].getLastName() << "|";
+	}
+	if (contacts[i].getNickName().length() > 10)
+	{
+		std::cout << contacts[i].getNickName().substr(0,9)<< ".|" << std::endl;
+	}
+	else
+	{
+		std::cout << std::setw(10) << contacts[i].getNickName() << "|" << std::endl;
+	}
+	std::cout << "----------*----------*----------*----------*" << std::endl;
+}
