@@ -4,14 +4,26 @@
 #include <string>
 #include <iostream>
 
-class Contact
+class Contack
 {
     private:
-    std::string     _name;
-    std::string     _lastName;
-    std::string     _nickName;
-    std::string     _phoneNumber;
-    std::string     _darkestSecret;
+    std::string     name;
+    std::string     lastName;
+    std::string     nickName;
+    std::string     phoneNumber;
+    std::string     darkestSecret;
+   
+    public:
+    void            setname(std::string name);
+    void            setlastName(std::string lastName);
+    void            setnickName(std::string nickName);
+    void            setphoneNumber(std::string phoneNumber);
+    void            setdarkestSecret(std::string darkestSecret);
+    std::string     getname();
+    std::string     getlastName();
+    std::string     getnickName();
+    std::string     getphoneNumber();
+    std::string     getdarkestSecret();
 };
 
 #endif
