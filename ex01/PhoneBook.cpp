@@ -89,3 +89,43 @@ static bool checkSearchIndex(std::string input)
 	}
 	return (false);
 }
+void PhoneBook::addContact(void)
+{
+	static int i = 0;
+
+	std::string input;
+	index = i;
+	do
+	{
+		std::cout << "First Name: " << std::endl;
+		input = get_input();
+	} while (checkName(input));
+	contacts[i % 8].setFirstName(input);
+	do
+	{
+		std::cout << "Last Name: " << std::endl;
+		input = get_input();
+	} while (checkName(input));
+	contacts[i % 8].setLastName(input);
+	do
+	{
+		std::cout << "Nick Name: " << std::endl;
+		input = get_input();
+	} while (checkNickName(input));
+	contacts[i % 8].setNickName(input);
+	do
+	{
+		std::cout << "Phone Number: " << std::endl;
+		input = get_input();
+	} while (checkPhoneNumber(input));
+	contacts[i % 8].setPhoneNumber(input);
+	do
+	{
+		std::cout << "Darkest Secret: " << std::endl;
+		input = get_input();
+	} while (checkDarkestSecret(input));
+	contacts[i % 8].setDarkestSecret(input);
+	std::cout << DARK_BLUE << "Contact added successfully" << RESET << std::endl;
+	i++;
+	index = i;
+}
