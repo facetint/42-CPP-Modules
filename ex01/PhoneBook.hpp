@@ -10,8 +10,11 @@ class PhoneBook
         int index;
 
     public:
-        void	addContact();
+        void	add();
+        void    PhoneBook::addFirstName(void);
         void	searchContact();
+        void	printUserInformation(int i);
 };
 
-#endif
+
+#endif 
