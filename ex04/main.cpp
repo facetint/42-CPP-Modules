@@ -6,7 +6,7 @@
 /*   By: facetint <facetint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 19:46:33 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/10 22:44:52 by facetint         ###   ########.fr       */
+/*   Updated: 2024/10/11 03:15:04 by facetint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	main(int ac, char **av)
 		std::string file = av[1];
 		std::string line;
 		std::ofstream output_file(file + ".replace");
-		if (!in_file)
+		if (!output_file)
 		{
 			std::cout << "File not found" << std::endl;
 			return (1);
