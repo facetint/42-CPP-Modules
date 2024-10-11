@@ -172,7 +172,7 @@ void PhoneBook::printPhoneBook(int i) const
 	}
 	if (contacts[i].getNickName().length() > 10)
 	{
-		std::cout << contacts[i].getNickName().substr(0,9)<< ".|" << std::endl;
+		std::cout << contacts[i].getNickName().substr(0,9) << ".|" << std::endl;
 	}
 	else
 	{
