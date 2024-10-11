@@ -2,6 +2,17 @@
 #include <cstdlib>
 #include <iomanip>
 
+std::string get_input(void)
+{
+	std::string input;
+	std::getline(std::cin, input);
+	if (std::cin.eof())
+	{
+		std::cout << RED_COLOR << "EOF" << RESET << std::endl;
+		exit(0);
+	}
+	return (input);
+}
 static bool checkName(std::string input)
 {
 	if (input.empty())
