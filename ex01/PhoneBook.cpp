@@ -180,3 +180,24 @@ void PhoneBook::printPhoneBook(int i) const
 	}
 	std::cout << "----------*----------*----------*----------*" << std::endl;
 }
+void PhoneBook::searchContact() const
+{
+	int i;
+
+	std::string input;
+	i = 0;
+	while (i < index && i < 8)
+	{
+		printPhoneBook(i);
+		i++;
+	}
+	do
+	{
+		std::cout << "Enter the index of the contact: " << std::endl;
+		input = get_input();
+	} while (checkSearchIndex(input));
+	if (input.length() == 1 && isdigit(input[0]))
+		printUserInformation(std::atoi(input.c_str()));
+	else
+		std::cout << RED_COLOR << "Invalid index" << RESET << std::endl;
+}
