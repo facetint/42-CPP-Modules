@@ -1,23 +1,38 @@
 #include "PhoneBook.hpp"
 
-int main(void)
+void	entrance(void)
 {
-	PhoneBook input;
-	std::string str;
+	std::cout << PURPLE_COLOR << std::endl;
+	std::cout << "$------------------------------------------------$" << std::endl;
+	std::cout << "$                                                $" << std::endl;
+	std::cout << "$       Welcome to my wonderful phone book 🖐     $" << std::endl;
+	std::cout << "$                                                $" << std::endl;
+	std::cout << "$       Enter a command: (ADD, SEARCH, EXIT)     $" << std::endl;
+	std::cout << "$                                                $" << std::endl;
+	std::cout << "$ ADD :    Adds a new contact to the phone book  $" << std::endl;
+	std::cout << "$ SEARCH : Allows you to search the phone book   $" << std::endl;
+	std::cout << "$ EXIT :   Allows you to exit the program        $" << std::endl;
+	std::cout << "$------------------------------------------------$" << std::endl;
+	std::cout << RESET << std::endl;
+} 
+int	main(void)
+{
+	PhoneBook	input;
 
+	std::string str;
 	while (1)
 	{
-		std::cout << "Enter A Values -> ADD, SEARCH, EXIT" << std::endl;
-        str = get_input();
+		entrance();
+		str = get_input();
 		if (str == "EXIT")
-			break;
+			break ;
 		else if (str == "ADD")
 			input.addContact();
 		else if (str == "SEARCH")
 			input.searchContact();
 		else
-			std::cout << "Invalid command" << std::endl;
-
+			std::cout  << RED_COLOR << "Invalid command" << RESET << std::endl;
 	}
-    return 0;
+
+	return (0);
 }
