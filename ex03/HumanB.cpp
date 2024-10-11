@@ -6,7 +6,7 @@
 /*   By: facetint <facetint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 05:43:04 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/08 20:04:47 by facetint         ###   ########.fr       */
+/*   Updated: 2024/10/10 21:06:18 by facetint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 HumanB::HumanB(std::string name)
 {
 	this->_name = name;
+	this->_weapon = NULL;
 }
 HumanB::~HumanB()
 {
