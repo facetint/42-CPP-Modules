@@ -6,7 +6,7 @@
 /*   By: facetint <facetint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 19:03:38 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/08 19:03:39 by facetint         ###   ########.fr       */
+/*   Updated: 2024/10/10 21:02:28 by facetint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ class  Zombie
 private:
     std::string _name;
 public:
-
     Zombie();
     ~Zombie();
     void announce(void);
