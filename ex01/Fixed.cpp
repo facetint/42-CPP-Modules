@@ -48,3 +48,18 @@ void Fixed::setRawBit(const int raw)
     this->value = raw;
 }
 
+Fixed& Fixed::operator=(const Fixed& other)
+{
+    std::cout << "Assignation operator called" << std::endl;
+    if (this != &other)
+    {
+        this->setRawBit(other.getRawBit());
+    }
+    return (*this);
+}
+
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
+{
+    os << fixed.toFloat();
+    return (os);
+}
