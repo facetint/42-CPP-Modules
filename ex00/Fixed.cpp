@@ -1,6 +1,6 @@
 #include "Fixed.hpp"
 
-Fixed::Fixed()
+Fixed::Fixed(void)
 {
     this->value = 0;
 }
@@ -13,4 +13,8 @@ Fixed::Fixed(const Fixed& other)
 Fixed::Fixed(int number) : value(number)
 {
 
+}
+
+Fixed::~Fixed(void){
+    std::cout << "Destructor called" << std::endl;
 }
