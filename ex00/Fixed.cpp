@@ -18,3 +18,14 @@ Fixed::Fixed(int number) : value(number)
 Fixed::~Fixed(void){
     std::cout << "Destructor called" << std::endl;
 }
+
+void Fixed::setValue(const int& number)
+{
+    this->value = number;
+}
+
+int Fixed::getValue(void) const
+{
+    return this->value;
+}
+
