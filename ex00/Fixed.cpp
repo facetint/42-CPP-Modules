@@ -9,3 +9,8 @@ Fixed::Fixed(const Fixed& other)
 {
     *this = other;
 }
+
+Fixed::Fixed(int number) : value(number)
+{
+
+}
