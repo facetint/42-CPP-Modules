@@ -21,21 +21,19 @@ Fixed::~Fixed(void){
     std::cout << "Destructor called" << std::endl;
 }
 
-void Fixed::setValue(const int& number)
+int Fixed::getRawBits(void) const
 {
-    std::cout << "setValue member function called" << std::endl;
-    this->value = number;
+    return (this->value);
 }
 
-int Fixed::getValue(void) const
+void Fixed::setRawBits(int const raw)
 {
-    std::cout << "getValue member function called" << std::endl;
-    return this->value;
+    this->value = raw;
 }
 
 Fixed& Fixed::operator=(const Fixed& other)
 {
     std::cout << "Copy assignment operator called" << std::endl;
-    this->setValue(other.getValue());
+    this->setRawBits(other.getRawBits());
     return (*this);
 }
