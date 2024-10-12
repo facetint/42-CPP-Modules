@@ -36,6 +36,8 @@ void Fixed::setRawBits(int const raw)
 Fixed& Fixed::operator=(const Fixed& other)
 {
     std::cout << "Copy assignment operator called" << std::endl;
-    this->setRawBits(other.getRawBits());
+    if (this != &other)
+        this->setRawBits(other.getRawBits());
+
     return (*this);
 }
