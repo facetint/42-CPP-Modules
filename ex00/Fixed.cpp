@@ -29,3 +29,8 @@ int Fixed::getValue(void) const
     return this->value;
 }
 
+Fixed& Fixed::operator=(const Fixed& other)
+{
+    this->setValue(other.getValue());
+    return (*this);
+}
