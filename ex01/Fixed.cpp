@@ -40,17 +40,19 @@ float Fixed::toFloat(void) const
 
 int Fixed::getRawBit(void) const
 {
+    std::cout << "getRawBit member function called" << std::endl;
     return (this->value);
 }
 
 void Fixed::setRawBit(const int raw)
 {
+    std::cout << "setRawBit member function called" << std::endl;
     this->value = raw;
 }
 
 Fixed& Fixed::operator=(const Fixed& other)
 {
-    std::cout << "Assignation operator called" << std::endl;
+    std::cout << "Copy assignment operator called" << std::endl;
     if (this != &other)
     {
         this->setRawBit(other.getRawBit());
