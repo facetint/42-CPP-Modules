@@ -27,3 +27,24 @@ Fixed::~Fixed(void)
 {
     std::cout << "Destructor called" << std::endl;
 }
+
+int Fixed::toInt(void) const
+{
+    return (this->value >> this->bitCount);
+}
+
+float Fixed::toFloat(void) const
+{
+    return ((float)this->value / (1 << this->bitCount));
+}
+
+int Fixed::getRawBit(void) const
+{
+    return (this->value);
+}
+
+void Fixed::setRawBit(const int raw)
+{
+    this->value = raw;
+}
+
