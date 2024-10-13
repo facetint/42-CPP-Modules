@@ -104,3 +104,34 @@ Reading data from a file is done with the ifstream or fstream class. Reading can
 **5. File Modes**
 File open modes can be used more than once. For example for both reading and writing.
 
+
+## Switch Case
+
+The switch-case construct allows different blocks of code to be executed based on the value of a variable. This construct is used to check multiple conditions and take action based on a specific state. It is similar to the if-else construct, but offers a cleaner and clearer way of checking multiple states.
+
+**Explanations:**
+
+**switch statement:** Starts with a variable (int, char, etc.) to be controlled.
+
+**case tags:** Tests which constant values the variable being checked is equal to. Each case tag contains a constant value.
+
+**break statement:** Allows the code to exit the switch structure after exiting that case statement. If break is not used, subsequent case blocks can be executed (this is called “fall-through”).
+
+**default tag: ** is the block of code that will be executed when no case value is provided. This part is optional.
+
+**Important Points:**
+
+**Variable Type:** The variables used in switch-case are usually integer types (int, char, enum). Floating point types like float or double cannot be used;
+
+**case Constants: ** Each case tag represents a constant value. These constants can be numbers or characters, but cannot be variables.
+
+**break Usage:** The break statement allows to exit the switch structure after completing the code block according to the checked condition. Otherwise, the next case block in the switch structure is also executed.
+
+**Fall-Through :**
+When break is not used, all case blocks after a case block are also executed. This is called fall-through:
+
+**Advantages of using switch-case:**
+
+Provides a more readable and manageable structure instead of a large number of if-else structures.
+It is generally faster when controlling a large number of cases.
+As a result, the switch-case structure is a convenient and flexible structure for controlling specific states and executing operations conditionally.
