@@ -61,9 +61,10 @@ In C++, a “constructor” is a special function that is automatically called w
 
 ## DESTRUCTOR
 
-- **Destructor is a special member method used to end the life of a class and release the resources that the class owns. The destructor of a class is automatically called when its object is released from a scope or freed from memory with the *"delete ”* operator.
+- Destructor is a special member method used to end the life of a class and release the resources that the class owns. The destructor of a class is automatically called when its object is released from a scope or freed from memory with the *"delete ”* operator.
 - **Destructor is defined as “*~ (Tilda)className()*”. Here the “~” sign represents that this method is a Destructor. Unlike Constructors, Destructors only have to be one.
-- **Why do we need a Destructor?
+
+ **Why do we need a Destructor?**
 - We use it to prevent leaks. By freeing the dynamic memory addresses we use in the class, we have a clean and readable code.
 - At the same time, since this method is automatically executed at the end of the class lifetime, we don't need to intervene manually.
 
