@@ -50,6 +50,8 @@ A function can return a reference. However, in this case, it is important that t
 
 ## Differences between References and Pointers
 
+
+
 | **Özellik**                  | **Referanslar (References)**                          | **Göstericiler (Pointers)**                            |
 |------------------------------|-------------------------------------------------------|-------------------------------------------------------|
 | **Null olma durumu**          | `null` olamaz                                         | `nullptr` olabilir                                    |
