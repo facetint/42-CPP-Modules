@@ -66,3 +66,41 @@ A function can return a reference. However, in this case, it is important that t
 | **Riski**                     | Bellek sızıntısı riski yok                            | Bellek sızıntısı ve hatalar oluşabilir                |
 
 
+## File Operations 
+
+The fstream library is used to perform file operations in C++. This library provides three basic classes for reading, writing and manipulating files:
+
+**ifstream (input file stream):** Used for reading data from a file.
+**ofstream (output file stream):** Used for writing data to a file.
+**fstream (file stream):** Used for both read and write operations.
+
+
+###File Operations with the fstream Library
+
+**1. File Open**
+
+We can use the fstream, ifstream, or ofstream classes to open files. Various modes can be used when opening files:
+
+ios::in: Opens the file in read mode (ifstream default mode)
+ios::out: Opens the file in write mode. Overwrites if the file exists, creates if not (ofstream default mode)
+ios::app: Appends to the end of the file.
+ios::binary: Opens the file in binary mode.
+ios::trunc: Resets a file if it exists, or creates it if it does not.
+ios::ate: Positions the pointer at the end of the file after opening the file.
+
+
+**2. File Opening and Closing**
+
+Opening: When opening a file, the open() function of the file object is called
+
+Closing When you are done with the file, you should close it with close().
+
+**3. Writing to File**
+The ofstream or fstream class is used to write data to the file. Writing is done with the << operator.
+
+**4. Reading from File**
+Reading data from a file is done with the ifstream or fstream class. Reading can be done with the >> operator or the getline() function.
+
+**5. File Modes**
+File open modes can be used more than once. For example for both reading and writing.
+
