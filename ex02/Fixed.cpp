@@ -21,3 +21,12 @@ Fixed::Fixed(const float number){
 Fixed::~Fixed(){
 	std::cout << "Destructor called" << std::endl;
 }
+
+float	Fixed::toFloat(void) const{
+
+	return ((float)this->value / (1 << this->bitCount));
+}
+
+
+
+
