@@ -13,3 +13,9 @@ Fixed::Fixed(const Fixed& other){
 	std::cout << "Copy constructor called" << std::endl;
 	*this = other;
 }
+
+Fixed::Fixed(const int number)
+{
+	this->value = number << this->bitCount;
+}
+
