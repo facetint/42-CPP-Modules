@@ -18,4 +18,6 @@ Fixed::Fixed(const int number)
 {
 	this->value = number << this->bitCount;
 }
-
+Fixed::Fixed(const float number){
+	this->value = roundf(number * (1 << this->bitCount));
+}
