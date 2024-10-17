@@ -31,3 +31,13 @@ int		Fixed::toInt(void) const{
 
 	return (this->value >> this->bitCount);
 }
+
+int		Fixed::getRawBit(void) const{
+
+	return (this->value);
+}
+
+void	Fixed::setRawBit(const int raw){
+
+	this->value = raw;
+}
