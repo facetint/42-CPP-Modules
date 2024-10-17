@@ -41,3 +41,10 @@ void	Fixed::setRawBit(const int raw){
 
 	this->value = raw;
 }
+
+Fixed& Fixed::operator=(const Fixed& other){
+	std::cout << "Copy assignment operator called" << std::endl;
+	if (this != &other)
+		this->value = other.getRawBit();
+	return (*this);
+}
