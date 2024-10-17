@@ -27,6 +27,7 @@ float	Fixed::toFloat(void) const{
 	return ((float)this->value / (1 << this->bitCount));
 }
 
+int		Fixed::toInt(void) const{
 
-
-
+	return (this->value >> this->bitCount);
+}
