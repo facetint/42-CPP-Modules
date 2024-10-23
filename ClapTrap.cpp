@@ -10,3 +10,8 @@ ClasTrap::ClasTrap(std::string name)
     this->energyPoint = 10;
     this->attackDamage = 0;
 }
+ClasTrap::ClasTrap(const ClasTrap& other)
+{
+    *this = other;
+    std::cout << "Copy constructor called" << std::endl;
+}
