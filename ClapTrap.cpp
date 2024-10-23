@@ -89,3 +89,14 @@ void ClapTrap::beRepaired(unsigned int amount)
     setHitPoint(getHitPoint() + amount);
     std::cout << "ClapTrap " << getName() << " is repaired for " << amount << " points!" << std::endl;
 }
+ClapTrap& ClapTrap::operator=(const ClapTrap& other)
+{
+    if (this != &other)
+    {
+        this->name = other.name;
+        this->hitPoint = other.hitPoint;
+        this->energyPoint = other.energyPoint;
+        this->attackDamage = other.attackDamage;
+    }
+    return (*this);
+}
