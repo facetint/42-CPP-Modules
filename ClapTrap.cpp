@@ -1,4 +1,5 @@
 #include "ClapTrap.hpp"
+#include <climits>
 
 ClapTrap::ClapTrap()
 {
@@ -50,6 +51,41 @@ void ClapTrap::setName(std::string name)
 
 void ClapTrap::attack(const std::string& target)
 {
-   std::cout << "ClapTrap " << this->name <<  " attacks " << target << ", causing " << this->attackDamage << " points of damage!" << std::endl;
+   std::cout << "ClapTrap " << getName() <<  " attacks " << target << ", causing " << getAttackDamage() << " points of damage!" << std::endl;
 }
 
+void ClapTrap::takeDamage(unsigned int amount)
+{
+    if (getHitPoint() == 0)
+    {
+        std::cout << "ClapTrap " << getName() << " is already dead!" << std::endl;
+        return;
+    }
+
+    if (getHitPoint() < amount)
+    {
+        std::cout << "ClapTrap " << getName() << " is dead!" << std::endl;
+        amount = hitPoint;
+        return;
+    }
+
+    setHitPoint(getHitPoint() - amount);
+    std::cout << "ClapTrap " << getName() << " takes " << amount << " points of damage!" << std::endl;
+}
+
+void ClapTrap::beRepaired(unsigned int amount)
+{
+    if (getHitPoint() == 0)
+    {
+        std::cout << "ClapTrap " << getName() << " is already dead!" << std::endl;
+        return;
+    }
+    if (getHitPoint() + amount > 10)
+    {
+        std::cout << "ClapTrap " << getName() << " is fully repaired!" << std::endl;
+        setHitPoint(10);
+        return;
+    }
+    setHitPoint(getHitPoint() + amount);
+    std::cout << "ClapTrap " << getName() << " is repaired for " << amount << " points!" << std::endl;
+}
