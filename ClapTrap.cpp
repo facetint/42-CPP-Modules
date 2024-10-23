@@ -15,3 +15,8 @@ ClasTrap::ClasTrap(const ClasTrap& other)
     *this = other;
     std::cout << "Copy constructor called" << std::endl;
 }
+void ClasTrap::attack(const std::string& target)
+{
+   std::cout << "ClapTrap " << this->name <<  " attacks " << target << ", causing " << this->attackDamage << " points of damage!" << std::endl;
+}
+
