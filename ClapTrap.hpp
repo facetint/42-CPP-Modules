@@ -4,23 +4,23 @@
 
 # include <iostream>
 
-class ClasTrap{
+class ClapTrap{
 
 private:
     std::string name;
     unsigned int hitPoint;
     unsigned int energyPoint;
     unsigned int attackDamage;
-    ClasTrap();
+    ClapTrap();
 
 public:
-    ClasTrap(std::string name);
-    ClasTrap(const ClasTrap& other);
-    ~ClasTrap();
+    ClapTrap(std::string name);
+    ClapTrap(const ClapTrap& other);
+    ~ClapTrap();
     void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
-    ClasTrap& operator=(const ClasTrap& other);
+    ClapTrap& operator=(const ClapTrap& other);
     unsigned int getHitPoint() const;
     unsigned int getEnergyPoint() const;
     unsigned int getAttackDamage() const;
@@ -29,7 +29,7 @@ public:
     void setHitPoint(unsigned int hitPoint);
     void setEnergyPoint(unsigned int energyPoint);
     void setAttackDamage(unsigned int attackDamage);
-    
+
 };
 
 #endif
