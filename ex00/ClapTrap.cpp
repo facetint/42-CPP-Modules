@@ -6,7 +6,7 @@
 /*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:54 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/24 17:32:48 by fatmanurcet      ###   ########.fr       */
+/*   Updated: 2024/10/24 17:35:23 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -172,5 +172,21 @@ void ClapTrap::fight(ClapTrap& target)
         std::cout << "ClapTrap " << target.getName() << " is dead!" << std::endl;
     else
         std::cout << "ClapTrap " << getName() << " ran out of energy!" << std::endl;
+}
+
+void ClapTrap::displayStats() const
+{
+    std::cout << "===== ClapTrap Stats =====" << std::endl;
+    std::cout << "Name: " << getName() << std::endl;
+    std::cout << "Hit Points: " << getHitPoint() << std::endl;
+    std::cout << "Energy Points: " << getEnergyPoint() << std::endl;
+    std::cout << "Attack Damage: " << getAttackDamage() << std::endl;
+
+    if (getHitPoint() == 0)
+        std::cout << getName() << " is dead!" << std::endl;
+    else
+        std::cout << getName() << " is alive!" << std::endl;
+
+    std::cout << "==========================" << std::endl;
 }
 
