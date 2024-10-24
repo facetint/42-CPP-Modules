@@ -6,7 +6,7 @@
 /*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:54 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/24 17:35:23 by fatmanurcet      ###   ########.fr       */
+/*   Updated: 2024/10/24 18:06:22 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -21,6 +21,7 @@ ClapTrap::ClapTrap(std::string name)
     this->hitPoint = 10;
     this->energyPoint = 10;
     this->attackDamage = 0;
+    this->name = name;
 }
 ClapTrap::ClapTrap(const ClapTrap& other)
 {
@@ -70,9 +71,9 @@ void ClapTrap::setName(std::string name)
 }
 
 void ClapTrap::attack(const std::string& target)
+{   
+  if (getEnergyPoint() == 0 || getHitPoint() == 0 || getAttackDamage() == 0)
 {
-    if (getEnergyPoint() == 0 || getHitPoint() == 0) || getAttackDamage() == 0)
-    {
         std::cout << "ClapTrap " << getName() << " is already dead!" << std::endl;
         return;
     }
