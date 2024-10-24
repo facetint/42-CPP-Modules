@@ -6,7 +6,7 @@
 /*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:54 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/24 17:30:53 by fatmanurcet      ###   ########.fr       */
+/*   Updated: 2024/10/24 17:32:48 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -121,6 +121,7 @@ void ClapTrap::beRepaired(unsigned int amount)
     setHitPoint(getHitPoint() + amount);
     std::cout << "ClapTrap " << getName() << " is repaired for " << amount << " points!" << std::endl;
 }
+
 ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 {
     if (this != &other)
@@ -138,5 +139,38 @@ void ClapTrap::useEnergy(unsigned int amount = 1) {
         energyPoint -= amount;
     else
         energyPoint = 0;
+}
+
+void ClapTrap::fight(ClapTrap& target)
+{
+    while (getHitPoint() > 0 && target.getHitPoint() > 0 && getEnergyPoint() > 0 && target.getEnergyPoint() > 0)
+    {
+        if (getEnergyPoint() > 0)
+        {
+            attack(target.getName());
+            target.takeDamage(getAttackDamage());
+            useEnergy();
+        }
+
+        if (target.getHitPoint() == 0)
+            break;
+
+        if (target.getEnergyPoint() > 0)
+        {
+            target.attack(getName());
+            takeDamage(target.getAttackDamage());
+            target.useEnergy();
+        }
+
+        if (getHitPoint() == 0)
+            break;
+    }
+
+    if (getHitPoint() == 0)
+        std::cout << "ClapTrap " << getName() << " is dead!" << std::endl;
+    else if (target.getHitPoint() == 0)
+        std::cout << "ClapTrap " << target.getName() << " is dead!" << std::endl;
+    else
+        std::cout << "ClapTrap " << getName() << " ran out of energy!" << std::endl;
 }
 
