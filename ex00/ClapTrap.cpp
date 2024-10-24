@@ -1,17 +1,16 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: facetint <facetint@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:54 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/23 15:48:55 by facetint         ###   ########.fr       */
+/*   Updated: 2024/10/24 17:08:51 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #include "ClapTrap.hpp"
-#include <climits>
 
 ClapTrap::ClapTrap()
 {
@@ -63,7 +62,13 @@ void ClapTrap::setName(std::string name)
 
 void ClapTrap::attack(const std::string& target)
 {
-   std::cout << "ClapTrap " << getName() <<  " attacks " << target << ", causing " << getAttackDamage() << " points of damage!" << std::endl;
+    if (getEnergyPoint() == 0 || getHitPoint() == 0) || getAttackDamage() == 0)
+    {
+        std::cout << "ClapTrap " << getName() << " is already dead!" << std::endl;
+        return;
+    }
+    std::cout << "ClapTrap " << getName() <<  " attacks " << target << ", causing " << getAttackDamage() << " points of damage!" << std::endl;
+    setEnergyPoint(getEnergyPoint() - 1);
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -73,14 +78,20 @@ void ClapTrap::takeDamage(unsigned int amount)
         std::cout << "ClapTrap " << getName() << " is already dead!" << std::endl;
         return;
     }
-
-    if (getHitPoint() < amount)
+    else if (amount == 0)
     {
-        std::cout << "ClapTrap " << getName() << " is dead!" << std::endl;
-        amount = hitPoint;
+        std::cout << "ClapTrap " << getName() << " takes 0 points of damage!" << std::endl;
         return;
     }
-
+    else
+    {
+        if (getHitPoint() - amount <= 0)
+        {
+            setHitPoint(0);
+            std::cout << "ClapTrap " << getName() << " is dead!" << std::endl;
+            return;
+        }
+    }
     setHitPoint(getHitPoint() - amount);
     std::cout << "ClapTrap " << getName() << " takes " << amount << " points of damage!" << std::endl;
 }
