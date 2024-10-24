@@ -6,7 +6,7 @@
 /*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:54 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/24 17:14:15 by fatmanurcet      ###   ########.fr       */
+/*   Updated: 2024/10/24 17:17:52 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -26,6 +26,10 @@ ClapTrap::ClapTrap(const ClapTrap& other)
 {
     *this = other;
     std::cout << "Copy constructor called" << std::endl;
+}
+ClapTrap::~ClapTrap()
+{
+    std::cout << "Destructor called" << std::endl;
 }
 unsigned int ClapTrap::getAttackDamage() const
 {
