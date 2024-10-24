@@ -6,7 +6,7 @@
 /*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:54 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/24 17:17:52 by fatmanurcet      ###   ########.fr       */
+/*   Updated: 2024/10/24 17:30:53 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -131,5 +131,12 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
         this->attackDamage = other.attackDamage;
     }
     return (*this);
+}
+
+void ClapTrap::useEnergy(unsigned int amount = 1) {
+    if (energyPoint >= amount)
+        energyPoint -= amount;
+    else
+        energyPoint = 0;
 }
 
