@@ -1,14 +1,14 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: facetint <facetint@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:57 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/23 15:48:58 by facetint         ###   ########.fr       */
+/*   Updated: 2024/10/24 17:13:25 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #ifndef CLAPTRAP_HPP
 
@@ -41,6 +41,8 @@ public:
     void setHitPoint(unsigned int hitPoint);
     void setEnergyPoint(unsigned int energyPoint);
     void setAttackDamage(unsigned int attackDamage);
+    void war(ClapTrap& target);
+    void displayStats() const;
 
 };
 
