@@ -6,7 +6,7 @@
 /*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:54 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/24 17:08:51 by fatmanurcet      ###   ########.fr       */
+/*   Updated: 2024/10/24 17:14:15 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -40,6 +40,11 @@ unsigned int ClapTrap::getEnergyPoint() const
 unsigned int ClapTrap::getHitPoint() const
 {
     return this->hitPoint;
+}
+
+std::string ClapTrap::getName() const
+{
+    return this->name;
 }
 
 void ClapTrap::setAttackDamage(unsigned int attackDamage)
@@ -123,3 +128,4 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
     }
     return (*this);
 }
+
