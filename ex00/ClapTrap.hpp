@@ -6,7 +6,7 @@
 /*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:57 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/24 17:13:25 by fatmanurcet      ###   ########.fr       */
+/*   Updated: 2024/10/24 17:27:09 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -41,7 +41,7 @@ public:
     void setHitPoint(unsigned int hitPoint);
     void setEnergyPoint(unsigned int energyPoint);
     void setAttackDamage(unsigned int attackDamage);
-    void war(ClapTrap& target);
+    void fight(ClapTrap& target);
     void displayStats() const;
 
 };
