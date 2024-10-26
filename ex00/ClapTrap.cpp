@@ -6,7 +6,7 @@
 /*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:54 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/26 17:36:24 by fatmanurcet      ###   ########.fr       */
+/*   Updated: 2024/10/26 17:39:50 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -101,9 +101,9 @@ void ClapTrap::takeDamage(unsigned int amount)
             std::cout << "ClapTrap " << getName() << " is dead!" << std::endl;
             return;
         }
+        std::cout << "ClapTrap " << getName() << " takes " << amount << " points of damage!" << std::endl;
+        setHitPoint(getHitPoint() - amount);
     }
-    setHitPoint(getHitPoint() - amount);
-    std::cout << "ClapTrap " << getName() << " takes " << amount << " points of damage!" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
