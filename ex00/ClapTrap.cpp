@@ -6,7 +6,7 @@
 /*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:54 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/24 18:06:22 by fatmanurcet      ###   ########.fr       */
+/*   Updated: 2024/10/26 17:31:25 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -133,46 +133,6 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
         this->attackDamage = other.attackDamage;
     }
     return (*this);
-}
-
-void ClapTrap::useEnergy(unsigned int amount = 1) {
-    if (energyPoint >= amount)
-        energyPoint -= amount;
-    else
-        energyPoint = 0;
-}
-
-void ClapTrap::fight(ClapTrap& target)
-{
-    while (getHitPoint() > 0 && target.getHitPoint() > 0 && getEnergyPoint() > 0 && target.getEnergyPoint() > 0)
-    {
-        if (getEnergyPoint() > 0)
-        {
-            attack(target.getName());
-            target.takeDamage(getAttackDamage());
-            useEnergy();
-        }
-
-        if (target.getHitPoint() == 0)
-            break;
-
-        if (target.getEnergyPoint() > 0)
-        {
-            target.attack(getName());
-            takeDamage(target.getAttackDamage());
-            target.useEnergy();
-        }
-
-        if (getHitPoint() == 0)
-            break;
-    }
-
-    if (getHitPoint() == 0)
-        std::cout << "ClapTrap " << getName() << " is dead!" << std::endl;
-    else if (target.getHitPoint() == 0)
-        std::cout << "ClapTrap " << target.getName() << " is dead!" << std::endl;
-    else
-        std::cout << "ClapTrap " << getName() << " ran out of energy!" << std::endl;
 }
 
 void ClapTrap::displayStats() const
