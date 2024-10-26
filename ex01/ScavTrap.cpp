@@ -1,13 +1,13 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap("DefaultName")
+ScavTrap::ScavTrap() : ClapTrap("")
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "Default constructor called - (ScavTrap)" << std::endl;
 }
 
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
 {
-    std::cout << "Parameterized constructor called" << std::endl;
+    std::cout << "Parameterized constructor called - (ScavTrap)" << std::endl;
     setHitPoint(100);
     setEnergyPoint(50);
     setAttackDamage(20);
@@ -15,18 +15,18 @@ ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
 
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
 {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Copy constructor called - (ScavTrap)" << std::endl;
     *this = other;
 }
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "Destructor called - (ScavTrap)" << std::endl;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
+    std::cout << "Copy assignment operator called - (ScavTrap)" << std::endl;
     if (this != &other)
         this->ClapTrap::operator=(other);
     return *this;
