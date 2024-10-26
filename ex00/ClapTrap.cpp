@@ -6,13 +6,12 @@
 /*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:54 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/26 22:18:06 by fatmanurcet      ###   ########.fr       */
+/*   Updated: 2024/10/26 22:49:55 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "ClapTrap.hpp"
 #include <climits>
-
 
 ClapTrap::ClapTrap()
 {
@@ -75,10 +74,10 @@ void ClapTrap::attack(const std::string& target)
 {   
   if (getEnergyPoint() == 0 || getHitPoint() == 0 || getAttackDamage() == 0)
 {
-        std::cout << "ClapTrap " << getName() << " is already dead!" << std::endl;
+        std::cout << RED_COLOR << "ClapTrap " << getName() << " is already dead!" << RESET << std::endl;
         return;
     }
-    std::cout << "ClapTrap " << getName() <<  " attacks " << target << ", causing " << getAttackDamage() << " points of damage!" << std::endl;
+    std::cout << BLUE_COLOR <<  "ClapTrap " << getName() <<  " attacks " << target << ", causing " << getAttackDamage() << " points of damage!" << RESET << std::endl;
     setEnergyPoint(getEnergyPoint() - 1);
 }
 
@@ -86,12 +85,12 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
     if (getHitPoint() == 0)
     {
-        std::cout << "ClapTrap " << getName() << " is already dead!" << std::endl;
+        std::cout << RED_COLOR << "ClapTrap " << getName() << " is already dead!" << RESET << std::endl;
         return;
     }
     else if (amount == 0)
     {
-        std::cout << "ClapTrap " << getName() << " takes 0 points of damage!" << std::endl;
+        std::cout << WHITE_COLOR << "ClapTrap " << getName() << " takes 0 points of damage!" << RESET << std::endl;
         return;
     }
     else
@@ -99,10 +98,10 @@ void ClapTrap::takeDamage(unsigned int amount)
         if (getHitPoint() - amount <= 0)
         {
             setHitPoint(0);
-            std::cout << "ClapTrap " << getName() << " is dead!" << std::endl;
+            std::cout << RED_COLOR << "ClapTrap " << getName() << " is dead!" << RESET << std::endl;
             return;
         }
-        std::cout << "ClapTrap " << getName() << " takes " << amount << " points of damage!" << std::endl;
+        std::cout << BLUE_COLOR << "ClapTrap " << getName() << " takes " << amount << " points of damage!" << RESET << std::endl;
         setHitPoint(getHitPoint() - amount);
     }
 }
@@ -111,14 +110,14 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
     if (getHitPoint() == 0)
     {
-        std::cout << "ClapTrap " << getName() << " is already dead!" << std::endl;
+        std::cout << RED_COLOR << "ClapTrap " << getName() << " is already dead!" << RESET << std::endl;
         return;
     }
     if ((unsigned long)(hitPoint + amount) > UINT_MAX)
         amount = UINT_MAX - hitPoint;
     setHitPoint(getHitPoint() + amount);
     setEnergyPoint(getEnergyPoint() - 1);
-    std::cout << "ClapTrap " << getName() << " is repaired for " << amount << " points!" << std::endl;
+    std::cout << BLUE_COLOR << "ClapTrap " << getName() << " is repaired for " << amount << " points!" << RESET << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other)
@@ -130,21 +129,24 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
         this->energyPoint = other.energyPoint;
         this->attackDamage = other.attackDamage;
     }
+    std::cout << "Copy assignment operator called" << std::endl;
     return (*this);
 }
 
 void ClapTrap::displayStats() const
 {
-    std::cout << "===== ClapTrap Stats =====" << std::endl;
+    std::cout << WHITE_COLOR << "===== " << RESET << PURPLE_COLOR << "ClapTrap Stats" << RESET << WHITE_COLOR << " =====" << std::endl;
+    std::cout << std::endl;
     std::cout << "Name: " << getName() << std::endl;
     std::cout << "Hit Points: " << getHitPoint() << std::endl;
     std::cout << "Energy Points: " << getEnergyPoint() << std::endl;
     std::cout << "Attack Damage: " << getAttackDamage() << std::endl;
 
     if (getHitPoint() == 0)
-        std::cout << getName() << " is dead!" << std::endl;
+        std::cout << RED_COLOR << getName() << " is dead!" << RESET << std::endl;
     else
-        std::cout << getName() << " is alive!" << std::endl;
+        std::cout << GREEN_COLOR << getName() << " is alive!" << RESET << std::endl;
 
-    std::cout << "==========================" << std::endl;
+    std::cout << WHITE_COLOR << "=========================="  << std::endl;
+    std::cout << RESET << std::endl;
 }
