@@ -6,7 +6,7 @@
 /*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:54 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/26 17:31:25 by fatmanurcet      ###   ########.fr       */
+/*   Updated: 2024/10/26 17:36:24 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -120,6 +120,7 @@ void ClapTrap::beRepaired(unsigned int amount)
         return;
     }
     setHitPoint(getHitPoint() + amount);
+    setEnergyPoint(getEnergyPoint() - 1);
     std::cout << "ClapTrap " << getName() << " is repaired for " << amount << " points!" << std::endl;
 }
 
