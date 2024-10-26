@@ -6,11 +6,13 @@
 /*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:54 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/26 17:39:50 by fatmanurcet      ###   ########.fr       */
+/*   Updated: 2024/10/26 17:41:58 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "ClapTrap.hpp"
+#include <climits>
+
 
 ClapTrap::ClapTrap()
 {
@@ -113,12 +115,8 @@ void ClapTrap::beRepaired(unsigned int amount)
         std::cout << "ClapTrap " << getName() << " is already dead!" << std::endl;
         return;
     }
-    if (getHitPoint() + amount > 10)
-    {
-        std::cout << "ClapTrap " << getName() << " is fully repaired!" << std::endl;
-        setHitPoint(10);
-        return;
-    }
+    if ((unsigned long)(hitPoint + amount) > UINT_MAX)
+        amount = UINT_MAX - hitPoint;
     setHitPoint(getHitPoint() + amount);
     setEnergyPoint(getEnergyPoint() - 1);
     std::cout << "ClapTrap " << getName() << " is repaired for " << amount << " points!" << std::endl;
