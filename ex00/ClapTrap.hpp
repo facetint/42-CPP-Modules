@@ -6,7 +6,7 @@
 /*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:57 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/26 17:31:00 by fatmanurcet      ###   ########.fr       */
+/*   Updated: 2024/10/26 17:43:41 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -26,7 +26,7 @@ private:
     ClapTrap();
 
 public:
-    ClapTrap(std::string name);
+    ClapTrap(const std::string& name);
     ClapTrap(const ClapTrap& other);
     ~ClapTrap();
     void attack(const std::string& target);

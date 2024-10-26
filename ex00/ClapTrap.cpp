@@ -6,7 +6,7 @@
 /*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:54 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/26 17:41:58 by fatmanurcet      ###   ########.fr       */
+/*   Updated: 2024/10/26 17:43:27 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -18,13 +18,12 @@ ClapTrap::ClapTrap()
 {
     std::cout << "Default Constructor called" << std::endl; 
 }
-ClapTrap::ClapTrap(std::string name)
+
+ClapTrap::ClapTrap(const std::string& name) : name(name), hitPoint(10), energyPoint(10), attackDamage(0)
 {
-    this->hitPoint = 10;
-    this->energyPoint = 10;
-    this->attackDamage = 0;
-    this->name = name;
+    std::cout << "Parameter Constructor called" << std::endl;
 }
+
 ClapTrap::ClapTrap(const ClapTrap& other)
 {
     *this = other;
