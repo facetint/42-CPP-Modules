@@ -6,7 +6,7 @@
 /*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:54 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/26 22:49:55 by fatmanurcet      ###   ########.fr       */
+/*   Updated: 2024/10/27 02:20:04 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -135,7 +135,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 
 void ClapTrap::displayStats() const
 {
-    std::cout << WHITE_COLOR << "===== " << RESET << PURPLE_COLOR << "ClapTrap Stats" << RESET << WHITE_COLOR << " =====" << std::endl;
+    std::cout << WHITE_COLOR << "===== " << RESET << PURPLE_COLOR << " STATS " << RESET << WHITE_COLOR << " =====" << std::endl;
     std::cout << std::endl;
     std::cout << "Name: " << getName() << std::endl;
     std::cout << "Hit Points: " << getHitPoint() << std::endl;
