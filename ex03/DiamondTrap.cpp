@@ -46,3 +46,9 @@ void DiamondTrap::setDiamondName(std::string name)
 {
     this->name = name;
 }
+
+void DiamondTrap::whoAmI()
+{
+	std::cout << "DiamondTrap identity: " << getDiamondName() << std::endl;
+	std::cout << "Base ClapTrap identity: " << getName() << std::endl;
+}
