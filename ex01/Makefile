@@ -1,7 +1,7 @@
 NAME = scavTrap
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -Wshadow -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
 SRCS = ./main.cpp ./ClapTrap.cpp ./ScavTrap.cpp
