@@ -6,7 +6,7 @@
 /*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:54 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/28 22:58:47 by fatmanurcet      ###   ########.fr       */
+/*   Updated: 2024/10/28 23:01:25 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -70,6 +70,19 @@ void ClapTrap::setName(std::string name)
     this->name = name;
 }
 
+ClapTrap& ClapTrap::operator=(const ClapTrap& other)
+{
+    if (this != &other)
+    {
+        this->name = other.name;
+        this->hitPoint = other.hitPoint;
+        this->energyPoint = other.energyPoint;
+        this->attackDamage = other.attackDamage;
+    }
+    std::cout << "Copy assignment operator called" << std::endl;
+    return (*this);
+}
+
 void ClapTrap::attack(const std::string &target)
 {
 	if (getEnergyPoint() == 0)
@@ -130,18 +143,6 @@ void ClapTrap::beRepaired(unsigned int amount)
 	std::cout << BLUE_COLOR << "ClapTrap " << getName() << " is repaired for " << amount << " points!" << RESET << std::endl;
 }
 
-ClapTrap& ClapTrap::operator=(const ClapTrap& other)
-{
-    if (this != &other)
-    {
-        this->name = other.name;
-        this->hitPoint = other.hitPoint;
-        this->energyPoint = other.energyPoint;
-        this->attackDamage = other.attackDamage;
-    }
-    std::cout << "Copy assignment operator called" << std::endl;
-    return (*this);
-}
 
 void ClapTrap::displayStats() const
 {
