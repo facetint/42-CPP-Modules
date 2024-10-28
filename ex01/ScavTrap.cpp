@@ -32,15 +32,20 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other)
     return *this;
 }
 
-void ScavTrap::attack(const std::string& target)
+void ScavTrap::attack(const std::string &target)
 {
-    if (getEnergyPoint() == 0 || getHitPoint() == 0 || getAttackDamage() == 0)
-    {
-        std::cout << RED_COLOR << "ScavTrap " << getName() << " is already dead!" << RESET << std::endl;
-        return;
-    }
-    std::cout << BLUE_COLOR << "ScavTrap " << getName() << " attacks " << target << ", causing " << getAttackDamage() << " points of damage!" << RESET << std::endl;
-    setEnergyPoint(getEnergyPoint() - 1);
+	if (getEnergyPoint() == 0)
+	{
+		std::cout << RED_COLOR << "ScavTrap " << getName() << " has no energy left to attack!" << RESET << std::endl;
+		return ;
+	}
+	if (getHitPoint() == 0)
+	{
+		std::cout << RED_COLOR << "ScavTrap " << getName() << " is already dead!" << RESET << std::endl;
+		return ;
+	}
+	std::cout << BLUE_COLOR << "ScavTrap " << getName() << " attacks " << target << ",causing " << getAttackDamage() << " points of damage !" << RESET << std::endl;
+	setEnergyPoint(getEnergyPoint() - 1);
 }
 
 void ScavTrap::guardGate()
