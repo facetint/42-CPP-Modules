@@ -6,7 +6,7 @@
 /*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:54 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/28 22:52:31 by fatmanurcet      ###   ########.fr       */
+/*   Updated: 2024/10/28 22:57:37 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -113,16 +113,21 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-    if (getHitPoint() == 0)
-    {
-        std::cout << RED_COLOR << "ClapTrap " << getName() << " is already dead!" << RESET << std::endl;
-        return;
-    }
-    if ((unsigned long)(hitPoint + amount) > UINT_MAX)
-        amount = UINT_MAX - hitPoint;
-    setHitPoint(getHitPoint() + amount);
-    setEnergyPoint(getEnergyPoint() - 1);
-    std::cout << BLUE_COLOR << "ClapTrap " << getName() << " is repaired for " << amount << " points!" << RESET << std::endl;
+	if (getHitPoint() == 0)
+	{
+		std::cout << RED_COLOR << "ClapTrap " << getName() << " is already dead and cannot be repaired!" << RESET << std::endl;
+		return ;
+	}
+	if (getEnergyPoint() == 0)
+	{
+		std::cout << RED_COLOR << "ClapTrap " << getName() << " has no energy left to repair!" << RESET << std::endl;
+		return ;
+	}
+	if (amount > UINT_MAX - getHitPoint())
+		amount = UINT_MAX - getHitPoint();
+	setHitPoint(getHitPoint() + amount);
+	setEnergyPoint(getEnergyPoint() - 1);
+	std::cout << BLUE_COLOR << "ClapTrap " << getName() << " is repaired for " << amount << " points!" << RESET << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other)
