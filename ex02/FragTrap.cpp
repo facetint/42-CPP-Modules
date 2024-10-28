@@ -34,7 +34,17 @@ FragTrap& FragTrap::operator=(const FragTrap& other)
 
 void FragTrap::highFivesGuys(void)
 {
-    std::cout << "FragTrap " << getName() << " requests a high five!" << std::endl;
+	std::string name = getName();
+	if (getEnergyPoint() > 0 && getHitPoint() > 0)
+	{
+		std::cout << GREEN_COLOR << "FragTrap " << name << " requests a high five!" << RESET << std::endl;
+	}
+	else if (getEnergyPoint() == 0)
+	{
+		std::cout << RED_COLOR << "FragTrap " << name << " has no energy left to request a high five" << std::endl;
+	}
+	else if (getHitPoint() <= 0)
+	{
+		std::cout << RED_COLOR << "FragTrap " << name << " is already dead!" << RESET << std::endl;
+	}
 }
-
-
