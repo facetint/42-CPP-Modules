@@ -6,7 +6,7 @@
 /*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:54 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/29 01:14:59 by fatmanurcet      ###   ########.fr       */
+/*   Updated: 2024/10/29 01:42:48 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -18,14 +18,14 @@ ClapTrap::ClapTrap()
     std::cout << "Default Constructor called" << std::endl; 
 }
 
-ClapTrap::ClapTrap(const std::string& name) : name(name), hitPoint(10), energyPoint(10), attackDamage(0)
+ClapTrap::ClapTrap(const std::string& name) : _name(name), _hitPoint(10), _energyPoint(10), _attackDamage(0)
 {
     std::cout << "Parameterized constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap& other)
+ClapTrap::ClapTrap(const ClapTrap& copy)
 {
-    *this = other;
+    *this = copy;
     std::cout << "Copy constructor called" << std::endl;
 }
 ClapTrap::~ClapTrap()
@@ -34,50 +34,50 @@ ClapTrap::~ClapTrap()
 }
 unsigned int ClapTrap::getAttackDamage() const
 {
-    return this->attackDamage;
+    return this->_attackDamage;
 }
 
 unsigned int ClapTrap::getEnergyPoint() const
 {
-    return this->energyPoint;
+    return this->_energyPoint;
 }
 
 unsigned int ClapTrap::getHitPoint() const
 {
-    return this->hitPoint;
+    return this->_hitPoint;
 }
 
 std::string ClapTrap::getName() const
 {
-    return this->name;
+    return this->_name;
 }
 
 void ClapTrap::setAttackDamage(unsigned int attackDamage)
 {
-    this->attackDamage = attackDamage;
+    this->_attackDamage = attackDamage;
 }
 
 void ClapTrap::setEnergyPoint(unsigned int energyPoint)
 {
-    this->energyPoint = energyPoint;
+    this->_energyPoint = energyPoint;
 }
 void ClapTrap::setHitPoint(unsigned int hitPoint)
 {
-    this->hitPoint = hitPoint;
+    this->_hitPoint = hitPoint;
 }
 void ClapTrap::setName(std::string name)
 {
-    this->name = name;
+    this->_name = name;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 {
     if (this != &other)
     {
-        this->name = other.name;
-        this->hitPoint = other.hitPoint;
-        this->energyPoint = other.energyPoint;
-        this->attackDamage = other.attackDamage;
+        this->_name = other._name;
+        this->_hitPoint = other._hitPoint;
+        this->_energyPoint = other._energyPoint;
+        this->_attackDamage = other._attackDamage;
     }
     std::cout << "Copy assignment operator called" << std::endl;
     return (*this);

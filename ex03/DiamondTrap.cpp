@@ -31,7 +31,7 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other)
     std::cout << "Copy assignment operator called - (DiamondTrap)" << std::endl;
     if (this != &other)
     {
-        this->name = other.getDiamondName();
+        this->_name = other.getDiamondName();
 		this->ClapTrap::operator=(other);
     }
     return *this;
@@ -39,12 +39,12 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other)
 
 std::string DiamondTrap::getDiamondName() const
 {
-    return this->name;
+    return this->_name;
 }
 
 void DiamondTrap::setDiamondName(std::string name)
 {
-    this->name = name;
+    this->_name = name;
 }
 
 void DiamondTrap::whoAmI()
