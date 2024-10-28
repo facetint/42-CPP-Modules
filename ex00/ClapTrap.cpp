@@ -6,7 +6,7 @@
 /*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:54 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/28 22:57:37 by fatmanurcet      ###   ########.fr       */
+/*   Updated: 2024/10/28 22:58:47 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -88,27 +88,27 @@ void ClapTrap::attack(const std::string &target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    if (getHitPoint() == 0)
-    {
-        std::cout << RED_COLOR << "ClapTrap " << getName() << " is already dead!" << RESET << std::endl;
-        return;
-    }
-    else if (amount == 0)
-    {
-        std::cout << WHITE_COLOR << "ClapTrap " << getName() << " takes 0 points of damage!" << RESET << std::endl;
-        return;
-    }
-    else
-    {
-        if (getHitPoint() - amount <= 0)
-        {
-            setHitPoint(0);
-            std::cout << RED_COLOR << "ClapTrap " << getName() << " is dead!" << RESET << std::endl;
-            return;
-        }
-        std::cout << BLUE_COLOR << "ClapTrap " << getName() << " takes " << amount << " points of damage!" << RESET << std::endl;
-        setHitPoint(getHitPoint() - amount);
-    }
+	if (getHitPoint() == 0)
+	{
+		std::cout << RED_COLOR << "ClapTrap " << getName() << " is already dead!" << RESET << std::endl;
+		return ;
+	}
+	else if (amount == 0)
+	{
+		std::cout << WHITE_COLOR << "ClapTrap " << getName() << " takes 0 points of damage!" << RESET << std::endl;
+		return ;
+	}
+	else
+	{
+		if (getHitPoint() <= amount)
+		{
+			setHitPoint(0);
+			std::cout << RED_COLOR << "ClapTrap " << getName() << " is dead!" << RESET << std::endl;
+			return ;
+		}
+		std::cout << BLUE_COLOR << "ClapTrap " << getName() << " takes " << amount << " points of damage!" << RESET << std::endl;
+		setHitPoint(getHitPoint() - amount);
+	}
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
