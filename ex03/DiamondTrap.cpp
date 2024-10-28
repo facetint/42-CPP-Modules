@@ -36,3 +36,13 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other)
     }
     return *this;
 }
+
+std::string DiamondTrap::getDiamondName() const
+{
+    return this->name;
+}
+
+void DiamondTrap::setDiamondName(std::string name)
+{
+    this->name = name;
+}
