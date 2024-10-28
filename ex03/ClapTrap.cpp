@@ -6,7 +6,7 @@
 /*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:54 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/28 23:06:28 by fatmanurcet      ###   ########.fr       */
+/*   Updated: 2024/10/29 01:15:18 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -146,7 +146,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 void ClapTrap::displayStats() const
 {
-    std::cout << WHITE_COLOR << "===== " << RESET << PURPLE_COLOR << "ClapTrap Stats" << RESET << WHITE_COLOR << " =====" << std::endl;
+	std::cout << WHITE_COLOR << "===== " << RESET << PURPLE_COLOR << " STATS " << RESET << WHITE_COLOR << " =====" << std::endl;
     std::cout << std::endl;
     std::cout << "Name: " << getName() << std::endl;
     std::cout << "Hit Points: " << getHitPoint() << std::endl;
