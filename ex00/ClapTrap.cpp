@@ -6,7 +6,7 @@
 /*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:54 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/26 22:49:55 by fatmanurcet      ###   ########.fr       */
+/*   Updated: 2024/10/28 22:52:31 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -70,15 +70,20 @@ void ClapTrap::setName(std::string name)
     this->name = name;
 }
 
-void ClapTrap::attack(const std::string& target)
-{   
-  if (getEnergyPoint() == 0 || getHitPoint() == 0 || getAttackDamage() == 0)
+void ClapTrap::attack(const std::string &target)
 {
-        std::cout << RED_COLOR << "ClapTrap " << getName() << " is already dead!" << RESET << std::endl;
-        return;
-    }
-    std::cout << BLUE_COLOR <<  "ClapTrap " << getName() <<  " attacks " << target << ", causing " << getAttackDamage() << " points of damage!" << RESET << std::endl;
-    setEnergyPoint(getEnergyPoint() - 1);
+	if (getEnergyPoint() == 0)
+	{
+		std::cout << RED_COLOR << "ClapTrap " << getName() << " has no energy left to attack!" << RESET << std::endl;
+		return ;
+	}
+	if (getHitPoint() == 0)
+	{
+		std::cout << RED_COLOR << "ClapTrap " << getName() << " is already dead!" << RESET << std::endl;
+		return ;
+	}
+	std::cout << BLUE_COLOR << "ClapTrap " << getName() << " attacks " << target << " ,causing " << getAttackDamage() << " points of damage!" << RESET << std::endl;
+	setEnergyPoint(getEnergyPoint() - 1);
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
