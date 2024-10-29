@@ -22,7 +22,9 @@ In C++, inheritance is an object-oriented programming (OOP) concept that allows 
 ## Basic Concepts of Inheritance
 
 **Base Class:** The class from which other classes inherit. The base class defines general properties and behaviors.
+
 **Derived Class:** A class that inherits properties and methods from the base class. It can add extra properties and behaviors. 
+
 **Access Specifier:** Rules that determine how members of the base class are accessed in derived classes during inheritance.
 
 **!!Note:** A derived class doesn’t inherit access to private data members. However, it does inherit a full parent object, which contains any private members which that class declares.
