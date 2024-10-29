@@ -21,3 +21,12 @@ Animal::~Animal()
     std::cout << "Destructor called " << std::endl;
 }
 
+Animal& Animal::operator=(const Animal& other)
+{
+    if (this != &other)
+    {
+        this->_type = other._type;
+    }
+    std::cout << "Assignation operator called " << std::endl;
+    return *this;
+}
