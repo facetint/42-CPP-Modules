@@ -30,3 +30,13 @@ Animal& Animal::operator=(const Animal& other)
     std::cout << "Assignation operator called " << std::endl;
     return *this;
 }
+
+void Animal::setType(const std::string type)
+{
+    this->_type = type;
+}
+
+std::string Animal::getType(void) const
+{
+    return this->_type;
+}
