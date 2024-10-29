@@ -124,3 +124,110 @@ There is no particular syntax of hybrid inheritance.
 
 
 ![image](https://github.com/user-attachments/assets/3b7c7621-6ad6-4467-a5e9-08dd5484ca94)
+
+
+## Diamond Problem
+
+It is a situation that arises in cases of multiple inheritance. This problem occurs when a class inherits the same superclass in two different ways. Below I provide more information about the diamond problem and a solution method.
+
+*Diamond Problem Explained*
+
+Consider the following structure:
+
+       A
+      / \
+     B   C
+      \ /
+       D
+
+Here:
+
+ClassA is inherited by classes B and C.
+ClassD inherits both classes B and C.
+If we define a method in class A and class D calls this method of class A through classes B and C, it becomes unclear which path to use. This leads to the diamond problem.
+
+*Example Code*
+
+```cpp
+#include <iostream>
+
+class A {
+public:
+    void speak() {
+        std::cout << "A speaks!" << std::endl;
+    }
+};
+
+class B : public A {
+public:
+    void speak() {
+        std::cout << "B speaks!" << std::endl;
+    }
+};
+
+class C : public A {
+public:
+    void speak() {
+        std::cout << "C speaks!" << std::endl;
+    }
+};
+
+class D : public B, public C {
+public:
+    void speak() {
+        // Which speak() method should we call?
+        // A::speak(); // This cannot be used directly
+        B::speak(); // We can call B's speak() method
+    }
+};
+
+int main() {
+    D d;
+    d.speak(); // Here we must specify which speak() method to call
+
+    return 0;
+}
+```
+
+**Solution Methods**
+
+*Virtual Inheritance:* This is the most common way to solve the diamond problem in C++. By defining classA as a virtual superclass, we allow classes B and C to use class A as a single object.
+
+```cpp
+class A {
+public:
+    void speak() {
+        std::cout << "A speaks!" << std::endl;
+    }
+};
+
+class B : virtual public A {
+public:
+    void speak() {
+        std::cout << "B speaks!" << std::endl;
+    }
+};
+
+class C : virtual public A {
+public:
+    void speak() {
+        std::cout << "C speaks!" << std::endl;
+    }
+};
+
+class D : public B, public C {
+public:
+    void speak() {
+        A::speak(); // A'nın speak() metodunu çağırıyoruz
+    }
+};
+
+int main() {
+    D d;
+    d.speak(); // A speaks!
+
+    return 0;
+}
+```
+
+*2- Method Selection:* Within classD, you can explicitly specify which method you want to call from class A, B or C. This removes ambiguity by choosing a specific path.
