@@ -15,6 +15,10 @@ public:
     Animal(const Animal& other);
     Animal& operator=(const Animal& other);
     ~Animal();
+
+    void        setType(const std::string type);
+    std::string getType(void) const;
+    
 };
 
 #endif
