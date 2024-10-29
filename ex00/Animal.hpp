@@ -18,7 +18,11 @@ public:
 
     void        setType(const std::string type);
     std::string getType(void) const;
-    
+
+    void    makeSound(void);
+    void    whoAmI(void) const;
+
+
 };
 
 #endif
