@@ -64,6 +64,10 @@ int main() {
 ```
 
 
+
+![image](https://github.com/user-attachments/assets/189064da-0423-435f-8d6b-6143cfbb93ce)
+
+
 ## Modes of Inheritance in C++
 
 Mode of inheritance controls the access level of the inherited members of the base class in the derived class. In C++, there are 3 modes of inheritance:
