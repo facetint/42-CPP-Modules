@@ -1,14 +1,14 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
+/*   By: facetint <facetint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:57 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/29 01:40:33 by fatmanurcet      ###   ########.fr       */
+/*   Updated: 2024/10/30 10:51:55 by facetint         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 
@@ -23,32 +23,32 @@
 # define PURPLE_COLOR "\x1b[38;2;178;58;238;01m"
 # define WHITE_COLOR "\x1b[38;2;255;255;255;01m"
 
-class ClapTrap{
+class ClapTrap
+{
+  private:
+	std::string _name;
+	unsigned int _hitPoint;
+	unsigned int _energyPoint;
+	unsigned int _attackDamage;
+	ClapTrap();
 
-private:
-    std::string _name;
-    unsigned int _hitPoint;
-    unsigned int _energyPoint;
-    unsigned int _attackDamage;
-    ClapTrap();
-
-public:
-    ClapTrap(const std::string& name);
-    ClapTrap(const ClapTrap& copy);
-    ~ClapTrap();
-    void attack(const std::string& target);
-    void takeDamage(unsigned int amount);
-    void beRepaired(unsigned int amount);
-    ClapTrap& operator=(const ClapTrap& other);
-    unsigned int getHitPoint() const;
-    unsigned int getEnergyPoint() const;
-    unsigned int getAttackDamage() const;
-    std::string getName() const;
-    void setName(std::string name);
-    void setHitPoint(unsigned int hitPoint);
-    void setEnergyPoint(unsigned int energyPoint);
-    void setAttackDamage(unsigned int attackDamage);
-    void displayStats() const;
+  public:
+	ClapTrap(const std::string &name);
+	ClapTrap(const ClapTrap &copy);
+	~ClapTrap();
+	void attack(const std::string &target);
+	void takeDamage(unsigned int amount);
+	void beRepaired(unsigned int amount);
+	ClapTrap &operator=(const ClapTrap &other);
+	unsigned int getHitPoint() const;
+	unsigned int getEnergyPoint() const;
+	unsigned int getAttackDamage() const;
+	std::string getName() const;
+	void setName(std::string name);
+	void setHitPoint(unsigned int hitPoint);
+	void setEnergyPoint(unsigned int energyPoint);
+	void setAttackDamage(unsigned int attackDamage);
+	void displayStats() const;
 };
 
 #endif

@@ -1,21 +1,21 @@
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
-#include <iostream>
-#include "ClapTrap.hpp"
+# include "ClapTrap.hpp"
+# include <iostream>
 
-class ScavTrap : public ClapTrap 
+class ScavTrap : public ClapTrap
 {
-private:
-    ScavTrap();
+  private:
+	ScavTrap();
 
-public:
-    ScavTrap(const std::string& name);
-    ScavTrap(const ScavTrap& other);
-    ~ScavTrap();
-    ScavTrap& operator=(const ScavTrap& other);
-    void attack(const std::string& target);
-    void guardGate();
+  public:
+	ScavTrap(const std::string &name);
+	ScavTrap(const ScavTrap &other);
+	~ScavTrap();
+	ScavTrap &operator=(const ScavTrap &other);
+	void attack(const std::string &target);
+	void guardGate();
 };
 
 #endif

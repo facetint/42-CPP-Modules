@@ -2,21 +2,20 @@
 
 # define FRAGTRAP_HPP
 
-# include <iostream>
 # include "ClapTrap.hpp"
+# include <iostream>
 
 class FragTrap : virtual public ClapTrap
 {
-private:
-    FragTrap();
+  private:
+	FragTrap();
 
-public:
-    FragTrap(const std::string& name);
-    FragTrap(const FragTrap& other);
-    ~FragTrap();
-    FragTrap& operator=(const FragTrap& other);
-    void highFivesGuys(void);
-
+  public:
+	FragTrap(const std::string &name);
+	FragTrap(const FragTrap &other);
+	~FragTrap();
+	FragTrap &operator=(const FragTrap &other);
+	void highFivesGuys(void);
 };
 
 #endif
