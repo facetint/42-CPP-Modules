@@ -1,14 +1,14 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: facetint <facetint@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:57 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/30 10:54:35 by facetint         ###   ########.fr       */
+/*   Updated: 2024/10/30 23:55:17 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #ifndef CLAPTRAP_HPP
 
@@ -30,9 +30,9 @@ class ClapTrap
 	unsigned int _hitPoint;
 	unsigned int _energyPoint;
 	unsigned int _attackDamage;
-	ClapTrap();
 
   public:
+	ClapTrap();
 	ClapTrap(const std::string &name);
 	ClapTrap(const ClapTrap &copy);
 	~ClapTrap();
