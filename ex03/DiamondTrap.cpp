@@ -6,8 +6,8 @@
 /*   By: facetint <facetint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 11:01:23 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/30 11:01:24 by facetint         ###   ########.fr       */
-/*                                                                            */
+/*   Updated: 2024/10/30 11:23:00 by facetint         ###   ########.fr       */
+/*                                                                            */ 
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
@@ -18,11 +18,9 @@ DiamondTrap::DiamondTrap() : ClapTrap(""), ScavTrap(""), FragTrap("")
 	setDiamondName("");
 }
 
-DiamondTrap::DiamondTrap(const std::string &name) : ClapTrap(name
-	+ "_clap_name"), ScavTrap(name), FragTrap(name)
+DiamondTrap::DiamondTrap(const std::string &name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name)
 {
-	std::cout << "Parameterized constructor called
-		- (DiamondTrap)" << std::endl;
+	std::cout << "Parameterized constructor called - (DiamondTrap)" << std::endl;
 	setDiamondName(name);
 	setHitPoint(100);
 	setEnergyPoint(50);

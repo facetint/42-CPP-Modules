@@ -6,7 +6,7 @@
 /*   By: facetint <facetint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:54 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/30 10:51:50 by facetint         ###   ########.fr       */
+/*   Updated: 2024/10/30 11:06:23 by facetint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ ClapTrap::ClapTrap()
 	std::cout << "Default Constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const std::string &name) : _name(name), _hitPoint(10),
-	_energyPoint(10), _attackDamage(0)
+ClapTrap::ClapTrap(const std::string &name) : _name(name), _hitPoint(10), _energyPoint(10), _attackDamage(0)
 {
 	std::cout << "Parameterized constructor called" << std::endl;
 }
