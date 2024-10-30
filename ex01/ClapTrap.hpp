@@ -6,7 +6,7 @@
 /*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:57 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/30 23:54:54 by fatmanurcet      ###   ########.fr       */
+/*   Updated: 2024/10/31 00:01:20 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -25,7 +25,7 @@
 
 class ClapTrap
 {
-  private:
+  protected:
 	std::string _name;
 	unsigned int _hitPoint;
 	unsigned int _energyPoint;
