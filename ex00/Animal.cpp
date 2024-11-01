@@ -40,3 +40,13 @@ std::string Animal::getType(void) const
 {
     return this->_type;
 }
+
+void Animal::makeSound() const
+{
+    std::cout << "Animal sound" << std::endl;
+}
+
+void Animal::whoAmI() const
+{
+    std::cout << "I am an Animal" << std::endl;
+}
