@@ -2,23 +2,23 @@
 
 Dog::Dog()
 {
-    std::cout << "Default constructor called - (Animal)" << std::endl;
+    std::cout << "Default constructor called - (Dog)" << std::endl;
 }
 
-Dog::Dog(std::string type) : Animal(type)
+Dog::Dog(std::string type) : Animal("Dog")
 {
-    std::cout << "Parameterized constructor called - (Animal)" << std::endl;
+    std::cout << "Parameterized constructor called - (Dog)" << std::endl;
 }
 
 Dog::Dog(const Dog& other)
 {
     *this = other;
-    std::cout << "Copy constructor called - (Animal)" << std::endl;
+    std::cout << "Copy constructor called - (Dog)" << std::endl;
 }
 
 Dog::~Dog()
 {
-    std::cout << "Destructor called - (Animal)" << std::endl;
+    std::cout << "Destructor called - (Dog)" << std::endl;
 }
 Dog& Dog::operator=(const Dog& other)
 {
@@ -26,6 +26,16 @@ Dog& Dog::operator=(const Dog& other)
     {
         this->setType(other.getType());
     }
-    std::cout << "Assignation operator called - (Animal)" << std::endl;
+    std::cout << "Assignation operator called - (Dog)" << std::endl;
     return *this;
+}
+
+void Dog::makeSound() const
+{
+    std::cout << "Woof Woof" << std::endl;   
+}
+
+void Dog::whoAmI() const
+{
+    std::cout << "I am a Dog" << std::endl;
 }
