@@ -2,12 +2,8 @@
 
 Dog::Dog()
 {
+    setType("Dog");
     std::cout << "Default constructor called - (Dog)" << std::endl;
-}
-
-Dog::Dog(std::string type) : Animal("Dog")
-{
-    std::cout << "Parameterized constructor called - (Dog)" << std::endl;
 }
 
 Dog::Dog(const Dog& other)

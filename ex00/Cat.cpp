@@ -2,12 +2,8 @@
 
 Cat::Cat()
 {
+    setType("Cat");
     std::cout << "Default constructor called " << std::endl;
-}
-
-Cat::Cat(std::string type) : Animal("Cat")
-{
-    std::cout << "Parameterized constructor called" << std::endl;
 }
 
 Cat::Cat(const Cat& other)
