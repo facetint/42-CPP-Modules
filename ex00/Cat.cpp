@@ -29,8 +29,3 @@ void Cat::makeSound() const
 {
     std::cout << "Meow Meow" << std::endl;
 }
-
-void Cat::whoAmI() const
-{
-    std::cout << "I am a Cat" << std::endl;
-}

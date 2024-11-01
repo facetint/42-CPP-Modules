@@ -31,7 +31,3 @@ void Dog::makeSound() const
     std::cout << "Woof Woof" << std::endl;   
 }
 
-void Dog::whoAmI() const
-{
-    std::cout << "I am a Dog" << std::endl;
-}
