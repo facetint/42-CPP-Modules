@@ -3,17 +3,17 @@
 Cat::Cat()
 {
     setType("Cat");
-    std::cout << "Default constructor called " << std::endl;
+    std::cout << "Default constructor called - (Cat)" << std::endl;
 }
 
 Cat::Cat(const Cat& other)
 {
     *this = other;
-    std::cout << "Copy constructor called " << std::endl;
+    std::cout << "Copy constructor called - (Cat)" << std::endl;
 }
 Cat::~Cat()
 {
-    std::cout << "Destructor called " << std::endl;
+    std::cout << "Destructor called - (Cat)" << std::endl;
 }
 Cat& Cat::operator=(const Cat& other)
 {
@@ -21,7 +21,7 @@ Cat& Cat::operator=(const Cat& other)
     {
         this->setType(other.getType());
     }
-    std::cout << "Assignation operator called " << std::endl;
+    std::cout << "Assignation operator called - (Cat)" << std::endl;
     return *this;
 }
 
