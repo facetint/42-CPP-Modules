@@ -2,23 +2,23 @@
 
 Animal::Animal() : _type("Animal")
 {
-    std::cout << "Default constructor called " << std::endl;
+    std::cout << "Default constructor called - (Animal)" << std::endl;
 }
 
 Animal::Animal(std::string type) : _type(type)
 {
-    std::cout << "Constructor called " << std::endl;
+    std::cout << "Constructor called - (Animal)" << std::endl;
 }
 
 Animal::Animal(const Animal& other)
 {
     *this = other;
-    std::cout << "Copy constructor called " << std::endl;
+    std::cout << "Copy constructor called - (Animal)" << std::endl;
 }
 
 Animal::~Animal()
 {
-    std::cout << "Destructor called " << std::endl;
+    std::cout << "Destructor called - (Animal)" << std::endl;
 }
 
 Animal& Animal::operator=(const Animal& other)
@@ -27,7 +27,7 @@ Animal& Animal::operator=(const Animal& other)
     {
         this->_type = other._type;
     }
-    std::cout << "Assignation operator called " << std::endl;
+    std::cout << "Assignation operator called - (Animal)" << std::endl;
     return *this;
 }
 
