@@ -5,7 +5,7 @@ Cat::Cat()
     std::cout << "Default constructor called " << std::endl;
 }
 
-Cat::Cat(std::string type) : Animal(type)
+Cat::Cat(std::string type) : Animal("Cat")
 {
     std::cout << "Parameterized constructor called" << std::endl;
 }
@@ -27,4 +27,14 @@ Cat& Cat::operator=(const Cat& other)
     }
     std::cout << "Assignation operator called " << std::endl;
     return *this;
+}
+
+void Cat::makeSound() const
+{
+    std::cout << "Meow Meow" << std::endl;
+}
+
+void Cat::whoAmI() const
+{
+    std::cout << "I am a Cat" << std::endl;
 }
