@@ -22,7 +22,16 @@ Cat& Cat::operator=(const Cat& other)
     if (this != &other)
     {
         this->setType(other.getType());
-        this->brain = other.getBrain();
+        if (this->brain != nullptr) {
+            delete this->brain;
+        }
+        try {
+            this->brain = new Brain(*other.brain);
+        } catch (const std::bad_alloc& e) {
+            std::cerr << "Memory Allocation Error: " << e.what() << std::endl;
+            this->brain = nullptr;
+            throw;
+        }
     }
     std::cout << "Assignation operator called - (Cat)" << std::endl;
     return *this;
@@ -33,7 +42,12 @@ void Cat::makeSound() const
     std::cout << "Meow Meow" << std::endl;
 }
 
-Brain *Cat::getBrain() const
+Brain Cat::getBrain() const
 {
-    return brain;
+    return *brain;
+}
+
+void Cat::display() const{
+
+    std::cout << this->brain->getIdea(0) << std::endl;
 }
