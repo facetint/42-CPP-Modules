@@ -22,6 +22,7 @@ Cat& Cat::operator=(const Cat& other)
     if (this != &other)
     {
         this->setType(other.getType());
+        this->brain = other.getBrain();
     }
     std::cout << "Assignation operator called - (Cat)" << std::endl;
     return *this;
@@ -30,4 +31,9 @@ Cat& Cat::operator=(const Cat& other)
 void Cat::makeSound() const
 {
     std::cout << "Meow Meow" << std::endl;
+}
+
+Brain *Cat::getBrain() const
+{
+    return brain;
 }
