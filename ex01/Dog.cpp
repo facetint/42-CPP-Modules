@@ -23,6 +23,7 @@ Dog& Dog::operator=(const Dog& other)
     if (this != &other)
     {
         this->setType(other.getType());
+        this->brain = other.getBrain();
     }
     std::cout << "Assignation operator called - (Dog)" << std::endl;
     return *this;
