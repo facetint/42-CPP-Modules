@@ -23,11 +23,21 @@ Dog& Dog::operator=(const Dog& other)
     if (this != &other)
     {
         this->setType(other.getType());
-        this->brain = other.getBrain();
+        if (this->brain != nullptr) {
+            delete this->brain;
+        }
+        try {
+            this->brain = new Brain(*other.brain);
+        } catch (const std::bad_alloc& e) {
+            std::cerr << "Memory Allocation Error: " << e.what() << std::endl;
+            this->brain = nullptr;
+            throw;
+        }
     }
     std::cout << "Assignation operator called - (Dog)" << std::endl;
     return *this;
 }
+
 
 void Dog::makeSound() const
 {
