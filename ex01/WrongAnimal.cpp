@@ -40,3 +40,11 @@ void WrongAnimal::makeSound() const
 {
     std::cout << "WrongAnimal sound" << std::endl;
 }
+
+void WrongAnimal::display() const
+{
+    std::cout << "---------------------------" << std::endl;
+    std::cout << WHITE_COLOR << "My type is: " << BLUE_COLOR << getType() << RESET << std::endl;
+    makeSound();
+    std::cout << "---------------------------" << std::endl;
+}
