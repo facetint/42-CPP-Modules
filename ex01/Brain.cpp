@@ -7,19 +7,19 @@ Brain::Brain()
 
 Brain::~Brain()
 {
-    std::cout << "Brain destructor called - (Brain)" << std::endl;
+    std::cout << "Destructor called - (Brain)" << std::endl;
 }
 
 Brain::Brain(const Brain &other)
 {
-    std::cout << "Brain copy constructor called - (Brain)" << std::endl;
+    std::cout << "Copy constructor called - (Brain)" << std::endl;
     for (int i = 0; i < 100; i++)
         ideas[i] = other.getIdea(i);
 }
 
 Brain &Brain::operator=(const Brain &other)
 {
-    std::cout << "Brain assignment operator called - (Brain)" << std::endl;
+    std::cout << "Assignment operator called - (Brain)" << std::endl;
     if (this == &other)
         return *this;
     for (int i = 0; i < 100; i++)
