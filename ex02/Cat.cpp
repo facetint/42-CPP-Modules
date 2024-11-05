@@ -2,15 +2,20 @@
 
 Cat::Cat()
 {
-    setType("Cat");
-    brain = new Brain();
     std::cout << "Default constructor called - (Cat)" << std::endl;
+
 }
 
 Cat::Cat(const Cat& other)
 {
-    *this = other;
     std::cout << "Copy constructor called - (Cat)" << std::endl;
+    try {
+        this->brain = new Brain(*other.brain);
+        setType(other.getType());
+    } catch (const std::bad_alloc& e) {
+        std::cerr << "Memory Allocation Error: " << e.what() << std::endl;
+        throw;
+    }
 }
 Cat::~Cat()
 {

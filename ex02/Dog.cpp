@@ -2,15 +2,31 @@
 
 Dog::Dog()
 {
-    setType("Dog");
-    brain = new Brain();
     std::cout << "Default constructor called - (Dog)" << std::endl;
+    try
+    {
+        setType("Dog");
+        brain = new Brain();
+    }
+    catch (const std::bad_alloc& e)
+    {
+        std::cerr << "Memory Allocation Error: " << e.what() << std::endl;
+        brain = NULL;
+        throw;
+    }
 }
 
 Dog::Dog(const Dog& other)
 {
-    *this = other;
     std::cout << "Copy constructor called - (Dog)" << std::endl;
+    try {
+        this->brain = new Brain(*other.brain);
+        setType(other.getType());
+    } catch (const std::bad_alloc& e) {
+        std::cerr << "Memory Allocation Error: " << e.what() << std::endl;
+        throw;
+    }
+    *this = other;
 }
 
 Dog::~Dog()
