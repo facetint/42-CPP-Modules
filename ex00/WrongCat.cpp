@@ -31,3 +31,11 @@ void WrongCat::makeSound() const
 {
     std::cout << "WrongCat sound" << std::endl;
 }
+
+void WrongCat::display() const
+{
+    std::cout << "---------------------------" << std::endl;
+    std::cout << WHITE_COLOR << "My type is: " << BLUE_COLOR << getType() << RESET << std::endl;
+    makeSound();
+    std::cout << "---------------------------" << std::endl;
+}

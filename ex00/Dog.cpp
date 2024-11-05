@@ -31,3 +31,10 @@ void Dog::makeSound() const
     std::cout << "Woof Woof" << std::endl;   
 }
 
+void Dog::display() const
+{
+    std::cout << "---------------------------" << std::endl;
+    std::cout << WHITE_COLOR << "My type is: " << BLUE_COLOR << getType() << RESET << std::endl;
+    makeSound();
+    std::cout << "---------------------------" << std::endl;
+}

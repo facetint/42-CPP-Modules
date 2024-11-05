@@ -29,3 +29,11 @@ void Cat::makeSound() const
 {
     std::cout << "Meow Meow" << std::endl;
 }
+
+void Cat::display() const
+{
+    std::cout << "---------------------------" << std::endl;
+    std::cout << WHITE_COLOR << "My type is: " << BLUE_COLOR << getType() << RESET << std::endl;
+    makeSound();
+    std::cout << "---------------------------" << std::endl;
+}
