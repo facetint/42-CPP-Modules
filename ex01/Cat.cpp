@@ -3,17 +3,7 @@
 Cat::Cat()
 {
     std::cout << "Default constructor called - (Cat)" << std::endl;
-    try
-    {
-        setType("Cat");
-        brain = new Brain();
-    }
-    catch (const std::bad_alloc& e)
-    {
-        std::cerr << "Memory Allocation Error: " << e.what() << std::endl;
-        brain = NULL;
-        throw;
-    }
+
 }
 
 Cat::Cat(const Cat& other)
