@@ -50,3 +50,12 @@ void Animal::whoAmI() const
 {
     std::cout << "I am an Animal" << std::endl;
 }
+
+void Animal::display() const
+{
+    std::cout << "---------------------------" << std::endl;
+    std::cout << WHITE_COLOR << "My type is: " << BLUE_COLOR << getType() << RESET << std::endl;
+    makeSound();
+    std::cout << "---------------------------" << std::endl;
+}
+

@@ -27,6 +27,7 @@ public:
     std::string getType(void) const;
 
     virtual void    makeSound(void) const;
+    virtual void display(void) const;
     void    whoAmI(void) const;
 
 };
