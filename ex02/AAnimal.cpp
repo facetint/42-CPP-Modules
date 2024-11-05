@@ -30,3 +30,12 @@ AAnimal& AAnimal::operator=(const AAnimal& other)
     return *this;
 }
 
+void AAnimal::setType(const std::string type)
+{
+    this->_type = type;
+}
+
+std::string AAnimal::getType(void) const
+{
+    return this->_type;
+}
