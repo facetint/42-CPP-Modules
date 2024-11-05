@@ -4,7 +4,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
-SRCS = ./main.cpp ./Animal.cpp ./Dog.cpp ./Cat.cpp ./WrongAnimal.cpp ./WrongCat.cpp ./Brain.cpp ./AAnimal.cpp
+SRCS = ./main.cpp ./Dog.cpp ./Cat.cpp ./WrongAnimal.cpp ./WrongCat.cpp ./Brain.cpp ./AAnimal.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
