@@ -12,6 +12,7 @@ public:
     Dog& operator=(const Dog& other);
     ~Dog();
     void makeSound() const;
+    void display(void) const;
 };
 
 #endif
