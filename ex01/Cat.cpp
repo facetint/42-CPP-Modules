@@ -22,14 +22,14 @@ Cat& Cat::operator=(const Cat& other)
     if (this != &other)
     {
         this->setType(other.getType());
-        if (this->brain != nullptr) {
-            delete this->brain;
+        if (this->brain != NULL) {
+            delete this->brain; 
         }
         try {
             this->brain = new Brain(*other.brain);
         } catch (const std::bad_alloc& e) {
             std::cerr << "Memory Allocation Error: " << e.what() << std::endl;
-            this->brain = nullptr;
+            this->brain = NULL;
             throw;
         }
     }
@@ -42,12 +42,7 @@ void Cat::makeSound() const
     std::cout << "Meow Meow" << std::endl;
 }
 
-Brain Cat::getBrain() const
+Brain *Cat::getBrain() const
 {
-    return *brain;
-}
-
-void Cat::display() const{
-
-    std::cout << this->brain->getIdea(0) << std::endl;
+    return brain;
 }

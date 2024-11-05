@@ -23,14 +23,14 @@ Dog& Dog::operator=(const Dog& other)
     if (this != &other)
     {
         this->setType(other.getType());
-        if (this->brain != nullptr) {
+        if (this->brain != NULL) {
             delete this->brain;
         }
         try {
             this->brain = new Brain(*other.brain);
         } catch (const std::bad_alloc& e) {
             std::cerr << "Memory Allocation Error: " << e.what() << std::endl;
-            this->brain = nullptr;
+            this->brain = NULL;
             throw;
         }
     }
