@@ -9,6 +9,7 @@ class Cat : public AAnimal
 {
 private:
     Brain *brain;
+    int ideaIndex;
 
 public:
     Cat();
@@ -18,6 +19,7 @@ public:
     void makeSound() const;
     Brain *getBrain() const;
     void display(void) const;
+
 };
 
 #endif
