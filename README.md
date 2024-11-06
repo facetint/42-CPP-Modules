@@ -71,6 +71,23 @@ They allow for polymorphic behavior, where objects of different derived classes 
 
 # Pure Virtual Functions and Abstract Classes in C++
 
+## Pure Virtual Functions 
+
+Pure virtual functions are functions that are defined in a class but are left without any content, only a skeleton. This type of function allows that class to be used only as a template or pattern. In other words, this function must be defined uniquely in subclasses.
+Pure virtual functions are marked with = 0 in the class definition. This tells the compiler “This function must be defined in subclasses”.
+
+### Pure Virtual Function Identification
+
+```cpp
+class Shape {
+public:
+    virtual void draw() = 0; // Pure virtual function
+};
+```
+Here draw() is defined as a pure virtual function in the Shape class. Every class that inherits theShape class has to define draw() in its own way. The skeleton of this function is ready, but it is empty; subclasses fill it according to their needs.
+Why Use Pure Virtual Function?
+Pure virtual functions are used only when we want to provide a template or a basic structure. For example, the Shape class represents a generic shape, but does not specify how to draw it. Therefore, we leave the content of the draw() function to subclasses.
+
 ## Abstract Class in C++
 
 In C++, an abstract class is defined by having at least one pure virtual function, a function without a concrete definition. These classes are essential in object-oriented programming, structuring code to mirror real-life scenarios through inheritance and abstraction. Abstract classes, which cannot be instantiated, are pivotal for expressing broad concepts and upcasting, allowing derived classes to implement their interfaces. Utilize pointers and references for abstract class types, and remember that any subclass failing to define the pure virtual function becomes abstract itself. The virtual function is declared with the pure specifier (= 0).
