@@ -135,3 +135,9 @@ This is from the derived class
 
 **3- Abstract Classes are mainly used for Upcasting, which means its derived classes can use its interface.**
 **4- Classes that inherit the Abstract Class must implement all pure virtual functions. If they do not, those classes will also be treated as abstract classes.**
+
+#### Why Can’t We Make an Abstract Class Object?
+
+Abstract classes in C++ cannot be instantiated because they are “abstract”. It’s like someone is telling you to draw an animal without telling you which specific animal. You can only draw if the person asks you to draw a cat, dog, etc., but an animal is abstract.
+
+The same is the case with abstract classes in C++, so we can’t create objects, but we can create a pointer of an abstract class.
