@@ -1,8 +1,7 @@
 #include "Cat.hpp"
 
-Cat::Cat()
+Cat::Cat() : Animal()
 {
-    std::cout << "Default constructor called - (Cat)" << std::endl;
     try {
         setType("Cat");
         brain = new Brain();
@@ -11,12 +10,11 @@ Cat::Cat()
         brain = NULL;
         throw;
     }
-
+    std::cout << "Default constructor called - (Cat)" << std::endl;
 }
 
-Cat::Cat(const Cat& other)
+Cat::Cat(const Cat& other) : Animal()
 {
-    std::cout << "Copy constructor called - (Cat)" << std::endl;
     try {
         this->brain = new Brain(*other.brain);
         setType(other.getType());
@@ -24,12 +22,15 @@ Cat::Cat(const Cat& other)
         std::cerr << "Memory Allocation Error: " << e.what() << std::endl;
         throw;
     }
+    std::cout << "Copy constructor called - (Cat)" << std::endl;
 }
+
 Cat::~Cat()
 {
-    std::cout << "Destructor called - (Cat)" << std::endl;
     delete brain;
+    std::cout << "Destructor called - (Cat)" << std::endl;
 }
+
 Cat& Cat::operator=(const Cat& other)
 {
     if (this != &other)
@@ -62,15 +63,13 @@ Brain *Cat::getBrain() const
 
 void Cat::display() const
 {
-    static int i = 0;
-    std::string idea = getBrain()->getIdea(i);
+    std::string idea = getBrain()->getIdeas();
 
-    std::cout << "My type is: " << getType()  << std::endl;
+    std::cout << "My type is: " << getType() << std::endl;
     if (idea != "") {
-       std::cout << "My idea at index " << i << " is: " << idea << std::endl;
+        std::cout << "My idea is: " << idea << std::endl;
     } else {
-        std::cout  << "I have no idea :("  << std::endl;
+        std::cout << "I have no idea :(" << std::endl;
     }
-    i++;
     makeSound();
 }
