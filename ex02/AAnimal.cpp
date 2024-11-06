@@ -5,10 +5,6 @@ AAnimal::AAnimal() : _type("AAnimal")
     std::cout << "Default constructor called - (AAnimal)" << std::endl;
 }
 
-AAnimal::AAnimal(std::string type) : _type(type)
-{
-    std::cout << "Parametric constructor called - (AAnimal)" << std::endl;
-}
 AAnimal::AAnimal(const AAnimal& other)
 {
     *this = other;
