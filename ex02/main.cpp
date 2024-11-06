@@ -1,71 +1,31 @@
+#include "Brain.hpp"
 #include "AAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
+# define MAX_ANIMALS 10
+
 int main() {
-    std::cout << "\n=== Testing Animal Hierarchy ===" << std::endl;
-
-    //const Animal* animal = new Animal();
-    const AAnimal* dog = new Dog();
-    const AAnimal* cat = new Cat();
-
-    std::cout << "Type of dog: " << dog->getType() << std::endl;
-    std::cout << "Type of cat: " << cat->getType() << std::endl;
-
-    dog->makeSound();
-    cat->makeSound();
-
-    delete dog;
-    delete cat;
-
-    std::cout << "\n=== Testing WrongAAnimal Hierarchy ===" << std::endl;
-
-    const WrongAnimal* wrongMeta = new WrongAnimal();
-    const WrongAnimal* wrongCat = new WrongCat();
-
-    std::cout << "Type of wrongCat: " << wrongCat->getType() << std::endl;
-
-    Cat cat2;
-    Cat cat3 = cat2;
-    wrongMeta->makeSound();
-    wrongCat->makeSound();
-
-    delete wrongMeta;
-    delete wrongCat;
-
-    std::cout << "\n=== Testing Deep Copy Dog ===" << std::endl;
-
-    Dog basicDog;
-    {
-        basicDog.getBrain()->setIdea(0, "I am a dog");
-        Dog tmpDog = basicDog;
-        std::cout << "Dog idea: " << tmpDog.getBrain()->getIdea(0) << std::endl;
-        basicDog.getBrain()->setIdea(0, "I am a cat");
-        std::cout << "Dog idea: " << tmpDog.getBrain()->getIdea(0) << std::endl;
-        std::cout << "Dog idea: " << basicDog.getBrain()->getIdea(0) << std::endl;
+    try {
+        if (MAX_ANIMALS < 2 || MAX_ANIMALS % 2 != 0) {
+            throw std::invalid_argument("MAX_ANIMALS must be a multiple of 2 and greater than 1");
+        }
+        const AAnimal* animals[MAX_ANIMALS] = {0};
+        for (int i = 0; i < MAX_ANIMALS; i++) {
+            if (i % 2 == 0)
+                animals[i] = new Dog();
+            else
+                animals[i] = new Cat();
+        }
+        for (int i = 0; i < MAX_ANIMALS; i++)
+            animals[i]->display();
+        for (int i = 0; i < MAX_ANIMALS; i++)
+            delete animals[i];
+    } catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+        return 1;
     }
-
-    std::cout << "\n=== Testing Deep Copy Cat ===" << std::endl;
-
-    Cat basicCat;
-    {
-        Cat tmpCat = basicCat;
-    }
-
-    std::cout << "===============================" << std::endl;
-    Dog dog1;
-    Cat cat1;
-
-    dog1.getBrain()->setIdea(0, "I am a dog");
-    cat1.getBrain()->setIdea(0, "I am a cat");
-
-    std::cout << "Dog idea: " << dog1.getBrain()->getIdea(0) << std::endl;
-    std::cout << "Cat idea: " << cat1.getBrain()->getIdea(0) << std::endl;
-
-    std::cout << "===============================" << std::endl;
-
-
     return 0;
 }
