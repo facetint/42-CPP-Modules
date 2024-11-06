@@ -1,6 +1,6 @@
 #include "Cat.hpp"
 
-Cat::Cat() : Animal()
+Cat::Cat() : AAnimal()
 {
     try {
         setType("Cat");
@@ -13,7 +13,7 @@ Cat::Cat() : Animal()
     std::cout << "Default constructor called - (Cat)" << std::endl;
 }
 
-Cat::Cat(const Cat& other) : Animal()
+Cat::Cat(const Cat& other) : AAnimal()
 {
     try {
         this->brain = new Brain(*other.brain);
