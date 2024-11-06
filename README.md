@@ -95,10 +95,43 @@ A pure virtual function (or abstract function) is a virtual function with no def
 
 **1- Abstract Classes must have at least one pure virtual function.**
 
-```c
+```c++
 virtual int perimeter() = 0;
 ````
 
 **2-Abstract Classes cannot be instantiated, but pointers and references of Abstract Class types can be created. You cannot create an object of an abstract class. Here is an example of a pointer to an abstract class.**
 
 
+```c++
+
+#include<iostream>
+using namespace std;
+
+class Base {
+  public:
+    virtual void print() = 0;
+};
+
+class Derived: public Base {
+  public: 
+    void print() {
+      cout << "This is from the derived class \n";
+    }
+};
+
+int main(void) {
+  Base* basePointer = new Derived();
+  basePointer -> print();
+  return 0;
+}
+````
+
+Output –
+
+```c++
+
+This is from the derived class
+````
+
+**3- Abstract Classes are mainly used for Upcasting, which means its derived classes can use its interface.**
+**4- Classes that inherit the Abstract Class must implement all pure virtual functions. If they do not, those classes will also be treated as abstract classes.**
