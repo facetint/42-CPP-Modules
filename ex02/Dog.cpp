@@ -1,6 +1,6 @@
 #include "Dog.hpp"
 
-Dog::Dog() : Animal()
+Dog::Dog() : AAnimal()
 {
     try
     {
@@ -16,7 +16,7 @@ Dog::Dog() : Animal()
     std::cout << "Default constructor called - (Dog)" << std::endl;
 }
 
-Dog::Dog(const Dog& other) : Animal()
+Dog::Dog(const Dog& other) : AAnimal()
 {
     try {
         this->brain = new Brain(*other.brain);
