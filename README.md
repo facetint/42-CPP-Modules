@@ -69,3 +69,36 @@ They allow for polymorphic behavior, where objects of different derived classes 
 | **C++'da Polimorfizm**       | Operatör aşırı yüklenmesi ve fonksiyon aşırı yüklenmesiyle elde edilir.                                            | Fonksiyon geçersiz kılma yoluyla elde edilir.                                                                          |
 
 
+# Pure Virtual Functions and Abstract Classes in C++
+
+## Abstract Class in C++
+
+In C++, an abstract class is defined by having at least one pure virtual function, a function without a concrete definition. These classes are essential in object-oriented programming, structuring code to mirror real-life scenarios through inheritance and abstraction. Abstract classes, which cannot be instantiated, are pivotal for expressing broad concepts and upcasting, allowing derived classes to implement their interfaces. Utilize pointers and references for abstract class types, and remember that any subclass failing to define the pure virtual function becomes abstract itself. The virtual function is declared with the pure specifier (= 0).
+
+### Restrictions on Abstract Classes
+
+There are some restrictions on abstract classes in C++.
+
+Abstract classes cannot be used for the following –
+
+Variables or member data
+Argument types
+Function return types
+Types of explicit conversions.
+The constructors of the abstract class in c++ can call other member functions, but if they directly or indirectly call the pure virtual function, then the result is undefined.
+
+A virtual function in C++ is a member function declared within a base class and redefined by the derived class.
+
+A pure virtual function (or abstract function) is a virtual function with no definition/logic. It is declared by assigning 0 at the time of declaration.
+
+### Characteristics of Abstract Class in C++
+
+**1- Abstract Classes must have at least one pure virtual function.**
+
+```c
+virtual int perimeter() = 0;
+````
+
+**2-Abstract Classes cannot be instantiated, but pointers and references of Abstract Class types can be created. You cannot create an object of an abstract class. Here is an example of a pointer to an abstract class.**
+
+
