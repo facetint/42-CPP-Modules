@@ -66,15 +66,14 @@ Brain *Dog::getBrain() const
 
 void Dog::display() const
 {
-    static int i = 0;
-    std::string idea = getBrain()->getIdea(i);
+    std::string idea = getBrain()->getIdea(ideaIndex);
 
-    std::cout << "My type is: " << getType()  << std::endl;
+    std::cout << "My type is: " << getType() << std::endl;
     if (idea != "") {
-       std::cout << "My idea at index " << i << " is: " << idea << std::endl;
+        std::cout << "My idea at index " << ideaIndex << " is: " << idea << std::endl;
     } else {
-        std::cout  << "I have no idea :("  << std::endl;
+        std::cout << "I have no idea :(" << std::endl;
     }
-    i++;
+    ideaIndex++;
     makeSound();
 }
