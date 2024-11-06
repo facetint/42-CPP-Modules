@@ -11,6 +11,7 @@ Cat::Cat()
         brain = NULL;
         throw;
     }
+
 }
 
 Cat::Cat(const Cat& other)
@@ -61,15 +62,8 @@ Brain *Cat::getBrain() const
 
 void Cat::display() const
 {
-    static int i = 0;
-    std::string idea = getBrain()->getIdea(i);
-
-    std::cout << "My type is: " << getType()  << std::endl;
-    if (idea != "") {
-       std::cout << "My idea at index " << i << " is: " << idea << std::endl;
-    } else {
-        std::cout  << "I have no idea :("  << std::endl;
-    }
-    i++;
+    std::cout << "---------------------------" << std::endl;
+    std::cout << WHITE_COLOR << "My type is: " << BLUE_COLOR << getType() << RESET << std::endl;
     makeSound();
+    std::cout << "---------------------------" << std::endl;
 }
