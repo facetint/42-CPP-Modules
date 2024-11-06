@@ -23,5 +23,18 @@ int main()
     delete j;
     delete i;
 
+    std::cout << GREEN_COLOR "=== WrongAnimal Test ===" << RESET << std::endl;
+
+    const WrongAnimal* wrongMeta = new WrongAnimal();
+    const WrongAnimal* wrongCat = new WrongCat();
+
+    std::cout <<  wrongCat->getType() << " " << std::endl;
+
+    wrongCat->display();
+    wrongMeta->display();
+
+    delete wrongMeta;
+    delete wrongCat;
+
     return 0;
 }
