@@ -1,8 +1,7 @@
 #include "Dog.hpp"
 
-Dog::Dog()
+Dog::Dog() : Animal()
 {
-    std::cout << "Default constructor called - (Dog)" << std::endl;
     try
     {
         setType("Dog");
@@ -14,11 +13,11 @@ Dog::Dog()
         brain = NULL;
         throw;
     }
+    std::cout << "Default constructor called - (Dog)" << std::endl;
 }
 
-Dog::Dog(const Dog& other)
+Dog::Dog(const Dog& other) : Animal()
 {
-    std::cout << "Copy constructor called - (Dog)" << std::endl;
     try {
         this->brain = new Brain(*other.brain);
         setType(other.getType());
@@ -26,27 +25,25 @@ Dog::Dog(const Dog& other)
         std::cerr << "Memory Allocation Error: " << e.what() << std::endl;
         throw;
     }
-    *this = other;
+    std::cout << "Copy constructor called - (Dog)" << std::endl;
 }
 
 Dog::~Dog()
 {
-    std::cout << "Destructor called - (Dog)" << std::endl;
     delete brain;
+    std::cout << "Destructor called - (Dog)" << std::endl;
 }
+
 Dog& Dog::operator=(const Dog& other)
 {
     if (this != &other)
     {
-        this->setType(other.getType());
-        if (this->brain != NULL) {
-            delete this->brain;
-        }
+        delete this->brain;
         try {
+            this->setType(other.getType());
             this->brain = new Brain(*other.brain);
         } catch (const std::bad_alloc& e) {
             std::cerr << "Memory Allocation Error: " << e.what() << std::endl;
-            this->brain = NULL;
             throw;
         }
     }
@@ -66,15 +63,13 @@ Brain *Dog::getBrain() const
 
 void Dog::display() const
 {
-    static int i = 0;
-    std::string idea = getBrain()->getIdea(i);
+    std::string idea = getBrain()->getIdeas();
 
-    std::cout << "My type is: " << getType()  << std::endl;
+    std::cout << "My type is: " << getType() << std::endl;
     if (idea != "") {
-       std::cout << "My idea at index " << i << " is: " << idea << std::endl;
+        std::cout << "My idea is: " << idea << std::endl;
     } else {
-        std::cout  << "I have no idea :("  << std::endl;
+        std::cout << "I have no idea :(" << std::endl;
     }
-    i++;
     makeSound();
 }
