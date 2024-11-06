@@ -50,20 +50,18 @@ A function can return a reference. However, in this case, it is important that t
 
 ## Differences between References and Pointers
 
-
-
-| **Özellik**                  | **Referanslar (References)**                          | **Göstericiler (Pointers)**                            |
-|------------------------------|-------------------------------------------------------|-------------------------------------------------------|
-| **Null olma durumu**          | `null` olamaz                                         | `nullptr` olabilir                                    |
-| **Yeniden atama**             | Yeniden atanamaz                                      | Yeniden atanabilir                                    |
-| **Bellek yönetimi**           | Otomatik olarak yapılır                               | Manuel olarak yapılır (`new` ve `delete` ile)         |
-| **İşlem operatörleri**        | Normal değişken gibi kullanılır                       | `*` (değer), `&` (adres) operatörleri kullanılır      |
-| **Pointer aritmetiği**        | Aritmetik işlemler yapılamaz                          | Pointer aritmetiği kullanılabilir                     |
-| **Null kontrolü**             | Null kontrolü yapılamaz                               | Null kontrolü yapılabilir                             |
-| **Bellek adresine erişim**    | Doğrudan değere erişim sağlar                         | Bellek adresine erişim sağlar ve adres üzerinden işlem yapılır |
-| **Kullanım zorluğu**          | Daha güvenli ve kolay                                | Daha fazla kontrol ve esneklik sağlar                 |
-| **Tanımlama esnasında bağlanma** | Tanımlandığı anda bir değişkene bağlanmak zorundadır | Null olabilir ve sonradan bir adrese atanabilir       |
-| **Riski**                     | Bellek sızıntısı riski yok                            | Bellek sızıntısı ve hatalar oluşabilir                |
+| Feature                         | References                                                                                           | Pointers                                                                                                 |
+|---------------------------------|------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Nullability**                 | Cannot be null                                                                                       | Can be `nullptr`                                                                                        |
+| **Reassignment**                | Cannot be reassigned                                                                                 | Can be reassigned                                                                                       |
+| **Memory Management**           | Managed automatically                                                                               | Managed manually (using `new` and `delete`)                                                             |
+| **Operator Usage**              | Used like a regular variable                                                                        | Uses `*` (for value) and `&` (for address) operators                                                    |
+| **Pointer Arithmetic**          | Arithmetic operations not allowed                                                                   | Supports pointer arithmetic                                                                             |
+| **Null Check**                  | Cannot perform null check                                                                           | Can perform null check                                                                                  |
+| **Memory Access**               | Provides direct access to the value                                                                 | Provides access to the memory address and allows operations on it                                       |
+| **Ease of Use**                 | Safer and easier to use                                                                             | Provides more control and flexibility                                                                   |
+| **Binding at Declaration**      | Must be bound to a variable when declared                                                           | Can be `nullptr` and assigned to an address later                                                       |
+| **Risk**                        | No risk of memory leaks                                                                             | Risk of memory leaks and errors                                                                         |
 
 
 ## File Operations 
