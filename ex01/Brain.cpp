@@ -46,3 +46,4 @@ void Brain::setIdea(int index, const std::string &idea)
     }
     ideas[index] = idea;
 }
+
