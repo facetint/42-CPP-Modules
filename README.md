@@ -13,3 +13,8 @@
 | CPP-Modules-08      | [CPP-Modules-08](https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-08) |
 | CPP-Modules-09      | [CPP-Modules-09](https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-09) |
 
+
+# POLIMORFIZM
+
+Polymorphism in C++ refers to the ability of objects to take on multiple forms according to their context or use. The same entity (method or object) behaves differently in different scenarios.
+Like real-life scenarios where a person can exhibit various roles simultaneously, such as being a parent, spouse, and employee, C++ Polymorphism enables objects to exhibit different behaviors depending on the situation.
