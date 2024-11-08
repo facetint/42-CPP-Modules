@@ -23,8 +23,7 @@
 
 # C++ Programming Language Overview
 
-C++ is a general-purpose programming language created by Bjarne Stroustup as an extension of the C programming language, referred to as “C with classes”.
-The C++ programming language is a general-purpose, object-oriented (OOP) language and is built on top of the C language. C++ can be used both for low-level hardware interactions (system programming) and for developing high-level applications. Known for its efficiency, flexibility, and performance, C++ is one of the most powerful languages used for system programming, application development, and even competitive programming.
+C++ is a programming language created by Bjarne Stroustup as an extension of the C programming language, referred to as “C with classes”. The C++ programming language is a general-purpose, object-oriented (OOP) language and is built on top of the C language. C++ can be used to develop both low-level hardware interactions (system programming) and high-level applications. Known for its efficiency, flexibility and performance, C++ is one of the most powerful languages used for systems programming, application development and even competitive programming.
 
 ## What is C++?
 
