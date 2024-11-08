@@ -209,3 +209,73 @@ This is from the derived class
 Abstract classes in C++ cannot be instantiated because they are “abstract”. It’s like someone is telling you to draw an animal without telling you which specific animal. You can only draw if the person asks you to draw a cat, dog, etc., but an animal is abstract.
 
 The same is the case with abstract classes in C++, so we can’t create objects, but we can create a pointer of an abstract class.
+
+
+
+## Interface in C++
+
+   In C++, an interface is a class that only declares the necessary functions (methods) but does not provide any implementation for them. Unlike some other languages, C++ does not have a direct interface keyword. Instead, we can achieve this functionality by creating an abstract class that only contains pure virtual functions.
+
+### Characteristics of an Interface in C++
+
+   - All methods are pure virtual functions, marked with = 0, meaning they have no implementation in the interface class.
+   - Interface classes typically do not contain data members, as the purpose of an interface is to define functionality, not state.
+   - Interface classes cannot be instantiated directly; derived classes must implement the pure virtual functions.
+
+**Example**
+
+Below is an example of an interface class IDrawable, which defines a common interface for "drawable" objects and includes a draw method for rendering:
+
+```cpp
+#include <iostream>
+
+// Interface class
+class IDrawable {
+public:
+    // Pure virtual function
+    virtual void draw() const = 0;
+
+    // Virtual destructor, good practice for interfaces
+    virtual ~IDrawable() = default;
+};
+
+// Class implementing the interface: Circle
+class Circle : public IDrawable {
+public:
+    void draw() const override {
+        std::cout << "Drawing a Circle" << std::endl;
+    }
+};
+
+// Class implementing the interface: Square
+class Square : public IDrawable {
+public:
+    void draw() const override {
+        std::cout << "Drawing a Square" << std::endl;
+    }
+};
+
+int main() {
+    IDrawable* shapes[2];
+    shapes[0] = new Circle();
+    shapes[1] = new Square();
+
+    // Polymorphism allows each shape to call its specific draw function
+    for (int i = 0; i < 2; ++i) {
+        shapes[i]->draw();
+    }
+
+    // Clean up memory
+    for (int i = 0; i < 2; ++i) {
+        delete shapes[i];
+    }
+
+    return 0;
+}
+```
+
+**Explanation :**
+
+   - The IDrawable class serves as an interface, containing a pure virtual function draw. This requires any derived class to implement the draw function.
+   - Circle and Square classes inherit from IDrawable and provide their own implementations of the draw function.
+   - In the main function, an array of IDrawable* is created, and polymorphism allows each shape object to call its specific draw function.
