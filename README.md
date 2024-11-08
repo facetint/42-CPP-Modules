@@ -1,8 +1,5 @@
 ## 42-CPP-Module-01
 
-![IMG_4493](https://github.com/user-attachments/assets/12c8d2f4-6e36-4175-9daf-35fffbfa6315)
-
-
 ## Installation
 
 ```
