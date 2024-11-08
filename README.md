@@ -16,7 +16,7 @@ git clone -b CPP-Module-00 https://github.com/facetint/42-CPP-Modules.git
    - [Public](#public)
    - [Private](#private)
    - [Protected](#protected)
-- [C++ Standard I/O Streams](#c++-standard-i-o-streams)
+- [C++ Standard I/O Streams](#c++-standard-i/o-streams)
    - [1. Standard Input and Output Streams](#1.-standart-input-and-output-streams)
    - [2. Basic Stream Operators](#2.-basic-stream-operator)
    - [3. Stream Manipulators](#3.stream-manipulators)
