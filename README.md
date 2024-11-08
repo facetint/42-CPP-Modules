@@ -2,7 +2,7 @@
 
 | Module              | GitHub Link                                                | Clone Command                                                      |
 |---------------------|------------------------------------------------------------|--------------------------------------------------------------------|
-| CPP-Module-00   | [CPP-Module-00](https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-00) | `git clone -b CPP-Module-00 https://github.com/facetint/42-CPP-Modules.git` |
+| CPP-Module-00       | [CPP-Module-00](https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-00) | `git clone -b CPP-Module-00 https://github.com/facetint/42-CPP-Modules.git` |
 | CPP-Module-01       | [CPP-Module-01](https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-01) | `git clone -b CPP-Module-01 https://github.com/facetint/42-CPP-Modules.git` |
 | CPP-Module-02       | [CPP-Module-02](https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-02) | `git clone -b CPP-Module-02 https://github.com/facetint/42-CPP-Modules.git` |
 | CPP-Module-03       | [CPP-Module-03](https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-03) | `git clone -b CPP-Module-03 https://github.com/facetint/42-CPP-Modules.git` |
