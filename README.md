@@ -1,5 +1,8 @@
 # 42-CPP-Modules
 
+![cover-cpp-bonus](https://github.com/user-attachments/assets/bca559c9-cf84-4248-bda1-be8548ac0f60)
+
+
 | Module              | GitHub Link                                                |
 |---------------------|-----------------------------------------------------------|
 | CPP-Module-00      | [CPP-Module-00](https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-00) |
