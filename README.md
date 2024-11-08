@@ -56,6 +56,26 @@ Function overloading occurs when multiple functions have the same name but diffe
 
 In C++, operator overloading empowers operators to have special meanings for specific data types. For instance, we can redefine the addition operator (+) for the string class to concatenate two strings. This flexibility allows us to extend the functionality of operators beyond their conventional usage.
 
+```cpp
+// Example: Operator Overloading
+#include <iostream>
+class Complex {
+public:
+    int real, imag;
+    Complex(int r, int i): real(r), imag(i) {}
+
+    Complex operator + (const Complex& obj) {
+        return Complex(real + obj.real, imag + obj.imag);
+    }
+};
+
+int main() {
+    Complex c1(3, 4), c2(1, 2);
+    Complex c3 = c1 + c2;
+    std::cout << "Sum: " << c3.real << " + " << c3.imag << "i" << std::endl;
+}
+```
+
 ## 2. Runtime Polymorphism
 
 Runtime Polymorphism in C++, also known as late binding or dynamic Polymorphism, is achieved through function overriding. Unlike compile-time Polymorphism, where the function call is resolved at compile time, run time Polymorphism in C++ resolves the function call at runtime. This allows for greater flexibility as the specific function implementation is determined based on the actual object type during program execution.
