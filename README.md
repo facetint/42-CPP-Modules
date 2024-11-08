@@ -73,11 +73,14 @@ myCar.start();          // Calling the member function
 
 In C++, there are 3 access specifiers that are as follows:
 
-   - ### Public: Members declared as public can be accessed from outside the class.
+   - ### Public: 
+   Members declared as public can be accessed from outside the class.
    
-   - ### Private: Members declared as private can only be accessed within the class itself.
+   - ### Private: 
+   Members declared as private can only be accessed within the class itself.
    
-   - ### Protected: Members declared as protected can be accessed within the class and by derived classes.
+   - ### Protected: 
+   Members declared as protected can be accessed within the class and by derived classes.
    
    - ‼️ *Default Access:* If no access modifier is specified, the default access level is private.
 
