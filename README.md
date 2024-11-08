@@ -38,8 +38,10 @@ git clone -b CPP-Module-04 https://github.com/facetint/42-CPP-Modules.git
 -  [Compile-Time vs Runtime Polymorphism](#compile-time-vs-runtime-polymorphism)
 -  [Pure Virtual Functions and Abstract Classes](#pure-virtual-functions-and-abstract-classes)
    - [What are Pure Virtual Functions?](#what-are-pure-virtual-functions)
-   - [Abstract Classes in C++](#abstract-classes-in-c++)
+- [Abstract Classes in C++](#abstract-classes-in-c++)
    - [Restrictions on Abstract Classes](#restrictions-on-abstract-classes)
+   - [Characteristics of Abstract Class in C++](#characteristict-of-abstract-class-in-c)
+
 -  [Example: Abstract Class and Derived Class](#example-abstract-class-and-derived-class)
 -  [Why Abstract Classes Cannot Be Instantiated](#why-abstract-classes-cannot-be-instantiated)
 -  [Conclusion](#conclusion)
