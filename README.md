@@ -2,7 +2,9 @@
 
 ## Installation
 
+```
 git clone -b CPP-Module-00 https://github.com/facetint/42-CPP-Modules.git
+```
 
 
 # Table of Contents
