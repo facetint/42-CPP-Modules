@@ -73,7 +73,7 @@ In C++ classes, we can control the access to the members of the class using Acce
 
 In C++, there are 3 access specifiers that are as follows:
 
-▫️ ** Public:** Members declared as public can be accessed from outside the class.
+▫️ **Public:** Members declared as public can be accessed from outside the class.
 
 ▫️ **Private:** Members declared as private can only be accessed within the class itself.
 
