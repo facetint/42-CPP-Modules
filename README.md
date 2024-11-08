@@ -9,21 +9,21 @@ git clone -b CPP-Module-00 https://github.com/facetint/42-CPP-Modules.git
 
 # Table of Contents
 
-1. [What is a Class in C++?](#what-is-a-class-in-c)
-2. [What is an Object in C++?](#what-is-an-object-in-c)
-3. [Accessing Data Members and Member Functions](#accessing-data-members-and-member-functions)
-4. [Access Modifiers](#access-modifiers)
+- [What is a Class in C++?](#what-is-a-class-in-c)
+- [What is an Object in C++?](#what-is-an-object-in-c)
+- [Accessing Data Members and Member Functions](#accessing-data-members-and-member-functions)
+- [Access Modifiers](#access-modifiers)
    - [Public](#public)
    - [Private](#private)
    - [Protected](#protected)
-5. [Member Function in C++ Classes](#member-function-in-c-classes)
+- [Member Function in C++ Classes](#member-function-in-c-classes)
    - [Inside Class Definition](#inside-class-definition)
    - [Outside Class Definition](#outside-class-definition)
-6. [Namespaces](#namespaces)
-7. [Initialization Lists](#initialization-lists)
-8. [Constructor](#constructor)
+- [Namespaces](#namespaces)
+- [Initialization Lists](#initialization-lists)
+- [Constructor](#constructor)
    - [Main Features](#main-features)
-9. [Destructor](#destructor)
+- [Destructor](#destructor)
    - [Why do we need a Destructor?](#why-do-we-need-a-destructor)
 
 
