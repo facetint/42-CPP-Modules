@@ -152,9 +152,9 @@ If we have the following components for a 32-bit floating-point number:
 
 The value of the floating-point number is calculated as:
 
-\[
-\text{Value} = (-1)^0 \times 1.25 \times 2^2 = 5
-\]
+```plaintext
+Value = (-1)^0 * 1.25 * 2^2 = 5
+```
 
 ### Advantages and Disadvantages of Floating-Point Numbers
 
