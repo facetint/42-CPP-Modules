@@ -1,4 +1,4 @@
-e## 42-CPP-Module-00 
+## 42-CPP-Module-00 
 
 ## Installation
 
@@ -456,6 +456,18 @@ public:
     MyClass(int value) : x(value) {}
 };
 ```
+
+## Summary of static Usage
+
+
+| **Usage**                    | **Example**                               | **Effect**                                                         |
+|------------------------------|-------------------------------------------|--------------------------------------------------------------------|
+| **Static Local Variable**     | `static int counter = 0;`                 | Retains its value between function calls                           |
+| **Static Global Variable**    | `static int globalVar = 0;`               | Restricted to the file, cannot be accessed outside the file       |
+| **Static Member Variable**    | `static int staticVar = 0;`               | Shared by all instances of the class                               |
+| **Static Member Function**    | `static void increment() {}`              | Can be called without creating an instance of the class           |
+| **Static Global Function**    | `static void helper() {}`                 | Accessible only within the same file                               |
+
 
 ## Constructor
 
