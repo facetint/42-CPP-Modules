@@ -20,16 +20,11 @@
 
 <img width="320" alt="Ekran Resmi 2024-10-05 21 41 17" src="https://github.com/user-attachments/assets/a273b32e-09d4-4cf5-8733-c4e2fb91a073">
 
-
-# C++ Programming Language Overview
-
-C++ is a programming language created by Bjarne Stroustup as an extension of the C programming language, referred to as “C with classes”. The C++ programming language is a general-purpose, object-oriented (OOP) language and is built on top of the C language. C++ can be used to develop both low-level hardware interactions (system programming) and high-level applications. Known for its efficiency, flexibility and performance, C++ is one of the most powerful languages used for systems programming, application development and even competitive programming.
-
-## What is C++?
+# What is C++?
 
 C++ was created by **Bjarne Stroustrup** in 1979 as an extension of the C programming language. It incorporates object-oriented principles, such as classes and objects, while retaining the low-level capabilities and system-level access of C. Over the years, C++ has evolved to support a variety of paradigms, including procedural, object-oriented, and generic programming.
 
-### Key Features of C++
+## Key Features of C++
 
 - **Object-Oriented Programming (OOP)**: C++ supports the principles of OOP, including classes, inheritance, polymorphism, and encapsulation. This allows for modular, maintainable, and reusable code.
   
