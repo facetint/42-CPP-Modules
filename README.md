@@ -73,11 +73,13 @@ In C++ classes, we can control the access to the members of the class using Acce
 
 In C++, there are 3 access specifiers that are as follows:
 
-**Public:** Members declared as public can be accessed from outside the class.
-**Private:** Members declared as private can only be accessed within the class itself.
-**Protected:** Members declared as protected can be accessed within the class and by derived classes.
+▫️ ** Public:** Members declared as public can be accessed from outside the class.
 
-*Default Access:* If no access modifier is specified, the default access level is private.
+▫️ **Private:** Members declared as private can only be accessed within the class itself.
+
+▫️ **Protected:** Members declared as protected can be accessed within the class and by derived classes.
+
+‼️ *Default Access:* If no access modifier is specified, the default access level is private.
 
 ```cpp
 class MyClass {
@@ -94,7 +96,8 @@ public:
 
 There are 2 ways to define a member function:
 
-Inside Class Definition
+### Inside Class Definition
+
 You can define a member function directly inside the class definition.
 
 ```cpp
@@ -106,7 +109,7 @@ public:
 };
 ```
 
-Outside Class Definition
+### Outside Class Definition
 Alternatively, you can declare the function inside the class and define it outside using the scope resolution operator (::).
 
 ```cpp
