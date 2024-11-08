@@ -44,10 +44,10 @@ git clone -b CPP-Module-02 https://github.com/facetint/42-CPP-Modules.git
 
 The **Orthodox Canonical Class Form** is a set of special member functions that should be defined to manage resource allocation and prevent common issues like memory leaks and unexpected behavior. These functions are:
 
-- **A Default Constructor**: Used internally to initialize objects and data members when no other value is available.
-- **A Copy Constructor**: Used in the implementation of call-by-value parameters.
-- **An Assignment Operator**: Used to assign one value to another.
-- **A Destructor**: Invoked when an object is deleted.
+🔴 **A Default Constructor**: Used internally to initialize objects and data members when no other value is available.
+🔴 **A Copy Constructor**: Used in the implementation of call-by-value parameters.
+🔴 **An Assignment Operator**: Used to assign one value to another.
+🔴 **A Destructor**: Invoked when an object is deleted.
 
 The purpose of this form is to prevent memory leaks, copy errors, and unnecessary copies in classes that require resource management. For example, if a class dynamically allocates memory, it needs to perform memory management properly when copied or moved. 
 
@@ -65,11 +65,11 @@ In fixed-point notation, part of the number is the integer part, and the other p
 
 ### Key Features of Fixed-Point Numbers
 
-- **Fixed Decimal Point**: Unlike floating-point numbers, the decimal point in fixed-point numbers remains in a fixed position. For example, the last 8 bits can represent the fractional part. Thus, the number `123.45` can be stored as `12345`, and the location of the decimal point is predetermined.
+🔴 **Fixed Decimal Point**: Unlike floating-point numbers, the decimal point in fixed-point numbers remains in a fixed position. For example, the last 8 bits can represent the fractional part. Thus, the number `123.45` can be stored as `12345`, and the location of the decimal point is predetermined.
   
-- **Precision and Scaling**: Fixed-point numbers are stored as integers and scaled by a fixed factor. For instance, if we scale by 256, the number `1.5` is stored as `384`, and `384 / 256 = 1.5`.
+🔴 **Precision and Scaling**: Fixed-point numbers are stored as integers and scaled by a fixed factor. For instance, if we scale by 256, the number `1.5` is stored as `384`, and `384 / 256 = 1.5`.
 
-- **Difference from Floating-Point Numbers**: Fixed-point numbers have fixed precision with a limited number of decimal places, making them faster but less flexible than floating-point numbers.
+🔴 **Difference from Floating-Point Numbers**: Fixed-point numbers have fixed precision with a limited number of decimal places, making them faster but less flexible than floating-point numbers.
 
 ### Use Cases of Fixed-Point Numbers
 
@@ -85,8 +85,8 @@ In an **8.8 fixed-point** representation, the first 8 bits represent the integer
 
 In this example:
 
-- **Integer Part (00000110)**: Represents `6` in decimal.
-- **Fractional Part (10000000)**: Represents `0.5` in decimal.
+🔴 **Integer Part (00000110)**: Represents `6` in decimal.
+🔴 **Fractional Part (10000000)**: Represents `0.5` in decimal.
 
 Thus, the combined fixed-point value represents `6.5`.
 
