@@ -25,6 +25,20 @@
 
 A class is a user-defined data type, which holds its own data members and member functions, which can be accessed and used by creating an instance of that class. A C++ class is like a blueprint for an object.
 
+
+**A class serves as a blueprint for creating objects in C++. Here's an example:**
+
+```cpp
+class Car {
+public:
+    string model;
+    int year;
+
+    void start() {
+        cout << "The car is starting." << endl;
+    }
+};
+```
 ## What is an Object in C++?
 
 When a class is defined, only the specification for the object is defined; no memory or storage is allocated. To use the data and access functions defined in the class, you need to create objects.
