@@ -298,10 +298,5 @@ Complex c1(4, 5);
 cout << c1;  // Output: 4 + 5i
 ```
 
-### Why Use Operator Overloading?
-
-**Improved Code Readability:** Allows you to write expressions that seem more intuitive and resemble mathematical operations.
-**Makes User-Defined Types More Natural:** Without operator overloading, you would need to use function calls for basic operations, which makes the code verbose and harder to read.
-**Saves Time:** Operator overloading can save time in writing repetitive code for basic operations on objects of a class.
 
 
