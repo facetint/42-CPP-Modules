@@ -1,5 +1,11 @@
 # 42-CPP-Modules
 
+## Installation
+
+```
+git clone -b CPP-Module-02 https://github.com/facetint/42-CPP-Modules.git
+```
+
 | Module              | GitHub Link                                                |
 |---------------------|-----------------------------------------------------------|
 | CPP-Modules-00      | [CPP-Modules-00](https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-00) |
