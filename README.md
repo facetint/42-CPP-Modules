@@ -28,18 +28,18 @@
 C++ was created by **Bjarne Stroustrup** in 1979 as an extension of the C programming language. It incorporates object-oriented principles, such as classes and objects, while retaining the low-level capabilities and system-level access of C. Over the years, C++ has evolved to support a variety of paradigms, including procedural, object-oriented, and generic programming.
 
 ## Key Features of C++
-
-- **Object-Oriented Programming (OOP)**: C++ supports the principles of OOP, including classes, inheritance, polymorphism, and encapsulation. This allows for modular, maintainable, and reusable code.
   
-- **Performance**: C++ is often the language of choice for high-performance applications due to its ability to interact directly with hardware. It allows precise memory management, enabling developers to optimize resource usage.
-
-- **Standard Template Library (STL)**: The STL provides useful templates for various data structures (like vectors, lists, and maps) and algorithms, making it easier to work with common operations and data types.
-
-- **Memory Management**: C++ gives developers direct control over memory management, allowing them to allocate and deallocate memory manually using operators such as `new` and `delete`.
-
-- **Multiplatform**: C++ code can be compiled and executed on multiple platforms, including Windows, macOS, and Linux. It is used in many large-scale applications, from web browsers and operating systems to games and scientific simulations.
-
-- **Low-Level Manipulation**: C++ provides low-level manipulation features, such as pointers and direct memory access, which are essential for system-level programming.
+  -  **Object-Oriented Programming (OOP)**: C++ supports the principles of OOP, including classes, inheritance, polymorphism, and encapsulation. This allows for modular, maintainable, and reusable code.
+    
+  - **Performance**: C++ is often the language of choice for high-performance applications due to its ability to interact directly with hardware. It allows precise memory management, enabling developers to optimize resource usage.
+  
+  - **Standard Template Library (STL)**: The STL provides useful templates for various data structures (like vectors, lists, and maps) and algorithms, making it easier to work with common operations and data types.
+  
+  - **Memory Management**: C++ gives developers direct control over memory management, allowing them to allocate and deallocate memory manually using operators such as `new` and `delete`.
+  
+  - **Multiplatform**: C++ code can be compiled and executed on multiple platforms, including Windows, macOS, and Linux. It is used in many large-scale applications, from web browsers and operating systems to games and scientific simulations.
+  
+  - **Low-Level Manipulation**: C++ provides low-level manipulation features, such as pointers and direct memory access, which are essential for system-level programming.
 
 ## C++ Syntax and Basics
 
