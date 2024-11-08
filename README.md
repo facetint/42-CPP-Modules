@@ -187,3 +187,103 @@ The following table highlights the key differences between fixed-point and float
 | **Applications**       | Embedded systems, Digital Signal Processing (DSP), game programming | Scientific computing, engineering applications, graphics processing |
 | **Flexibility**        | Less flexible, precision is fixed            | More flexible, can scale the number using exponent |
 
+
+
+## Operator Overloading in C++
+
+Operator overloading is a feature in C++ that allows developers to define custom behavior for operators (like `+`, `-`, `*`, `==`, etc.) when applied to objects of a class. Instead of using the default implementation of an operator, you can redefine how the operator behaves for user-defined data types, making your code more intuitive and expressive.
+
+### Why Use Operator Overloading?
+
+Operator overloading enhances code readability and allows for the creation of more intuitive classes. It allows you to write expressions that use operators (such as addition or subtraction) on objects, just like you would on primitive data types.
+
+For example, consider a `Complex` class for complex numbers. Without operator overloading, adding two complex numbers might involve a function call like `add(complex1, complex2)`. With operator overloading, you can use the `+` operator directly, making the code cleaner and easier to understand.
+
+### Basic Rules of Operator Overloading
+
+1. **Cannot Overload Certain Operators**: Some operators, like `::`, `sizeof`, `.` (member access operator), `? :` (ternary), and `typeid` cannot be overloaded.
+2. **Maintain Operator Arity**: You cannot change the number of operands an operator takes. For example, you cannot make a binary operator behave like a unary operator or vice versa.
+3. **Use of Friend Function**: For some operators (like `<<` and `>>`), it is common to declare the operator function as a friend function to allow access to private members of the class. **(NOTE !!!! : But note that the use of friends in pdfs is prohibited !!!!!!)**
+
+### Syntax for Operator Overloading
+
+You can overload operators either as member functions or as non-member (friend) functions.
+
+#### 1. **Overloading Operators as Member Functions**
+
+For unary operators, you typically overload them as member functions. Here's an example with the `-` operator (negation):
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Complex {
+public:
+    int real, imag;
+
+    Complex(int r, int i) : real(r), imag(i) {}
+
+    // Overloading the unary '-' operator as a member function
+    Complex operator-() {
+        return Complex(-real, -imag);
+    }
+
+    void display() {
+        cout << real << " + " << imag << "i" << endl;
+    }
+};
+
+int main() {
+    Complex c1(4, 5);
+    Complex c2 = -c1;  // Calls the overloaded '-' operator
+    c2.display();  // Output: -4 + -5i
+    return 0;
+}
+````
+
+### Types of Operators That Can Be Overloaded
+
+Unary Operators: These operators work on a single operand. Examples include -, ++, --, and !.
+
+```cpp
+Complex operator-();   // Unary negation
+Complex operator++();  // Unary increment
+Binary Operators: These operators work on two operands. Examples include +, -, *, /, and =.
+```
+
+```cpp
+Complex operator+(const Complex& other);   // Addition
+Complex operator-(const Complex& other);   // Subtraction
+Complex operator*(const Complex& other);   // Multiplication
+Comparison Operators: You can overload comparison operators to allow comparisons between objects. Examples include ==, !=, <, >, <=, and >=.
+```
+
+```cpp
+bool operator==(const Complex& other);   // Equality comparison
+bool operator!=(const Complex& other);   // Inequality comparison
+Stream Insertion/Extraction Operators: Overload the << and >> operators to enable easy input and output for user-defined types.
+```
+
+```cpp
+friend ostream& operator<<(ostream& os, const Complex& c);   // Stream insertion  (NOTE !!!! : But note that the use of friends in pdfs is prohibited !!!!!!)
+friend istream& operator>>(istream& is, Complex& c);          // Stream extraction
+Example of overloading the << operator:
+```
+
+```cpp
+friend ostream& operator<<(ostream& os, const Complex& c) {
+    os << c.real << " + " << c.imag << "i";
+    return os;
+}
+// Example usage:
+Complex c1(4, 5);
+cout << c1;  // Output: 4 + 5i
+```
+
+Why Use Operator Overloading?
+Improved Code Readability: Allows you to write expressions that seem more intuitive and resemble mathematical operations.
+Makes User-Defined Types More Natural: Without operator overloading, you would need to use function calls for basic operations, which makes the code verbose and harder to read.
+Saves Time: Operator overloading can save time in writing repetitive code for basic operations on objects of a class.
+Conclusion
+Operator overloading is a powerful feature in C++ that allows you to customize the behavior of operators for user-defined types. When used carefully, it can significantly enhance the readability and maintainability of your code, allowing you to write more intuitive and expressive object-oriented programs. However, like any powerful feature, it should be used judiciously to avoid making the code overly complex or confusing.
+
