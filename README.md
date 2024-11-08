@@ -89,6 +89,7 @@ In an **8.8 fixed-point** representation, the first 8 bits represent the integer
 In this example:
 
 🔴 **Integer Part (00000110)**: Represents `6` in decimal.
+
 🔴 **Fractional Part (10000000)**: Represents `0.5` in decimal.
 
 Thus, the combined fixed-point value represents `6.5`.
