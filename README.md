@@ -15,6 +15,32 @@
 
 
 
+# Table of Contents
+
+- [Inheritance in C++](#inheritance-in-c++)
+- [Basic Concepts of Inheritance](#basic-concepts-of-inheritance)
+  - [Base Class](#base-class)
+  - [Derived Class](#derived-class)
+  - [Access Specifier](#access-specifier)
+  - [Note](#note)
+- [Modes of Inheritance in C++](#modes-of-inheritance-in-c++)
+  - [Public Inheritance Mode](#public-inheritance-mode)
+  - [Protected Inheritance Mode](#protected-inheritance-mode)
+  - [Private Inheritance Mode](#private-inheritance-mode)
+- [Types of Inheritance in C++](#types-of-inheritance-in-c++)
+  - [Single Inheritance](#single-inheritance)
+  - [Multiple Inheritance](#multiple-inheritance)
+  - [Multilevel Inheritance](#multilevel-inheritance)
+  - [Hierarchical Inheritance](#hierarchical-inheritance)
+  - [Hybrid Inheritance](#hybrid-inheritance)
+- [Diamond Problem](#diamond-problem)
+  - [Diamond Problem Explained](#diamond-problem-explained)
+  - [Example Code](#example-code)
+  - [Solution Methods](#solution-methods)
+    - [Virtual Inheritance](#virtual-inheritance)
+    - [Method Selection](#method-selection)
+
+
 # Inheritance
 
 In C++, inheritance is an object-oriented programming (OOP) concept that allows a class to inherit features and methods from another class. Inheritance is used to reduce code duplication, create hierarchy between classes, and create a more organized structure.
