@@ -274,6 +274,177 @@ MyNamespace::MyClass obj;
 obj.display();
 ```
 
+## Using `const` in C++
+
+The `const` keyword in C++ enforces immutability, preventing modification of variables, pointers, and function behavior. Here’s a detailed overview of `const` usage in C++.
+
+### 1. Defining Constants
+
+   You can define constant values that cannot be modified after initialization.
+
+```cpp
+const int maxValue = 100;  // maxValue cannot be modified
+// maxValue = 200; // Error: assignment of read-only variable
+````
+
+### 2. Constant Pointers
+
+#### a. Pointer to Constant Data
+
+   A pointer to constant data can point to different locations, but cannot modify the data it points to.
+
+```cpp
+const int *ptr = &maxValue;  // Data is const, pointer can change
+*ptr = 20; // Error: cannot modify the data pointed to by ptr
+ptr = &anotherValue; // Allowed: pointer can change
+````
+
+#### b. Constant Pointer;
+
+   A constant pointer cannot change its memory location but can modify the data at that location.
+
+```cpp
+int *const ptr = &maxValue;  // Pointer is const, data can be modified
+*ptr = 20;  // Allowed
+ptr = &anotherValue; // Error: cannot change pointer itself
+````
+
+#### c. Constant Pointer to Constant Data
+
+   Neither the pointer’s address nor the data at that address can be changed.
+
+```cpp
+const int *const ptr = &maxValue;  // Both data and pointer are const
+*ptr = 20; // Error: cannot modify data
+ptr = &anotherValue; // Error: cannot change pointer itself
+````
+
+### 3. Const in Function Parameters
+
+   Using const in function parameters helps protect data passed by reference or pointer.
+
+#### a. const Value Parameters
+
+   - Often unnecessary for primitive types.
+
+```cpp
+void myFunction(const int x) {
+    // x is a copy, and changes won't affect the original argument
+}
+````
+
+#### b. const Reference Parameters
+
+   - Used for passing large objects efficiently without modifying them.
+
+```cpp
+void print(const std::string &text) {
+    std::cout << text; // text cannot be modified here
+}
+```
+
+#### c. const Pointer Parameters
+
+   -You can use const to prevent modification of data pointed to by a pointer parameter.
+
+```cpp
+void display(const int *array, int size) {
+    for (int i = 0; i < size; i++) {
+        std::cout << array[i] << " ";
+    }
+    // array[i] = 10;  // Error: cannot modify const data
+}
+````
+
+### 4. Const Member Functions
+
+   -In class definitions, making a member function const prevents it from modifying any member variables.
+
+```cpp
+class MyClass {
+    int value;
+public:
+    int getValue() const { return value; }  // This function cannot modify `value`
+    void setValue(int v) { value = v; }     // Non-const, can modify `value`
+};
+```
+
+Trying to call a non-const function on a const object will result in an error:
+
+```cpp
+const MyClass obj;
+obj.getValue(); // Allowed
+obj.setValue(5); // Error: setValue is not const
+````
+
+### 5. Const Return Types
+
+   -Returning a const reference or value can prevent the caller from modifying the returned object.
+
+#### a. Returning a const Value
+
+```cpp
+const int getConstValue() {
+    return 42;
+}
+
+// Cannot modify the returned value
+getConstValue() = 50; // Error: returned value is const
+````
+
+#### b. Returning a const Reference
+
+   -Efficient and prevents modification by the caller.
+
+```cpp
+class MyClass {
+    int value;
+public:
+    MyClass(int v) : value(v) {}
+    const int& getValue() const { return value; }
+};
+
+const int &val = obj.getValue();
+val = 10; // Error: cannot modify a const reference
+````
+
+### 6. Const Cast
+
+   -const_cast is used to add or remove const from a variable. Use cautiously, as modifying data that was originally const is undefined behavior.
+
+```cpp
+const int num = 10;
+int *ptr = const_cast<int*>(&num);  // Removes const
+*ptr = 20;  // Undefined behavior: modifying a const variable
+```
+
+### 7. Constexpr and Constinit
+
+   In modern C++, constexpr and constinit extend const for compile-time and initialization-time constants:
+
+   - constexpr: Forces compile-time evaluation.
+   -constinit: Ensures initialization occurs at compile-time, preventing run-time initialization.
+
+```cpp
+constexpr int compileTimeValue = 5 * 2;
+constinit int initValue = 10;
+````
+
+### `const` Usage in C++
+
+| **Usage**            | **Example**                                      | **Effect**                                |
+|----------------------|--------------------------------------------------|-------------------------------------------|
+| **Const Variable**    | `const int num = 10;`                           | Immutable variable                        |
+| **Pointer to const**  | `const int *ptr = &num;`                        | Pointer can change, data cannot          |
+| **Const Pointer**     | `int *const ptr = &num;`                        | Data can change, pointer cannot          |
+| **Const in Class**    | `int getValue() const { return value; }`        | Member function cannot modify the object |
+| **Const Reference**   | `void print(const std::string &text);`           | Efficient, prevents modification         |
+| **Const Return**      | `const int& getValue() const;`                  | Prevents caller from modifying returned reference |
+| **Constexpr**         | `constexpr int compileTimeValue = 5 * 2;`       | Forces compile-time evaluation           |
+| **Constinit**         | `constinit int initValue = 10;`                 | Forces initialization at compile time    |
+| **Const Cast**        | `int *ptr = const_cast<int*>(&num);`            | Used to remove const-qualification (use with caution) |
+
+
 ## Initialization Lists
 
    Initialization lists are used to assign initial values to data members in the constructor. This method improves performance and is especially necessary when initializing variables of type `const` or reference.
