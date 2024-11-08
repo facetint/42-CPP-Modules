@@ -172,11 +172,8 @@ Floating-point numbers are used in various fields, including scientific computin
 
 ---
 
-Feel free to refer to the IEEE 754 standard for more detailed information on floating-point arithmetic and the various edge cases associated with this number representation.
-
 ## Differences Between Fixed-Point and Floating-Point Numbers
 
-The following table highlights the key differences between fixed-point and floating-point numbers:
 
 | Feature               | Fixed-Point Numbers                           | Floating-Point Numbers                       |
 |-----------------------|-----------------------------------------------|---------------------------------------------|
