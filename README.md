@@ -24,3 +24,6 @@
 - An assignment operator: used to assign one value to another.
 
 - A destructor: Invoked when an object is deleted.
+
+
+The purpose of this form is to prevent memory leaks, copy errors and unnecessary copies in classes that require resource management. For example, if a class dynamically allocates memory, it needs to perform this memory management properly when copied or moved. If these special member functions are not defined, C++ automatically provides a copy constructor and copy assignment operator by default, but this does not guarantee that resources are managed correctly, which can lead to memory leaks or unexpected behavior.
