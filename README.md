@@ -15,6 +15,27 @@
 
 
 
+# Table of Contents
+
+- [The Orthodox Canonical Class Form](#the-orthodox-canonical-class-form)
+- [Fixed-Point Numbers](#fixed-point-numbers)
+  - [What is a Fixed-Point Number?](#what-is-a-fixed-point-number)
+  - [Key Features of Fixed-Point Numbers](#key-features-of-fixed-point-numbers)
+  - [Use Cases of Fixed-Point Numbers](#use-cases-of-fixed-point-numbers)
+  - [Fixed-Point Representation Example](#fixed-point-representation-example)
+  - [Example Code for Fixed-Point Numbers](#example-code-for-fixed-point-numbers)
+- [Floating Point Numbers](#floating-point-numbers)
+  - [Structure of a Floating-Point Number](#structure-of-a-floating-point-number)
+  - [IEEE 754 Single Precision (32-bit)](#ieee-754-single-precision-32-bit)
+  - [Floating Point Representation](#floating-point-representation)
+  - [Example - IEEE 754 Single Precision](#example-ieee-754-single-precision)
+- [Differences Between Fixed-Point and Floating-Point Numbers](#differences-between-fixed-point-and-floating-point-numbers)
+- [Operator Overloading in C++](#operator-overloading-in-c++)
+  - [Why Use Operator Overloading?](#why-use-operator-overloading)
+  - [Basic Rules of Operator Overloading](#basic-rules-of-operator-overloading)
+  - [Syntax for Operator Overloading](#syntax-for-operator-overloading)
+    - [Overloading Operators as Member Functions](#overloading-operators-as-member-functions)
+
 ## The Orthodox Canonical Class Form
 
 The **Orthodox Canonical Class Form** is a set of special member functions that should be defined to manage resource allocation and prevent common issues like memory leaks and unexpected behavior. These functions are:
