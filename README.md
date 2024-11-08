@@ -174,3 +174,16 @@ Floating-point numbers are used in various fields, including scientific computin
 
 Feel free to refer to the IEEE 754 standard for more detailed information on floating-point arithmetic and the various edge cases associated with this number representation.
 
+## Differences Between Fixed-Point and Floating-Point Numbers
+
+The following table highlights the key differences between fixed-point and floating-point numbers:
+
+| Feature               | Fixed-Point Numbers                           | Floating-Point Numbers                       |
+|-----------------------|-----------------------------------------------|---------------------------------------------|
+| **Precision**          | Fixed precision with a fixed number of decimal places | Higher precision with variable decimal places |
+| **Speed**              | Faster, requires less processing power       | Slower, requires more processing power      |
+| **Memory Usage**       | Uses less memory                             | Uses more memory due to extra components (mantissa and exponent) |
+| **Range**              | Limited range, smaller numbers can be represented | Larger range, can represent very small and very large numbers |
+| **Applications**       | Embedded systems, Digital Signal Processing (DSP), game programming | Scientific computing, engineering applications, graphics processing |
+| **Flexibility**        | Less flexible, precision is fixed            | More flexible, can scale the number using exponent |
+
