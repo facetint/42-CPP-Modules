@@ -19,8 +19,11 @@ git clone -b CPP-Module-02 https://github.com/facetint/42-CPP-Modules.git
 | CPP-Module-08       | [CPP-Module-08](https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-08) | `git clone -b CPP-Module-08 https://github.com/facetint/42-CPP-Modules.git` |
 | CPP-Module-09       | [CPP-Module-09](https://github.com/facetint/42-CPP-Modules/tree/CPP-Module-09) | `git clone -b CPP-Module-09 https://github.com/facetint/42-CPP-Modules.git` |
 
+<span style="color:red">This text is red.
 
 # Table of Contents
+
+</span>
 
 - [The Orthodox Canonical Class Form](#the-orthodox-canonical-class-form)
 - [Fixed-Point Numbers](#fixed-point-numbers)
