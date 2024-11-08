@@ -132,9 +132,9 @@ The structure for **single precision** (32-bit) floating-point numbers is as fol
 
 The value of a floating-point number can be calculated using the following formula:
 
-\[
-\text{Value} = (-1)^{\text{Sign}} \times \text{Mantissa} \times 2^{\text{Exponent - Bias}}
-\]
+```plaintext
+Value = (-1)^Sign × Mantissa × 2^(Exponent - Bias)
+```
 
 Where:
 - **Sign**: 0 for positive, 1 for negative.
