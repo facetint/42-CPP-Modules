@@ -212,11 +212,11 @@ The same is the case with abstract classes in C++, so we can’t create objects,
 
 
 
-## Interface in C++
+## Interface
 
    In C++, an interface is a class that only declares the necessary functions (methods) but does not provide any implementation for them. Unlike some other languages, C++ does not have a direct interface keyword. Instead, we can achieve this functionality by creating an abstract class that only contains pure virtual functions.
 
-### Characteristics of an Interface in C++
+### Characteristics of an Interface
 
    - All methods are pure virtual functions, marked with = 0, meaning they have no implementation in the interface class.
    - Interface classes typically do not contain data members, as the purpose of an interface is to define functionality, not state.
