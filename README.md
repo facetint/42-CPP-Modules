@@ -31,7 +31,7 @@ git clone -b CPP-Module-01 https://github.com/facetint/42-CPP-Modules.git
 
 ---
 
-## C++ Memory Management
+## C++ Memory Management 
 
 Memory management in C++ gives the programmer a great deal of flexibility and control, but it can also lead to problems such as memory leaks or errors if care is not taken. Memory management can be divided into two main categories: automatic memory management (stack) and manual memory management (heap). Let's examine how these two types of memory work.
 
@@ -43,9 +43,9 @@ Memory management on the stack is easy because C++ manages this memory automatic
 
 ### Manual Memory Management (Heap)
 
-Heap is the partition with dynamic memory allocation and memory management is done manually. The new operator is used to allocate memory on the heap, and the delete operator is used to free the allocated memory. Memory allocation on the heap can continue throughout the runtime of the program, and larger data is stored there than on the stack.
-
-The important point here is to release the allocated memory without forgetting it. Otherwise, a memory leak may occur. This means that if memory is not released on the heap, it will run out of memory.
+   Heap is the partition with dynamic memory allocation and memory management is done manually. The new operator is used to allocate memory on the heap, and the delete operator is used to free the allocated memory. Memory allocation on the heap can continue throughout the runtime of the program, and larger data is stored there than on the stack.
+   
+   The important point here is to release the allocated memory without forgetting it. Otherwise, a memory leak may occur. This means that if memory is not released on the heap, it will run out of memory.
 
 ### Dynamic Array Memory Management
 
@@ -55,17 +55,17 @@ It is also possible to create an array on the heap. The dynamic array can be all
 
 ## References
 
-In C++, references are a powerful feature that allows giving variables an alternative name and working with them directly. A reference is like a pointer to the address of a variable in memory, but it is easier to use and more secure. In C++, references are often used to optimize parameter passing in functions and to provide safer memory management.
+   In C++, references are a powerful feature that allows giving variables an alternative name and working with them directly. A reference is like a pointer to the address of a variable in memory, but it is easier to use and more secure. In C++, references are often used to optimize parameter passing in functions and to provide safer memory management.
 
 ### Properties of References
 
-- **Points to the Same Address in Memory**: A reference uses the address in memory of the variable from which it was created, and any changes made to that reference take effect directly on the original variable.
-- **Cannot be Reassigned to Another Variable**: Once a reference is assigned to a variable, it cannot be bound to another variable. That is, the reference continues to point to the variable to which it is bound throughout its lifecycle.
-- **Cannot be Null**: References, like pointers, cannot take the value `nullptr`; they must always point to a valid variable.
+   - **Points to the Same Address in Memory**: A reference uses the address in memory of the variable from which it was created, and any changes made to that reference take effect directly on the original variable.
+   - **Cannot be Reassigned to Another Variable**: Once a reference is assigned to a variable, it cannot be bound to another variable. That is, the reference continues to point to the variable to which it is bound throughout its lifecycle.
+   - **Cannot be Null**: References, like pointers, cannot take the value `nullptr`; they must always point to a valid variable.
 
 ### References in Functions
 
-References are especially useful for function parameters and return values. Normally when a function is called, the parameters are copied and passed. However, this can be costly for large data structures. By using references, instead of copying the data, the original data is accessed directly and performance is improved.
+   References are especially useful for function parameters and return values. Normally when a function is called, the parameters are copied and passed. However, this can be costly for large data structures. By using references, instead of copying the data, the original data is accessed directly and performance is improved.
 
 #### Functions with Reference Parameters
 
@@ -73,11 +73,11 @@ Passing parameters to functions using references is ideal for efficiently handli
 
 #### Const References
 
-If you want to ensure that when passing a reference as a parameter of a function, that reference is not modified, you can use a const reference. This ensures read-only reference passing and increases data security.
+   If you want to ensure that when passing a reference as a parameter of a function, that reference is not modified, you can use a const reference. This ensures read-only reference passing and increases data security.
 
 #### Returning Reference from Functions
 
-A function can return a reference. However, in this case, it is important that the lifetime of the returned reference does not exceed the lifetime of the function. Otherwise, a dangling reference error will occur.
+   A function can return a reference. However, in this case, it is important that the lifetime of the returned reference does not exceed the lifetime of the function. Otherwise, a dangling reference error will occur.
 
 ---
 
@@ -100,17 +100,17 @@ A function can return a reference. However, in this case, it is important that t
 
 ## File Operations
 
-The fstream library is used to perform file operations in C++. This library provides three basic classes for reading, writing and manipulating files:
+   The fstream library is used to perform file operations in C++. This library provides three basic classes for reading, writing and manipulating files:
 
-- **ifstream (input file stream):** Used for reading data from a file.
-- **ofstream (output file stream):** Used for writing data to a file.
-- **fstream (file stream):** Used for both read and write operations.
+   - **ifstream (input file stream):** Used for reading data from a file.
+   - **ofstream (output file stream):** Used for writing data to a file.
+   - **fstream (file stream):** Used for both read and write operations.
 
 ### File Operations with the fstream Library
 
 #### File Open
-
-We can use the fstream, ifstream, or ofstream classes to open files. Various modes can be used when opening files:
+   
+   - We can use the fstream, ifstream, or ofstream classes to open files. Various modes can be used when opening files:
 
 - `ios::in`: Opens the file in read mode (ifstream default mode)
 - `ios::out`: Opens the file in write mode. Overwrites if the file exists, creates if not (ofstream default mode)
@@ -121,20 +121,20 @@ We can use the fstream, ifstream, or ofstream classes to open files. Various mod
 
 #### File Opening and Closing
 
-- **Opening:** When opening a file, the `open()` function of the file object is called.
-- **Closing:** When you are done with the file, you should close it with `close()`.
+   - **Opening:** When opening a file, the `open()` function of the file object is called.
+   - **Closing:** When you are done with the file, you should close it with `close()`.
 
 #### Writing to File
 
-The `ofstream` or `fstream` class is used to write data to the file. Writing is done with the `<<` operator.
+   The `ofstream` or `fstream` class is used to write data to the file. Writing is done with the `<<` operator.
 
 #### Reading from File
 
-Reading data from a file is done with the `ifstream` or `fstream` class. Reading can be done with the `>>` operator or the `getline()` function.
+   Reading data from a file is done with the `ifstream` or `fstream` class. Reading can be done with the `>>` operator or the `getline()` function.
 
 #### File Modes
 
-File open modes can be used more than once. For example, for both reading and writing.
+   File open modes can be used more than once. For example, for both reading and writing.
 
 
 ```cpp
@@ -166,14 +166,14 @@ int main() {
 
 ## Switch Case
 
-The switch-case construct allows different blocks of code to be executed based on the value of a variable. This construct is used to check multiple conditions and take action based on a specific state. It is similar to the if-else construct, but offers a cleaner and clearer way of checking multiple states.
+   The switch-case construct allows different blocks of code to be executed based on the value of a variable. This construct is used to check multiple conditions and take action based on a specific state. It is similar to the if-else construct, but offers a cleaner and clearer way of checking multiple states.
 
 ### Explanations
 
-- **switch statement**: Starts with a variable (int, char, etc.) to be controlled.
-- **case tags**: Tests which constant values the variable being checked is equal to. Each case tag contains a constant value.
-- **break statement**: Allows the code to exit the switch structure after exiting that case statement. If break is not used, subsequent case blocks can be executed (this is called “fall-through”).
-- **default tag**: Is the block of code that will be executed when no case value is provided. This part is optional.
+   - **switch statement**: Starts with a variable (int, char, etc.) to be controlled.
+   - **case tags**: Tests which constant values the variable being checked is equal to. Each case tag contains a constant value.
+   - **break statement**: Allows the code to exit the switch structure after exiting that case statement. If break is not used, subsequent case blocks can be executed (this is called “fall-through”).
+   - **default tag**: Is the block of code that will be executed when no case value is provided. This part is optional.
 
 ### Important Points
 
@@ -184,6 +184,6 @@ The switch-case construct allows different blocks of code to be executed based o
 
 ### Advantages of using switch-case
 
-- Provides a more readable and manageable structure instead of a large number of if-else structures.
-- It is generally faster when controlling a large number of cases.
-- As a result, the switch-case structure is a convenient and flexible structure for controlling specific states and executing operations conditionally
+   - Provides a more readable and manageable structure instead of a large number of if-else structures.
+   - It is generally faster when controlling a large number of cases.
+   - As a result, the switch-case structure is a convenient and flexible structure for controlling specific states and executing operations conditionally
