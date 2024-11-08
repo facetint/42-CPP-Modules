@@ -22,6 +22,24 @@ git clone -b CPP-Module-00 https://github.com/facetint/42-CPP-Modules.git
    - [3. Stream Manipulators](#3stream-manipulators)
    - [4. Buffering and Flush](#4-bufferind-and-flush)
    - [5. File I/O Streams](#5-file-i/o-streams)
+- [Using `const` in C++](#using-const-in-c++)
+   - [1. Defining Constants](#1-defining-constants)
+   - [2. Constant Pointers](#2-constant-pointers)
+      - [a. Pointer to Constant Data](#a-pointer-to-constant-data)
+      - [b. Constant Pointer](#b-constant-pointer)
+      - [c. Constant Pointer to Constant Data](#c-constant-pointer-to-constant-data)
+   - [3. Const in Function Parameters](#3-const-in-function-parameters)
+      - [a. const Value Parameters](#a-const-value-parameters)
+      - [b. const Reference Parameters](#b-const-reference-parameters)
+      - [c. const Pointer Parameters](#c-const-pointer-parameters)
+   - [4. Const Member Functions](#4-const-member-functions)
+   - [5. Const Return Types](#5-const-return-types)
+      - [a. Returning a const Value](#a-returning-a-const-value)
+      - [b. Returning a const Reference](#b-returning-a-const-reference)
+   - [6. Const Cast](#6-const-cast)
+   - [7. Constexpr and Constinit](#7-constexpr-and-constinit)
+   - [8. `const` Usage in C++](#8-const-usage-in-c++)
+- [Summary of static Usage](#summary-of-static-usage)
 - [Member Function in C++ Classes](#member-function-in-c-classes)
    - [Inside Class Definition](#inside-class-definition)
    - [Outside Class Definition](#outside-class-definition)
@@ -31,6 +49,7 @@ git clone -b CPP-Module-00 https://github.com/facetint/42-CPP-Modules.git
    - [Main Features](#main-features)
 - [Destructor](#destructor)
    - [Why do we need a Destructor?](#why-do-we-need-a-destructor)
+
 
 
 # What is a Class in C++?
