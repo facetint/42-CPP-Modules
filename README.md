@@ -130,6 +130,32 @@ Reading data from a file is done with the `ifstream` or `fstream` class. Reading
 
 File open modes can be used more than once. For example, for both reading and writing.
 
+
+```cpp
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ofstream outFile("example.txt");  // Open file for writing
+    if (outFile.is_open()) {
+        outFile << "Hello, world!" << endl;
+        outFile.close();
+    }
+
+    ifstream inFile("example.txt");   // Open file for reading
+    string line;
+    if (inFile.is_open()) {
+        while (getline(inFile, line)) {
+            cout << line << endl;
+        }
+        inFile.close();
+    }
+
+    return 0;
+}
+```
+
 ---
 
 ## Switch Case
