@@ -88,12 +88,8 @@ public:
 
 There are 2 ways to define a member function:
 
-Inside class definition
-Outside class definition
-Till now, we have defined the member function inside the class, but we can also define the member function outside the class. To define a member function outside the class definition,
-
-We have to first declare the function prototype in the class definition.
-Then we have to use the scope resolution:: operator along with the class name and function name.
+Inside Class Definition
+You can define a member function directly inside the class definition.
 
 ```cpp
 class MyClass {
@@ -104,16 +100,58 @@ public:
 };
 ```
 
+Outside Class Definition
+Alternatively, you can declare the function inside the class and define it outside using the scope resolution operator (::).
+
+```cpp
+class MyClass {
+public:
+    void sayHello();
+};
+
+void MyClass::sayHello() {
+    cout << "Hello from outside the class!" << endl;
+}
+```
+
+Till now, we have defined the member function inside the class, but we can also define the member function outside the class. To define a member function outside the class definition,
+
+We have to first declare the function prototype in the class definition.
+Then we have to use the scope resolution:: operator along with the class name and function name.
 
 
 ## Namespaces
 
 Namespaces are used to avoid name conflicts. Especially in large projects or when working with different libraries, there may be classes or functions with the same name. Separating these names using namespaces makes the code easier to read and maintain. The `::` operator is used to access elements within a namespace.
 
+```cpp
+namespace MyNamespace {
+    class MyClass {
+    public:
+        void display() {
+            cout << "Inside MyNamespace" << endl;
+        }
+    };
+}
+```
+To use members of a namespace:
+
+```cpp
+MyNamespace::MyClass obj;
+obj.display();
+```
 
 ## Initialization Lists
 
 Initialization lists are used to assign initial values to data members in the constructor. This method improves performance and is especially necessary when initializing variables of type `const` or reference.
+
+```cpp
+class MyClass {
+    const int x;
+public:
+    MyClass(int value) : x(value) {}
+};
+```
 
 ## Constructor
 
@@ -126,6 +164,15 @@ In C++, a “constructor” is a special function that is automatically called w
 3. **Called Automatically**: Called automatically when the object is created.
 4. **Overloadable**: Multiple constructors can be defined with different parameter sets (constructor overloading).
 
+```cpp
+class Car {
+public:
+    string model;
+    int year;
+
+    Car(string m, int y) : model(m), year(y) {}
+};
+```
 
 ## DESTRUCTOR
 
@@ -135,4 +182,18 @@ In C++, a “constructor” is a special function that is automatically called w
  **Why do we need a Destructor?**
 - We use it to prevent leaks. By freeing the dynamic memory addresses we use in the class, we have a clean and readable code.
 - At the same time, since this method is automatically executed at the end of the class lifetime, we don't need to intervene manually.
+
+
+```cpp
+class Car {
+public:
+    Car() {
+        cout << "Car is created!" << endl;
+    }
+
+    ~Car() {  // Destructor
+        cout << "Car is destroyed!" << endl;
+    }
+};
+```
 
