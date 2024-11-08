@@ -102,3 +102,75 @@ The number 6.5 is stored as 6.5 * 256 = 1664, and by dividing by the scaling fac
 Fixed-point numbers allow us to perform fractional calculations efficiently, making them advantageous for systems where performance and memory efficiency are critical. However, they are less flexible than floating-point numbers because fractional precision is fixed.
 
 
+# Floating Point Numbers
+
+Floating-point numbers are a way of representing real numbers in computers. These numbers are used when you need to handle very large or very small values. They are represented in a format similar to scientific notation and are particularly useful for working with decimal values. The IEEE 754 standard is the most widely used standard for representing floating-point numbers in modern computers.
+
+## Structure of a Floating-Point Number
+
+A floating-point number consists of three main parts:
+
+1. **Sign Bit**: Indicates whether the number is positive or negative.
+2. **Exponent**: Determines the magnitude (size) of the number.
+3. **Mantissa (or Significand)**: Represents the precision or the fractional part of the number.
+
+The standard floating-point format used is the **IEEE 754** standard, and there are typically two formats:
+- **Single Precision (32 bits)**: 1 bit for sign, 8 bits for exponent, and 23 bits for mantissa.
+- **Double Precision (64 bits)**: 1 bit for sign, 11 bits for exponent, and 52 bits for mantissa.
+
+### IEEE 754 Single Precision (32-bit)
+
+The structure for **single precision** (32-bit) floating-point numbers is as follows:
+
+| Bit Count       | Component   | Description                                    |
+|-----------------|-------------|------------------------------------------------|
+| 1 bit           | Sign Bit    | Indicates whether the number is positive (0) or negative (1). |
+| 8 bits          | Exponent    | Encodes the exponent, which determines the scale or size of the number. |
+| 23 bits         | Mantissa    | Encodes the significant digits or precision part of the number. |
+
+### Floating Point Representation
+
+The value of a floating-point number can be calculated using the following formula:
+
+\[
+\text{Value} = (-1)^{\text{Sign}} \times \text{Mantissa} \times 2^{\text{Exponent - Bias}}
+\]
+
+Where:
+- **Sign**: 0 for positive, 1 for negative.
+- **Mantissa**: The precision part of the number.
+- **Exponent**: Determines the scaling of the number.
+- **Bias**: A shift applied to the exponent to make it always non-negative. (For single precision, the bias is 127, and for double precision, it is 1023).
+
+### Example - IEEE 754 Single Precision
+
+If we have the following components for a 32-bit floating-point number:
+
+- **Sign**: 0 (positive)
+- **Exponent**: 10000001 (binary, which equals 129; bias = 127, so exponent = 2)
+- **Mantissa**: 1.01 (binary)
+
+The value of the floating-point number is calculated as:
+
+\[
+\text{Value} = (-1)^0 \times 1.25 \times 2^2 = 5
+\]
+
+### Advantages and Disadvantages of Floating-Point Numbers
+
+#### Advantages:
+- **Wide Range**: Can represent very large and very small numbers.
+- **Precision**: Suitable for calculations involving decimal numbers.
+
+#### Disadvantages:
+- **Precision Loss**: Floating-point numbers may introduce small errors due to the finite precision of their representation.
+- **Rounding Errors**: Representing an infinite number of decimal values with a finite number of bits can result in rounding errors.
+
+### Floating Point Numbers in Practice
+
+Floating-point numbers are used in various fields, including scientific computing, engineering simulations, graphics processing units (GPUs), sound processing, and physics simulations. These applications often require handling extremely large or small numbers, and floating-point numbers provide the flexibility needed for these tasks.
+
+---
+
+Feel free to refer to the IEEE 754 standard for more detailed information on floating-point arithmetic and the various edge cases associated with this number representation.
+
