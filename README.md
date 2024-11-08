@@ -1,5 +1,11 @@
 # 42-CPP-Module-01
 
+## Installation
+
+```
+git clone -b CPP-Module-01 https://github.com/facetint/42-CPP-Modules.git
+```
+
 ## Table of Contents
 1. [C++ Memory Management](#c-memory-management)
    - [Automatic Memory Management (Stack)](#automatic-memory-management-stack)
