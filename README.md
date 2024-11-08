@@ -280,7 +280,7 @@ The `const` keyword in C++ enforces immutability, preventing modification of var
 
 ### 1. Defining Constants
 
-   You can define constant values that cannot be modified after initialization.
+   - You can define constant values that cannot be modified after initialization.
 
 ```cpp
 const int maxValue = 100;  // maxValue cannot be modified
@@ -291,7 +291,7 @@ const int maxValue = 100;  // maxValue cannot be modified
 
 #### a. Pointer to Constant Data
 
-   A pointer to constant data can point to different locations, but cannot modify the data it points to.
+   - A pointer to constant data can point to different locations, but cannot modify the data it points to.
 
 ```cpp
 const int *ptr = &maxValue;  // Data is const, pointer can change
@@ -301,7 +301,7 @@ ptr = &anotherValue; // Allowed: pointer can change
 
 #### b. Constant Pointer;
 
-   A constant pointer cannot change its memory location but can modify the data at that location.
+   - A constant pointer cannot change its memory location but can modify the data at that location.
 
 ```cpp
 int *const ptr = &maxValue;  // Pointer is const, data can be modified
@@ -311,7 +311,7 @@ ptr = &anotherValue; // Error: cannot change pointer itself
 
 #### c. Constant Pointer to Constant Data
 
-   Neither the pointer’s address nor the data at that address can be changed.
+   - Neither the pointer’s address nor the data at that address can be changed.
 
 ```cpp
 const int *const ptr = &maxValue;  // Both data and pointer are const
@@ -321,7 +321,7 @@ ptr = &anotherValue; // Error: cannot change pointer itself
 
 ### 3. Const in Function Parameters
 
-   Using const in function parameters helps protect data passed by reference or pointer.
+   - Using const in function parameters helps protect data passed by reference or pointer.
 
 #### a. const Value Parameters
 
@@ -335,7 +335,7 @@ void myFunction(const int x) {
 
 #### b. const Reference Parameters
 
-   Used for passing large objects efficiently without modifying them.
+   - Used for passing large objects efficiently without modifying them.
 
 ```cpp
 void print(const std::string &text) {
@@ -345,7 +345,7 @@ void print(const std::string &text) {
 
 #### c. const Pointer Parameters
 
-   You can use const to prevent modification of data pointed to by a pointer parameter.
+   - You can use const to prevent modification of data pointed to by a pointer parameter.
 
 ```cpp
 void display(const int *array, int size) {
@@ -369,7 +369,7 @@ public:
 };
 ```
 
-Trying to call a non-const function on a const object will result in an error:
+   - Trying to call a non-const function on a const object will result in an error:
 
 ```cpp
 const MyClass obj;
@@ -379,7 +379,7 @@ obj.setValue(5); // Error: setValue is not const
 
 ### 5. Const Return Types
 
-   -Returning a const reference or value can prevent the caller from modifying the returned object.
+   - Returning a const reference or value can prevent the caller from modifying the returned object.
 
 #### a. Returning a const Value
 
@@ -394,7 +394,7 @@ getConstValue() = 50; // Error: returned value is const
 
 #### b. Returning a const Reference
 
-   -Efficient and prevents modification by the caller.
+   - Efficient and prevents modification by the caller.
 
 ```cpp
 class MyClass {
@@ -410,7 +410,7 @@ val = 10; // Error: cannot modify a const reference
 
 ### 6. Const Cast
 
-   -const_cast is used to add or remove const from a variable. Use cautiously, as modifying data that was originally const is undefined behavior.
+   - const_cast is used to add or remove const from a variable. Use cautiously, as modifying data that was originally const is undefined behavior.
 
 ```cpp
 const int num = 10;
@@ -423,7 +423,7 @@ int *ptr = const_cast<int*>(&num);  // Removes const
    In modern C++, constexpr and constinit extend const for compile-time and initialization-time constants:
 
    - constexpr: Forces compile-time evaluation.
-   -constinit: Ensures initialization occurs at compile-time, preventing run-time initialization.
+   - constinit: Ensures initialization occurs at compile-time, preventing run-time initialization.
 
 ```cpp
 constexpr int compileTimeValue = 5 * 2;
