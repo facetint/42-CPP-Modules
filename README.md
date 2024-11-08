@@ -16,6 +16,12 @@ git clone -b CPP-Module-00 https://github.com/facetint/42-CPP-Modules.git
    - [Public](#public)
    - [Private](#private)
    - [Protected](#protected)
+- [C++ Standard I/O Streams](#c++-standard-ı/o-streams)
+   - [1. Standard Input and Output Streams](#1.-standart-input-and-output-streams)
+   - [2. Basic Stream Operators](#2.-basic-stream-operator)
+   - [3. Stream Manipulators](#3.stream-manipulators)
+   - [4. Buffering and Flush](#4.-bufferind-and-flush)
+   - [5. File I/O Streams](#5.-file-i/o-streams)
 - [Member Function in C++ Classes](#member-function-in-c-classes)
    - [Inside Class Definition](#inside-class-definition)
    - [Outside Class Definition](#outside-class-definition)
@@ -93,6 +99,123 @@ public:
     void setAge(int a) { age = a; }  // Public member function
 };
 
+```
+
+## C++ Standard I/O Streams
+
+In C++, standard input/output (I/O) streams are used to read data from the user and display data to the user. These streams are part of the **`<iostream>`** header and include:
+
+### 1. Standard Input and Output Streams
+
+   - **`std::cout`**: Used for displaying output to the console.
+     - The "console output" object is used with the `<<` operator to direct data from left to right.
+   - std::cin: Used to get input from the user.
+
+The "console input" object reads data into variables via the >> operator.
+
+```cpp
+#include <iostream>
+
+int main() {
+    int number;
+    std::cout << "Enter a number: ";
+    std::cin >> number;
+    std::cout << "You entered: " << number << std::endl;
+    return 0;
+}
+````
+   - std::cerr: Used to output error messages.
+      -"Console error" is helpful for debugging or informing users of mistakes.
+
+```cpp
+std::cerr << "An error occurred!" << std::endl;
+```
+
+   -std::clog: Used to display log or debug messages.
+      - Useful for outputting logs and additional details about program execution.
+
+```cpp
+std::clog << "Logging message." << std::endl;
+````
+
+### 2. Basic Stream Operators
+
+#### << (insertion operator): 
+   - Used with std::cout to direct data to the console or another output stream.
+#### >> (extraction operator): 
+   - Used with std::cin to receive input data from the console into a variable.
+
+   - Multiple streams can be chained together for efficient output:
+
+```cpp
+std::cout << "Hello, " << "World!" << std::endl;
+````
+
+### 3. Stream Manipulators
+Stream manipulators format the output or input. Some commonly used manipulators include:
+
+   - std::endl: Inserts a newline and flushes the output buffer.
+   - std::setw: Sets a specific width (useful for tables).
+   - std::fixed and std::setprecision: Controls the number of decimal places.
+   - std::boolalpha and std::noboolalpha: Displays Boolean values as "true" or "false" instead of 1 or 0.
+
+Example:
+
+```cpp 
+#include <iostream>
+#include <iomanip> // Required for setw, setprecision
+
+int main() {
+    double pi = 3.14159;
+    std::cout << std::fixed << std::setprecision(2) << pi << std::endl; // Outputs 3.14
+    return 0;
+}
+````
+
+### 4. Buffering and Flush
+
+Streams typically buffer data, meaning the output is delayed until the buffer is full or flushed.
+
+   - std::flush: Manually flushes the buffer, forcing data to be output immediately.
+
+### 5. File I/O Streams
+
+File handling in C++ is done via <fstream> which includes std::ifstream, std::ofstream, and std::fstream for file operations.
+
+   - std::ifstream: Used for reading data from files.
+   - std::ofstream: Used for writing data to files.
+   - std::fstream: Used for both reading and writing data.
+
+Example:
+
+```cpp
+#include <fstream>
+#include <iostream>
+
+int main() {
+    std::ofstream outFile("example.txt");
+    if (outFile.is_open()) {
+        outFile << "This is a line in the file.\n";
+        outFile.close();
+    }
+    return 0;
+}
+````
+
+Summary
+   - std::cout: Outputs to console.
+   - std::cin: Receives input from console.
+   - std::cerr: Outputs error messages.
+   - std::clog: Outputs log messages.
+   - std::ofstream, std::ifstream, std::fstream: File I/O operations.
+
+  ```cpp
+  #include <iostream>
+
+  int main() {
+      std::cout << "Hello, World!" << std::endl;
+      return 0;
+  }
 ```
 
 ## Member Function in C++ Classes
