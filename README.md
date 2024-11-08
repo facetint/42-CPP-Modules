@@ -226,7 +226,7 @@ For example, consider a `Complex` class for complex numbers. Without operator ov
 
 1. **Cannot Overload Certain Operators**: Some operators, like `::`, `sizeof`, `.` (member access operator), `? :` (ternary), and `typeid` cannot be overloaded.
 2. **Maintain Operator Arity**: You cannot change the number of operands an operator takes. For example, you cannot make a binary operator behave like a unary operator or vice versa.
-3. **Use of Friend Function**: For some operators (like `<<` and `>>`), it is common to declare the operator function as a friend function to allow access to private members of the class. **(NOTE !!!! : But note that the use of friends in pdfs is prohibited !!!!!!)**
+3. **Use of Friend Function**: For some operators (like `<<` and `>>`), it is common to declare the operator function as a friend function to allow access to private members of the class. **(NOTE ‼️‼️ But note that the use of friends in pdfs is prohibited ‼️‼️**
 
 ### Syntax for Operator Overloading
 
