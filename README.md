@@ -1,7 +1,5 @@
 # 42-CPP-Modules
 
-![cover-cpp-bonus](https://github.com/user-attachments/assets/bca559c9-cf84-4248-bda1-be8548ac0f60)
-
 
 | Module              | GitHub Link                                                |
 |---------------------|-----------------------------------------------------------|
