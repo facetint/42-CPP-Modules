@@ -27,23 +27,23 @@ git clone -b CPP-Module-04 https://github.com/facetint/42-CPP-Modules.git
 
 # Table of Contents
 
-1. [POLYMORPHİSM](#polymorphism)
-2. [Types of Polymorphism](#types-of-polymorphism)
+- [POLYMORPHİSM](#polymorphism)
+- [Types of Polymorphism](#types-of-polymorphism)
    - [Compile-Time Polymorphism](#compile-time-polymorphism)
      - [Function Overloading](#function-overloading)
      - [Operator Overloading](#operator-overloading)
    - [Runtime Polymorphism](#runtime-polymorphism)
      - [Function Overriding](#function-overriding)
      - [Virtual Functions](#virtual-functions)
-3. [Compile-Time vs Runtime Polymorphism](#compile-time-vs-runtime-polymorphism)
-4. [Pure Virtual Functions and Abstract Classes](#pure-virtual-functions-and-abstract-classes)
+-  [Compile-Time vs Runtime Polymorphism](#compile-time-vs-runtime-polymorphism)
+-  [Pure Virtual Functions and Abstract Classes](#pure-virtual-functions-and-abstract-classes)
    - [What are Pure Virtual Functions?](#what-are-pure-virtual-functions)
    - [Abstract Classes in C++](#abstract-classes-in-c++)
    - [Restrictions on Abstract Classes](#restrictions-on-abstract-classes)
-5. [Example: Abstract Class and Derived Class](#example-abstract-class-and-derived-class)
-6. [Why Abstract Classes Cannot Be Instantiated](#why-abstract-classes-cannot-be-instantiated)
-7. [Conclusion](#conclusion)
-
+-  [Example: Abstract Class and Derived Class](#example-abstract-class-and-derived-class)
+-  [Why Abstract Classes Cannot Be Instantiated](#why-abstract-classes-cannot-be-instantiated)
+-  [Conclusion](#conclusion)
+-  [Interface](#interface)
 
 # POLYMORPHİSM
 
