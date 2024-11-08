@@ -335,7 +335,7 @@ void myFunction(const int x) {
 
 #### b. const Reference Parameters
 
-   - Used for passing large objects efficiently without modifying them.
+   Used for passing large objects efficiently without modifying them.
 
 ```cpp
 void print(const std::string &text) {
@@ -345,7 +345,7 @@ void print(const std::string &text) {
 
 #### c. const Pointer Parameters
 
-   -You can use const to prevent modification of data pointed to by a pointer parameter.
+   You can use const to prevent modification of data pointed to by a pointer parameter.
 
 ```cpp
 void display(const int *array, int size) {
@@ -358,7 +358,7 @@ void display(const int *array, int size) {
 
 ### 4. Const Member Functions
 
-   -In class definitions, making a member function const prevents it from modifying any member variables.
+   - In class definitions, making a member function const prevents it from modifying any member variables.
 
 ```cpp
 class MyClass {
