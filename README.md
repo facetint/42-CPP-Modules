@@ -1,4 +1,5 @@
-## 42-CPP-Module-00
+## 42-CPP-Module-00 
+![cover-cpp-bonus](https://github.com/user-attachments/assets/73afb22c-ffaf-46b6-9f18-36f05f09ef65)
 
 ## Installation
 
