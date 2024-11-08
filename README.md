@@ -43,9 +43,23 @@ public:
 
 When a class is defined, only the specification for the object is defined; no memory or storage is allocated. To use the data and access functions defined in the class, you need to create objects.
 
+```cpp
+
+Car myCar;  // myCar is an object of the Car class
+myCar.model = "Tesla";
+myCar.year = 2022;
+myCar.start();  // Calls the start method
+```
+
 ## Accessing Data Members and Member Functions
 
 The data members and member functions of the class can be accessed using the dot(‘.’) operator with the object.
+
+```cpp
+
+myCar.model = "Tesla";  // Accessing the data member
+myCar.start();          // Calling the member function
+```
 
 ## Access Modifiers
 
@@ -56,8 +70,19 @@ In C++, there are 3 access specifiers that are as follows:
 **Public:** Members declared as public can be accessed from outside the class.
 **Private:** Members declared as private can only be accessed within the class itself.
 **Protected:** Members declared as protected can be accessed within the class and by derived classes.
-If we do not specify the access specifier, the private specifier is applied to every member by default.
 
+*Default Access:* If no access modifier is specified, the default access level is private.
+
+```cpp
+class MyClass {
+private:
+    int age;  // Private member
+
+public:
+    void setAge(int a) { age = a; }  // Public member function
+};
+
+```
 
 ## Member Function in C++ Classes
 
@@ -69,6 +94,16 @@ Till now, we have defined the member function inside the class, but we can also 
 
 We have to first declare the function prototype in the class definition.
 Then we have to use the scope resolution:: operator along with the class name and function name.
+
+```cpp
+class MyClass {
+public:
+    void sayHello() {
+        cout << "Hello!" << endl;
+    }
+};
+```
+
 
 
 ## Namespaces
