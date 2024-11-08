@@ -120,9 +120,44 @@ int main() {
    - **Cannot be Reassigned to Another Variable**: Once a reference is assigned to a variable, it cannot be bound to another variable. That is, the reference continues to point to the variable to which it is bound throughout its lifecycle.
    - **Cannot be Null**: References, like pointers, cannot take the value `nullptr`; they must always point to a valid variable.
 
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num = 10;
+    int& ref = num;  // ref is a reference to num
+
+    ref = 20;  // Changes the value of num through the reference
+
+    cout << "num: " << num << endl;  // Output: num: 20
+    return 0;
+}
+```
+   - Explanation: The reference ref points to the same memory location as num. Changing ref also changes num directly.
+
 ### References in Functions
 
    References are especially useful for function parameters and return values. Normally when a function is called, the parameters are copied and passed. However, this can be costly for large data structures. By using references, instead of copying the data, the original data is accessed directly and performance is improved.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+void modifyValue(int& num) {
+    num = 50;  // Modifies the original variable directly
+}
+
+int main() {
+    int num = 10;
+    modifyValue(num);  // num is passed by reference
+
+    cout << "num: " << num << endl;  // Output: num: 50
+    return 0;
+}
+
+````
+   - Explanation: The modifyValue function takes an int& as a parameter, which means that it can modify the original num passed from main.
 
 #### Functions with Reference Parameters
 
@@ -132,9 +167,49 @@ Passing parameters to functions using references is ideal for efficiently handli
 
    If you want to ensure that when passing a reference as a parameter of a function, that reference is not modified, you can use a const reference. This ensures read-only reference passing and increases data security.
 
+```cpp
+
+#include <iostream>
+using namespace std;
+
+void printValue(const int& num) {
+    cout << "Value: " << num << endl;  // num is read-only
+}
+
+int main() {
+    int num = 10;
+    printValue(num);  // Passes num by const reference
+
+    // num = 20;  // Uncommenting this line will modify num
+    return 0;
+}
+````
+   -Explanation: The printValue function takes a const int&, meaning that the reference cannot modify the original num.
+
 #### Returning Reference from Functions
 
    A function can return a reference. However, in this case, it is important that the lifetime of the returned reference does not exceed the lifetime of the function. Otherwise, a dangling reference error will occur.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int& getReference() {
+    static int num = 10;  // Static variable ensures that it persists after the function ends
+    return num;  // Return reference to num
+}
+
+int main() {
+    int& ref = getReference();  // Get reference to num
+
+    ref = 20;  // Modify num through the reference
+    cout << "num: " << ref << endl;  // Output: num: 20
+
+    return 0;
+}
+```
+   -Explanation: The function getReference returns a reference to a static variable, which ensures that the reference remains valid even after the function scope ends.
+
 
 ---
 
