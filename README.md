@@ -35,21 +35,78 @@ git clone -b CPP-Module-01 https://github.com/facetint/42-CPP-Modules.git
 
 Memory management in C++ gives the programmer a great deal of flexibility and control, but it can also lead to problems such as memory leaks or errors if care is not taken. Memory management can be divided into two main categories: automatic memory management (stack) and manual memory management (heap). Let's examine how these two types of memory work.
 
-### Automatic Memory Management (Stack)
+### 1- Automatic Memory Management (Stack)
 
 The stack is the automatic allocation of memory. Local variables defined inside functions are automatically added to the stack memory when the function is called, and this memory is automatically freed when the function terminates.
 
 Memory management on the stack is easy because C++ manages this memory automatically. The data in the stack is small and of fixed size; it is usually short-lived. For example, a local variable in a function is on the stack when the function is called and is deleted when the function ends.
 
-### Manual Memory Management (Heap)
+```cpp
+#include <iostream>
+using namespace std;
+
+void exampleFunction() {
+    int num = 10;  // Local variable on the stack
+    cout << "Value of num: " << num << endl;
+}  // 'num' is automatically destroyed when the function ends
+
+int main() {
+    exampleFunction();  // num is created and destroyed automatically
+    return 0;
+}
+```
+   - Explanation: The variable num is automatically created when exampleFunction() is called, and it is automatically destroyed when the function returns. No need for the programmer to manually handle memory allocation or deallocation.
+
+### 2- Manual Memory Management (Heap)
 
    Heap is the partition with dynamic memory allocation and memory management is done manually. The new operator is used to allocate memory on the heap, and the delete operator is used to free the allocated memory. Memory allocation on the heap can continue throughout the runtime of the program, and larger data is stored there than on the stack.
    
    The important point here is to release the allocated memory without forgetting it. Otherwise, a memory leak may occur. This means that if memory is not released on the heap, it will run out of memory.
 
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int* ptr = new int;  // Allocate memory for a single integer on the heap
+    *ptr = 42;  // Assign a value to the allocated memory
+    cout << "Value: " << *ptr << endl;
+    
+    delete ptr;  // Free the allocated memory
+
+    return 0;
+}
+````
+   
+   - Explanation: The variable ptr points to a memory location on the heap that stores an integer. We use new to allocate memory and delete to release it. If we forget to call delete, the memory will not be freed, leading to a memory leak.
+
+
 ### Dynamic Array Memory Management
 
 It is also possible to create an array on the heap. The dynamic array can be allocated with the new[] operator and freed with the delete[] operator.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int* arr = new int[5];  // Allocate an array of 5 integers on the heap
+
+    // Assign values to the array
+    for (int i = 0; i < 5; ++i) {
+        arr[i] = i * 10;
+    }
+
+    // Print the array
+    for (int i = 0; i < 5; ++i) {
+        cout << "arr[" << i << "] = " << arr[i] << endl;
+    }
+
+    delete[] arr;  // Free the dynamically allocated array
+
+    return 0;
+}
+```
 
 ---
 
