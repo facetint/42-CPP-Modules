@@ -1,6 +1,6 @@
 <div align="center"> 
 
-# 42-CPP-Modules ☄️
+# ☄️ 42-CPP-Modules ☄️
 </div>
 
 | Module              | GitHub Link                                                | Clone Command                                                      |
