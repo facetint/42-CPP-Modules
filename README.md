@@ -125,13 +125,13 @@ int main() {
 }
 ````
    - std::cerr: Used to output error messages.
-      -"Console error" is helpful for debugging or informing users of mistakes.
+      - "Console error" is helpful for debugging or informing users of mistakes.
 
 ```cpp
 std::cerr << "An error occurred!" << std::endl;
 ```
 
-   -std::clog: Used to display log or debug messages.
+   - std::clog: Used to display log or debug messages.
       - Useful for outputting logs and additional details about program execution.
 
 ```cpp
