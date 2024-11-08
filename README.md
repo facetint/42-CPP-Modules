@@ -17,41 +17,42 @@
 
 ## The Orthodox Canonical Class Form
 
-- A default constructor: used internally to initialize objects and data members when no other value is available.
+The **Orthodox Canonical Class Form** is a set of special member functions that should be defined to manage resource allocation and prevent common issues like memory leaks and unexpected behavior. These functions are:
 
-- A copy constructor: used in the implementation of call-by-value parameters.
+- **A Default Constructor**: Used internally to initialize objects and data members when no other value is available.
+- **A Copy Constructor**: Used in the implementation of call-by-value parameters.
+- **An Assignment Operator**: Used to assign one value to another.
+- **A Destructor**: Invoked when an object is deleted.
 
-- An assignment operator: used to assign one value to another.
+The purpose of this form is to prevent memory leaks, copy errors, and unnecessary copies in classes that require resource management. For example, if a class dynamically allocates memory, it needs to perform memory management properly when copied or moved. 
 
-- A destructor: Invoked when an object is deleted.
+If these special member functions are not defined, C++ automatically provides a copy constructor and copy assignment operator by default. However, these default implementations do not guarantee that resources are managed correctly, which can lead to memory leaks or unexpected behavior.
 
-
-The purpose of this form is to prevent memory leaks, copy errors and unnecessary copies in classes that require resource management. For example, if a class dynamically allocates memory, it needs to perform this memory management properly when copied or moved. If these special member functions are not defined, C++ automatically provides a copy constructor and copy assignment operator by default, but this does not guarantee that resources are managed correctly, which can lead to memory leaks or unexpected behavior.
-
+---
 
 ## Fixed-Point Numbers
 
 ### What is a Fixed-Point Number?
 
-A fixed-point number is a method of representing numerical values where the number of decimal places is fixed. Fixed-point numbers are particularly useful in embedded systems or applications requiring high performance and limited memory because they allow fractional numbers to be represented with a fixed number of decimal points.
+A **fixed-point number** is a method of representing numerical values where the number of decimal places is fixed. Fixed-point numbers are particularly useful in embedded systems or applications requiring high performance and limited memory, as they allow fractional numbers to be represented with a fixed number of decimal points.
 
-In fixed-point notation, part of the number is the integer part and the other part is the fractional part. This allows fractional values to be represented similarly to floating-point numbers, but with a fixed number of decimal places.
+In fixed-point notation, part of the number is the integer part, and the other part is the fractional part. This allows fractional values to be represented similarly to floating-point numbers but with a fixed number of decimal places.
 
 ### Key Features of Fixed-Point Numbers
 
-Fixed Decimal Point: Unlike floating-point numbers, the decimal point in fixed-point numbers remains in a fixed position. For example, the last 8 bits can represent the fractional part. Thus, the number 123.45 can be stored as 12345, and we know the location of the decimal point.
+- **Fixed Decimal Point**: Unlike floating-point numbers, the decimal point in fixed-point numbers remains in a fixed position. For example, the last 8 bits can represent the fractional part. Thus, the number `123.45` can be stored as `12345`, and the location of the decimal point is predetermined.
+  
+- **Precision and Scaling**: Fixed-point numbers are stored as integers and scaled by a fixed factor. For instance, if we scale by 256, the number `1.5` is stored as `384`, and `384 / 256 = 1.5`.
 
-#### Precision and Scaling: 
-Fixed-point numbers are stored as integers and scaled by a fixed factor. For example, if we scale by 256, the number 1.5 is stored as 384, and 384 / 256 = 1.5.
-
-Difference from Floating-Point Numbers: Fixed-point numbers have fixed precision with a limited number of decimal places, making them faster but less flexible than floating-point numbers.
+- **Difference from Floating-Point Numbers**: Fixed-point numbers have fixed precision with a limited number of decimal places, making them faster but less flexible than floating-point numbers.
 
 ### Use Cases of Fixed-Point Numbers
+
 Fixed-point representation is widely used in embedded systems, game programming, and digital signal processing (DSP), where limited hardware resources must handle fractional number calculations efficiently.
 
 ### Fixed-Point Representation Example
 
-In an 8.8 fixed-point representation, the first 8 bits represent the integer part, and the last 8 bits represent the fractional part.
+In an **8.8 fixed-point** representation, the first 8 bits represent the integer part, and the last 8 bits represent the fractional part.
 
 | Integer Part (8 bits) | Fractional Part (8 bits) |
 |-----------------------|--------------------------|
@@ -69,7 +70,6 @@ Thus, the combined fixed-point value represents `6.5`.
 The following code shows how to represent fixed-point numbers in C++:
 
 ```cpp
-
 #include <iostream>
 
 class FixedPoint {
@@ -95,12 +95,12 @@ int main() {
     return 0;
 }
 ```
+
 In this example:
 
 The FixedPoint class stores a float value as an integer in fixed-point format.
 The number 6.5 is stored as 6.5 * 256 = 1664, and by dividing by the scaling factor of 256, we get back 6.5.
 Fixed-point numbers allow us to perform fractional calculations efficiently, making them advantageous for systems where performance and memory efficiency are critical. However, they are less flexible than floating-point numbers because fractional precision is fixed.
-
 
 # Floating Point Numbers
 
