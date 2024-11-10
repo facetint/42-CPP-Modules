@@ -23,7 +23,7 @@ public:
     ~WrongAnimal();
 
     void        setType(const std::string type);
-    std::string getType(void) const;
+    const std::string getType(void) const;
 
     void    makeSound(void) const;
     void display(void) const;

@@ -23,7 +23,7 @@ public:
     virtual ~Animal();
 
     void        setType(const std::string type);
-    std::string getType(void) const;
+    const std::string getType(void) const;
 
     virtual void    makeSound(void) const;
     virtual void display(void) const;

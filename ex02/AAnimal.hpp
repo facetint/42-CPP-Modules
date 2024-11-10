@@ -14,7 +14,7 @@ class AAnimal
         virtual ~AAnimal();
         AAnimal& operator=(const AAnimal& other);
         void setType(const std::string type);
-        std::string getType(void) const;
+        const std::string getType(void) const;
         virtual void makeSound() const = 0;
         virtual void display() const = 0;
 };

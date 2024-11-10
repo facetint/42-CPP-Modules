@@ -28,10 +28,10 @@ AAnimal& AAnimal::operator=(const AAnimal& other)
 
 void AAnimal::setType(const std::string type)
 {
-    this->_type = type;
+    this->_type = type; 
 }
 
-std::string AAnimal::getType(void) const
+const std::string AAnimal::getType(void) const
 {
     return this->_type;
 }
