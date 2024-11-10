@@ -41,11 +41,6 @@ void Animal::makeSound() const
     std::cout << "Animal sound" << std::endl;
 }
 
-void Animal::whoAmI() const
-{
-    std::cout << "I am an Animal" << std::endl;
-}
-
 void Animal::display() const
 {
     std::cout << "---------------------------" << std::endl;
