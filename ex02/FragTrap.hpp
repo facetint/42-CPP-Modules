@@ -1,14 +1,14 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: facetint <facetint@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 11:00:30 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/30 11:00:31 by facetint         ###   ########.fr       */
+/*   Updated: 2024/11/10 23:14:55 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #ifndef FRAGTRAP_HPP
 
@@ -19,10 +19,8 @@
 
 class FragTrap : public ClapTrap
 {
-  private:
-	FragTrap();
-
   public:
+	FragTrap();
 	FragTrap(const std::string &name);
 	FragTrap(const FragTrap &other);
 	~FragTrap();
