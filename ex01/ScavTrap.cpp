@@ -1,28 +1,32 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: facetint <facetint@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 11:00:19 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/30 11:00:20 by facetint         ###   ########.fr       */
+/*   Updated: 2024/11/10 23:09:55 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap("")
+ScavTrap::ScavTrap() : ClapTrap()
 {
 	std::cout << "Default constructor called - (ScavTrap)" << std::endl;
+	this->_name = "ScavTrap";
+	this->_hitPoint = 100;
+	this->_energyPoint = 50;
+	this->_attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name)
 {
 	std::cout << "Parameterized constructor called - (ScavTrap)" << std::endl;
-	setHitPoint(100);
-	setEnergyPoint(50);
-	setAttackDamage(20);
+	this->_hitPoint = 100;
+	this->_energyPoint = 50;
+	this->_attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
@@ -40,7 +44,12 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 {
 	std::cout << "Copy assignment operator called - (ScavTrap)" << std::endl;
 	if (this != &other)
-		this->ClapTrap::operator=(other);
+	{
+		this->_name = other._name;
+		this->_hitPoint = other._hitPoint;
+		this->_energyPoint = other._energyPoint;
+		this->_attackDamage = other._attackDamage;
+	}
 	return (*this);
 }
 
