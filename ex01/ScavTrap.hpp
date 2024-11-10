@@ -1,14 +1,14 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: facetint <facetint@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 11:00:21 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/30 11:00:22 by facetint         ###   ########.fr       */
+/*   Updated: 2024/11/10 23:11:20 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
@@ -18,10 +18,8 @@
 
 class ScavTrap : public ClapTrap
 {
-  private:
+public:
 	ScavTrap();
-
-  public:
 	ScavTrap(const std::string &name);
 	ScavTrap(const ScavTrap &other);
 	~ScavTrap();
