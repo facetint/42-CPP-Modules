@@ -1,36 +1,40 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: facetint <facetint@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:48:54 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/30 11:07:00 by facetint         ###   ########.fr       */
+/*   Updated: 2024/11/10 23:12:55 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #include "ClapTrap.hpp"
 #include <climits>
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "Default Constructor called" << std::endl;
+	std::cout << "Default Constructor called - (ClapTrap)" << std::endl;
+	this->_name = "ClapTrap";
+	this->_hitPoint = 10;
+	this->_energyPoint = 10;
+	this->_attackDamage = 0;
 }
 
 ClapTrap::ClapTrap(const std::string &name) : _name(name), _hitPoint(10), _energyPoint(10), _attackDamage(0)
 {
-	std::cout << "Parameterized constructor called" << std::endl;
+	std::cout << "Parameterized constructor called - (ClapTrap)" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy)
 {
 	*this = copy;
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy constructor called - (ClapTrap)" << std::endl;
 }
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Destructor called - (ClapTrap)" << std::endl;
 }
 unsigned int ClapTrap::getAttackDamage() const
 {
