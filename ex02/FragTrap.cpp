@@ -1,28 +1,32 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: facetint <facetint@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fatmanurcetintas <fatmanurcetintas@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 11:00:26 by facetint          #+#    #+#             */
-/*   Updated: 2024/10/30 11:00:27 by facetint         ###   ########.fr       */
+/*   Updated: 2024/11/10 23:13:41 by fatmanurcet      ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() : ClapTrap("")
+FragTrap::FragTrap() : ClapTrap()
 {
 	std::cout << "Default constructor called - (FragTrap)" << std::endl;
+	this->_name = "FragTrap";
+	this->_hitPoint = 100;
+	this->_energyPoint = 100;
+	this->_attackDamage = 30;
 }
 
 FragTrap::FragTrap(const std::string &name) : ClapTrap(name)
 {
 	std::cout << "Parameterized constructor called - (FragTrap)" << std::endl;
-	setHitPoint(100);
-	setEnergyPoint(100);
-	setAttackDamage(30);
+	this->_hitPoint = 100;
+	this->_energyPoint = 100;
+	this->_attackDamage = 30;
 }
 
 FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other)
@@ -40,7 +44,12 @@ FragTrap &FragTrap::operator=(const FragTrap &other)
 {
 	std::cout << "Copy assignment operator called - (FragTrap)" << std::endl;
 	if (this != &other)
-		FragTrap::ClapTrap::operator=(other);
+	{
+		this->_name = other._name;
+		this->_hitPoint = other._hitPoint;
+		this->_energyPoint = other._energyPoint;
+		this->_attackDamage = other._attackDamage;
+	}
 	return (*this);
 }
 
