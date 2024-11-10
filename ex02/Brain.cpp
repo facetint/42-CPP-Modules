@@ -29,7 +29,7 @@ Brain &Brain::operator=(const Brain &other)
     return *this;
 }
 
-std::string Brain::getIdea(int index) const
+const std::string Brain::getIdea(int index) const
 {
     if (index >= 0 && index < 100) {
         return ideas[index];
@@ -47,7 +47,7 @@ void Brain::setIdea(int index, const std::string& idea)
         std::cout << "Idea index out of bounds - (Brain)" << std::endl;
 }
 
-std::string Brain::getIdeas() const
+const std::string Brain::getFirstIdea() const
 {
    return ideas[0];
 }
