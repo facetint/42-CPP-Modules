@@ -2,17 +2,17 @@
 
 # define CAT_HPP
 
-#include "Animal.hpp"
+# include "Animal.hpp"
 
 class Cat : public Animal
 {
-public:
-    Cat();
-    Cat(const Cat& other);
-    Cat& operator=(const Cat& other);
-    ~Cat();
-    void makeSound() const;
-    void display(void) const;
+  public:
+	Cat();
+	Cat(const Cat &other);
+	Cat &operator=(const Cat &other);
+	~Cat();
+	void makeSound() const;
+	void display(void) const;
 };
 
 #endif

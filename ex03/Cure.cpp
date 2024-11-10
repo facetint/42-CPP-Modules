@@ -2,37 +2,36 @@
 
 Cure::Cure() : AMateria("cure")
 {
-    std::cout << "Default constructor called - (Cure)" << std::endl;
+	std::cout << "Default constructor called - (Cure)" << std::endl;
 }
 
-Cure::Cure(const Cure& other)
+Cure::Cure(const Cure &other)
 {
-    *this = other;
-    std::cout << "Copy constructor called - (Cure)" << std::endl;
+	*this = other;
+	std::cout << "Copy constructor called - (Cure)" << std::endl;
 }
 
 Cure::~Cure()
 {
-    std::cout << "Destructor called - (Cure)" << std::endl;
+	std::cout << "Destructor called - (Cure)" << std::endl;
 }
 
-Cure& Cure::operator=(const Cure& other)
+Cure &Cure::operator=(const Cure &other)
 {
-    if (this != &other)
-    {
-        this->_type = other._type;
-    }
-    std::cout << "Assignation operator called - (Cure)" << std::endl;
-    return *this;
+	if (this != &other)
+	{
+		this->_type = other._type;
+	}
+	std::cout << "Assignation operator called - (Cure)" << std::endl;
+	return (*this);
 }
 
-AMateria* Cure::clone() const
+AMateria *Cure::clone() const
 {
-    return new Cure(*this);
+	return (new Cure(*this));
 }
 
-void Cure::use(ICharacter& target)
+void Cure::use(ICharacter &target)
 {
-    std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }
-

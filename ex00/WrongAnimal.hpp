@@ -10,24 +10,22 @@
 # define PURPLE_COLOR "\x1b[38;2;178;58;238;01m"
 # define WHITE_COLOR "\x1b[38;2;255;255;255;01m"
 
+class WrongAnimal
+{
+  protected:
+	std::string _type;
 
-class WrongAnimal{
+  public:
+	WrongAnimal();
+	WrongAnimal(const WrongAnimal &other);
+	WrongAnimal &operator=(const WrongAnimal &other);
+	~WrongAnimal();
 
-protected:
-    std::string _type;
+	void setType(const std::string type);
+	const std::string getType(void) const;
 
-public:
-    WrongAnimal();
-    WrongAnimal(const WrongAnimal& other);
-    WrongAnimal& operator=(const WrongAnimal& other);
-    ~WrongAnimal();
-
-    void        setType(const std::string type);
-    const std::string getType(void) const;
-
-    void    makeSound(void) const;
-    void display(void) const;
-
+	void makeSound(void) const;
+	void display(void) const;
 };
 
 #endif

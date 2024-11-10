@@ -2,7 +2,7 @@
 
 # define WRONGCAT_HPP
 
-#include "WrongAnimal.hpp"
+# include "WrongAnimal.hpp"
 # define RED_COLOR "\x1b[31;01m"
 # define RESET "\x1b[0m"
 # define GREEN_COLOR "\x1b[32;01m"
@@ -12,13 +12,13 @@
 
 class WrongCat : public WrongAnimal
 {
-public:
-    WrongCat();
-    WrongCat(const WrongCat& other);
-    WrongCat& operator=(const WrongCat& other);
-    ~WrongCat();
-    void makeSound() const;
-    void display(void) const;
+  public:
+	WrongCat();
+	WrongCat(const WrongCat &other);
+	WrongCat &operator=(const WrongCat &other);
+	~WrongCat();
+	void makeSound() const;
+	void display(void) const;
 };
 
 #endif

@@ -11,22 +11,22 @@
 # define PURPLE_COLOR "\x1b[38;2;178;58;238;01m"
 # define WHITE_COLOR "\x1b[38;2;255;255;255;01m"
 
-class Animal{
+class Animal
+{
+  protected:
+	std::string _type;
 
-protected:
-    std::string _type;
+  public:
+	Animal();
+	Animal(const Animal &other);
+	Animal &operator=(const Animal &other);
+	virtual ~Animal();
 
-public:
-    Animal();
-    Animal(const Animal& other);
-    Animal& operator=(const Animal& other);
-    virtual ~Animal();
+	void setType(const std::string type);
+	const std::string getType(void) const;
 
-    void        setType(const std::string type);
-    const std::string getType(void) const;
-
-    virtual void    makeSound(void) const;
-    virtual void display(void) const;
+	virtual void makeSound(void) const;
+	virtual void display(void) const;
 };
 
 #endif
