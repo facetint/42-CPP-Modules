@@ -69,3 +69,8 @@ void DiamondTrap::whoAmI()
 	std::cout << "DiamondTrap identity: " << getDiamondName() << std::endl;
 	std::cout << "Base ClapTrap identity: " << getName() << std::endl;
 }
+
+void DiamondTrap::attack(const std::string &target)
+{
+	ScavTrap::attack(target);
+}
