@@ -1,4 +1,4 @@
-#pragma one
+#pragma once
 
 #include <iostream>
 
@@ -17,5 +17,5 @@ public:
     int getGrade() const;
     void incrementGrade() const;
     void decrementGrade() const;
-    
+
 };
