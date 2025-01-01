@@ -38,3 +38,43 @@ AForm::~AForm()
 {
     std::cout << "AForm destructor called" << std::endl;
 }
+
+std::string const &AForm::getName() const
+{
+    return _name;
+}
+
+int AForm::getGradeToSign() const
+{
+    return _signGrade;
+}
+
+int AForm::getGradeToExecute() const
+{
+    return _executeGrade;
+}
+
+bool AForm::getSigned() const
+{
+    return _isSigned;
+}
+
+void AForm::setName(std::string const name)
+{
+    const_cast<std::string &>(_name) = name;
+}
+
+void AForm::setSign(bool sign)
+{
+    _isSigned = sign;
+}
+
+void AForm::setGradeToSign(int gradeToSign)
+{
+    const_cast<int &>(_signGrade) = gradeToSign;
+}
+
+void AForm::setGradeToExecute(int gradeToExecute)
+{
+    const_cast<int &>(_executeGrade) = gradeToExecute;
+}
