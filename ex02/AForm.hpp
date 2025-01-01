@@ -22,7 +22,7 @@ public:
     AForm(std::string const name, int gradeToSign, int gradeToExecute);
     AForm(AForm const &other);
     AForm &operator=(AForm const &other);
-    ~AForm();
+    virtual ~AForm();
 
     std::string const &getName() const;
     int getGradeToSign() const;
@@ -35,6 +35,8 @@ public:
     void setGradeToExecute(int gradeToExecute);
 
     void beSigned(const Bureaucrat &bureaucrat);
+
+
 
     class GradeTooHighException : public std::exception
     {
@@ -51,4 +53,3 @@ public:
 };
 
 std::ostream &operator<<(std::ostream &out, AForm const &form);
-
