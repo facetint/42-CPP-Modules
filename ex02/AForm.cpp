@@ -78,3 +78,10 @@ void AForm::setGradeToExecute(int gradeToExecute)
 {
     const_cast<int &>(_executeGrade) = gradeToExecute;
 }
+
+void AForm::beSigned(const Bureaucrat &bureaucrat)
+{
+    if (bureaucrat.getGrade() > getGradeToSign())
+        throw AForm::GradeTooLowException();
+    setSign(true);
+}
