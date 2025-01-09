@@ -30,3 +30,14 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 {
     std::cout << "Destructor called - (ShrubberyCreationForm)" << std::endl;
 }
+
+std::string const &ShrubberyCreationForm::getTarget() const
+{
+    return _target;
+}
+
+void ShrubberyCreationForm::setTarget(std::string target)
+{
+    const_cast<std::string &>(_target) = target;
+}
+
