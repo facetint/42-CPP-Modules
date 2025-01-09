@@ -7,7 +7,7 @@ Bureaucrat::Bureaucrat() : _name("default"), _grade(150)
 
 Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name)
 {
-    std::cout << "Parametric constructor called - (Bureaucrat)" << std::endl;
+    std::cout << "Parameterized constructor called - (Bureaucrat)" << std::endl;
     if (grade < 1)
         throw Bureaucrat::GradeTooHighException();
     else if (grade > 150)
