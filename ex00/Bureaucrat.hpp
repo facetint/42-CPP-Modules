@@ -2,8 +2,11 @@
 
 #include <iostream>
 
-#define GRADE_MIN 1
-#define GRADE_MAX 150
+# define RESET "\x1b[0m"
+# define BLUE "\x1b[34;01m"
+
+# define GRADE_MIN 1
+# define GRADE_MAX 150
 
 class Bureaucrat
 {
