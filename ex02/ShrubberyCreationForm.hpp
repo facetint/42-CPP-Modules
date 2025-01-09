@@ -21,3 +21,5 @@ public:
     void execute(Bureaucrat const &executor) const;
 
 };
+
+std::ostream &operator<<(std::ostream &out, ShrubberyCreationForm const &shrubberyCreationForm);
