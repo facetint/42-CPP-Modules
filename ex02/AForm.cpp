@@ -2,12 +2,12 @@
 
 AForm::AForm() : _name("default"), _isSigned(false), _signGrade(150), _executeGrade(150)
 {
-    std::cout << "AForm default constructor called" << std::endl;
+    std::cout << "Default constructor called - (AForm)" << std::endl;
 }
 
 AForm::AForm(std::string const name, int gradeToSign, int gradeToExecute) : _name(name), _signGrade(gradeToSign), _executeGrade(gradeToExecute)
 {
-    std::cout << "AForm parameterized constructor called" << std::endl;
+    std::cout << "Parametric constructor called - (AForm)" << std::endl;
     if (gradeToSign < 1 || gradeToExecute < 1)
         throw AForm::GradeTooHighException();
     else if (gradeToSign > 150 || gradeToExecute > 150)
@@ -17,13 +17,13 @@ AForm::AForm(std::string const name, int gradeToSign, int gradeToExecute) : _nam
 
 AForm::AForm(AForm const &other) : _name(other.getName()), _signGrade(other.getGradeToSign()), _executeGrade(other.getGradeToExecute())
 {
-    std::cout << "AForm copy constructor called" << std::endl;
+    std::cout << "Copy constructor called - (AForm)" << std::endl;
     *this = other;
 }
 
 AForm &AForm::operator=(AForm const &other)
 {
-    std::cout << "AForm assignation operator called" << std::endl;
+    std::cout << "Assignation operator called - (AForm)" << std::endl;
     if (this != &other)
     {
         setName(other.getName());
@@ -36,7 +36,7 @@ AForm &AForm::operator=(AForm const &other)
 
 AForm::~AForm()
 {
-    std::cout << "AForm destructor called" << std::endl;
+    std::cout << "Destructor called - (AForm)" << std::endl;
 }
 
 std::string const &AForm::getName() const
