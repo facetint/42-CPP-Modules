@@ -2,12 +2,12 @@
 
 Form::Form() : _name("default"), _isSigned(false), _signGrade(150), _executeGrade(150)
 {
-    std::cout << "Form default constructor called" << std::endl;
+    std::cout << "Default constructor called - (Form)" << std::endl;
 }
 
 Form::Form(std::string const name, int gradeToSign, int gradeToExecute) : _name(name), _signGrade(gradeToSign), _executeGrade(gradeToExecute)
 {
-    std::cout << "Form parameterized constructor called" << std::endl;
+    std::cout << "Parametric constructor called - (Form)" << std::endl;
     if (gradeToSign < 1 || gradeToExecute < 1)
         throw Form::GradeTooHighException();
     else if (gradeToSign > 150 || gradeToExecute > 150)
@@ -17,13 +17,13 @@ Form::Form(std::string const name, int gradeToSign, int gradeToExecute) : _name(
 
 Form::Form(Form const &other) : _name(other.getName()), _signGrade(other.getGradeToSign()), _executeGrade(other.getGradeToExecute())
 {
-    std::cout << "Form copy constructor called" << std::endl;
+    std::cout << "Copy constructor called - (Form)" << std::endl;
     *this = other;
 }
 
 Form &Form::operator=(Form const &other)
 {
-    std::cout << "Form assignation operator called" << std::endl;
+    std::cout << "Assignation operator called - (Form)" << std::endl;
     if (this != &other)
     {
         setName(other.getName());
@@ -36,7 +36,7 @@ Form &Form::operator=(Form const &other)
 
 Form::~Form()
 {
-    std::cout << "Form destructor called" << std::endl;
+    std::cout << "Destructor called - (Form)" << std::endl;
 }
 
 std::string const &Form::getName() const
