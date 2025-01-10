@@ -105,4 +105,3 @@ std::ostream &operator<<(std::ostream &out, Form const &form)
     out << GREEN << "Form signed: " << RESET << WHITE << form.getSigned() << std::endl << RESET;
     return out;
 }
-
