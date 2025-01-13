@@ -30,3 +30,13 @@ RobotomyRequestForm::~RobotomyRequestForm()
 {
     std::cout << "Destructor called - (RobotomyRequestForm)" << std::endl;
 }
+
+std::string const &RobotomyRequestForm::getTarget() const
+{
+    return _target;
+}
+
+void RobotomyRequestForm::setTarget(std::string target)
+{
+    const_cast<std::string &>(_target) = target;
+}
