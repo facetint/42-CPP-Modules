@@ -31,10 +31,7 @@ public:
     int getGradeToExecute() const;
     bool getSigned() const;
 
-    void setName(std::string const name);
     void setSign(bool sign);
-    void setGradeToSign(int gradeToSign);
-    void setGradeToExecute(int gradeToExecute);
 
     void beSigned(const Bureaucrat &bureaucrat);
 

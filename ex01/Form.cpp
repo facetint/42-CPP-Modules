@@ -25,12 +25,7 @@ Form &Form::operator=(Form const &other)
 {
     std::cout << "Assignation operator called - (Form)" << std::endl;
     if (this != &other)
-    {
-        setName(other.getName());
         setSign(other.getSigned());
-        setGradeToSign(other.getGradeToSign());
-        setGradeToExecute(other.getGradeToExecute());
-    }
     return *this;
 }
 
@@ -59,24 +54,10 @@ bool Form::getSigned() const
     return _isSigned;
 }
 
-void Form::setName(std::string const name)
-{
-    const_cast<std::string &>(_name) = name;
-}
 
 void Form::setSign(bool sign)
 {
     _isSigned = sign;
-}
-
-void Form::setGradeToSign(int gradeToSign)
-{
-    const_cast<int &>(_signGrade) = gradeToSign;
-}
-
-void Form::setGradeToExecute(int gradeToExecute)
-{
-    const_cast<int &>(_executeGrade) = gradeToExecute;
 }
 
 void Form::beSigned(const Bureaucrat &bureaucrat)
