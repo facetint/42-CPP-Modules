@@ -19,7 +19,6 @@ public:
     virtual ~RobotomyRequestForm();
 
     std::string const &getTarget() const;
-    void setTarget(std::string target);
 
     void execute(Bureaucrat const &executor) const;
 };

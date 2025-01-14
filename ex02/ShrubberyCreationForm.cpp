@@ -20,10 +20,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 {
     std::cout << "Assignation operator called - (ShrubberyCreationForm)" << std::endl;
     if (this != &other)
-    {
         AForm::operator=(other);
-        setTarget(other.getTarget());
-    }
     return *this;
 }
 
@@ -35,11 +32,6 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 std::string const &ShrubberyCreationForm::getTarget() const
 {
     return _target;
-}
-
-void ShrubberyCreationForm::setTarget(std::string target)
-{
-    const_cast<std::string &>(_target) = target;
 }
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const

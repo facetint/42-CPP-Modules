@@ -20,10 +20,7 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm
 {
     std::cout << "Assignation operator called - (PresidentialPardonForm)" << std::endl;
     if (this != &other)
-    {
         AForm::operator=(other);
-        setTarget(other.getTarget());
-    }
     return *this;
 }
 
@@ -37,19 +34,12 @@ std::string const &PresidentialPardonForm::getTarget() const
     return _target;
 }
 
-void PresidentialPardonForm::setTarget(std::string target)
-{
-    const_cast<std::string &>(_target) = target;
-}
-
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
-   if (executor.getGrade() < getGradeToExecute())
-    {
-        if (getSigned())
-            std::cout << _target << " has been pardoned by Zafod Beeblebrox." << std::endl;
-        else
-            std::cout << "Form is not signed." << std::endl;
-    }
+    if (executor.getGrade() > getGradeToExecute())
         throw AForm::GradeTooLowException();
+    if (getSigned())
+        std::cout << _target << " has been pardoned by Zafod Beeblebrox." << std::endl;
+    else
+        std::cout << "Form is not signed." << std::endl;
 }
