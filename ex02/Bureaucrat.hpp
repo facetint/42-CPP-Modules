@@ -24,7 +24,6 @@ public:
     ~Bureaucrat();
     std::string const &getName() const;
     int getGrade() const;
-    void setName(std::string const name);
     void incrementGrade();
     void decrementGrade();
     void signForm(AForm &form);
