@@ -1,6 +1,9 @@
 #pragma once
 
-# include "AForm.hpp"
+# include "Bureaucrat.hpp"
+# include <cstdlib>
+# include <ctime>
+
 
 class RobotomyRequestForm : public AForm
 {
