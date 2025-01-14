@@ -1,4 +1,5 @@
 #include "RobotomyRequestForm.hpp"
+#include "Bureaucrat.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45), _target("default")
 {
@@ -39,4 +40,23 @@ std::string const &RobotomyRequestForm::getTarget() const
 void RobotomyRequestForm::setTarget(std::string target)
 {
     const_cast<std::string &>(_target) = target;
+}
+
+void RobotomyRequestForm::execute(Bureaucrat const &executor) const
+{
+    if (executor.getGrade() < getGradeToExecute())
+    {
+        if (getSigned())
+        {
+            std::cout << "*drilling noises* " << std::endl;
+            srand(time(NULL));
+            if (rand() % 2)
+                std::cout << _target << " has been robotomized successfully." << std::endl;
+            else
+                std::cout << _target << " robotomization failed." << std::endl;
+        }
+            std::cout << "Form is not signed." << std::endl;
+    }
+    else
+        throw AForm::GradeTooLowException();
 }
