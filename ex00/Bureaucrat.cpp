@@ -25,10 +25,7 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const &other)
 {
     std::cout << "Assignation operator called - (Bureaucrat)" << std::endl;
     if (this != &other)
-    {
         this->_grade = other._grade;
-        setName(other.getName());
-    }
     return *this;
 }
 
@@ -45,11 +42,6 @@ std::string const &Bureaucrat::getName() const
 int Bureaucrat::getGrade() const
 {
     return _grade;
-}
-
-void Bureaucrat::setName(std::string const name)
-{
-    const_cast<std::string &>(_name) = name;
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
