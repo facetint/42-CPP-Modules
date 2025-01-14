@@ -8,9 +8,9 @@ class PresidentialPardonForm : public AForm
 {
 private:
     const std::string _target;
+    PresidentialPardonForm();
 
 public:
-    PresidentialPardonForm();
     PresidentialPardonForm(const std::string target);
     PresidentialPardonForm(PresidentialPardonForm const &other);
     PresidentialPardonForm &operator=(PresidentialPardonForm const &other);
