@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+class Form;
+
 # define RESET "\x1b[0m"
 # define BLUE "\x1b[34;01m"
 
@@ -24,6 +26,7 @@ public:
     void setName(std::string const name);
     void incrementGrade();
     void decrementGrade();
+    void signForm(Form &form);
     class GradeTooHighException : public std::exception
     {
         public:
