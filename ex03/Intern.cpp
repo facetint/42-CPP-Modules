@@ -26,4 +26,9 @@ Intern::~Intern()
     std::cout << "Destructor called - (Intern)" << std::endl;
 }
 
+const char *Intern::FormNotFound::what() const throw()
+{
+    return "Form not found";
+}
+
 
