@@ -1,7 +1,9 @@
 #pragma once
 
-# include "Bureaucrat.hpp"
 # include <fstream>
+# include "AForm.hpp"
+
+class Bureaucrat;
 
 class ShrubberyCreationForm : public AForm
 {
