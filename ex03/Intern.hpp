@@ -4,6 +4,11 @@
 
 class AForm;
 
+# define RED "\x1b[31;01m"
+# define RESET "\x1b[0m"
+# define GREEN "\x1b[32;01m"
+# define WHITE "\x1b[38;2;255;255;255;01m"
+# define PURPLE "\x1b[38;2;178;58;238;01m"
 
 class Intern
 {
