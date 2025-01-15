@@ -43,7 +43,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
     }
 
     if (!getSigned()) {
-        std::cout << getName() << " is not signed, can't execute." << std::endl;
+        std::cout << RED << getName() << " is not signed, can't execute." << RESET << std::endl;
         throw GradeTooLowException();
     }
 
@@ -66,5 +66,5 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
     outputFile << "      // \\\\" << std::endl;
 
     outputFile.close();
-    std::cout << "Shrubbery has been successfully created in " << filename << std::endl;
+    std::cout << GREEN << "Shrubbery has been successfully created in " << filename << RESET << std::endl;
 }
