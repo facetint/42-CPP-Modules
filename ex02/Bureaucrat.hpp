@@ -4,6 +4,7 @@
 
 class AForm;
 
+# define RED "\x1b[31;01m"
 # define RESET "\x1b[0m"
 # define BLUE "\x1b[34;01m"
 
@@ -24,6 +25,7 @@ public:
     ~Bureaucrat();
     std::string const &getName() const;
     int getGrade() const;
+
     void incrementGrade();
     void decrementGrade();
     void signForm(AForm &form);

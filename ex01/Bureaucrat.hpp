@@ -4,6 +4,7 @@
 
 class Form;
 
+# define RED "\x1b[31;01m"
 # define RESET "\x1b[0m"
 # define BLUE "\x1b[34;01m"
 
