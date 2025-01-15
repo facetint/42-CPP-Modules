@@ -6,7 +6,8 @@
 
 int main()
 {
-    try {
+    try 
+    {
         Bureaucrat bureaucrat1("user1", 50);
         Bureaucrat bureaucrat2("user2", 140);
         Bureaucrat bureaucrat3("user3", 1);
@@ -15,17 +16,19 @@ int main()
         std::cout << bureaucrat2 << std::endl;
         std::cout << bureaucrat3 << std::endl;
 
-        PresidentialPardonForm pardonForm("Target1");
-        ShrubberyCreationForm shrubberyForm("Target2");
-        RobotomyRequestForm robotomyForm("Target3");
+        PresidentialPardonForm pardonForm("target1");
+        ShrubberyCreationForm shrubberyForm("target2");
+        RobotomyRequestForm robotomyForm("target3");
 
-        std::cout << "\nTrying to sign forms..." << std::endl;
+        std::cout << std::endl;
+        std::cout << "~ - - Trying to sign forms - - ~" << std::endl;
 
         bureaucrat1.signForm(pardonForm);
         bureaucrat2.signForm(robotomyForm);
         bureaucrat3.signForm(shrubberyForm);
 
-        std::cout << "\nTrying to execute forms..." << std::endl;
+        std::cout << std::endl;
+        std::cout << "~ - - Trying to execute forms - - ~" << std::endl;
 
         
         bureaucrat1.executeForm(pardonForm);
