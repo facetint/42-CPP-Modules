@@ -71,10 +71,16 @@ void Bureaucrat::decrementGrade()
 
 void Bureaucrat::signForm(Form &form)
 {
-    if (form.getSigned())
-        std::cout << _name << " cannot sign " << form.getName() << " because it's already signed." << std::endl;
-    else
-        std::cout << this->_name << " couldn't sign " << form.getName() << " because he don't have the ability to do this." << std::endl;
+    try
+    {
+        form.beSigned(*this);
+        std::cout << WHITE << _name << " signs " << form.getName() << RESET << std::endl;
+    }
+    catch (std::exception &e)
+    {
+        std::cout << WHITE << _name << " cannot sign " << form.getName() << " because " << RESET;
+        std::cerr << RED << e.what() << RESET << std::endl;
+    }
 }
 
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &bureaucrat)
