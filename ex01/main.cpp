@@ -10,7 +10,7 @@ int main()
 
     try
     {
-        form1->beSigned(*bureaucrat1);
+        bureaucrat1->signForm(*form1);
     }
     catch (const std::exception &e)
     {
