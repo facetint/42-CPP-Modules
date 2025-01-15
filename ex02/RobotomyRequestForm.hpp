@@ -6,6 +6,10 @@
 
 class Bureaucrat;
 
+# define RED "\x1b[31;01m"
+# define RESET "\x1b[0m"
+# define GREEN "\x1b[32;01m"
+
 class RobotomyRequestForm : public AForm
 {
 private:
