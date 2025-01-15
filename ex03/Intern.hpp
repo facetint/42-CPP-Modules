@@ -1,10 +1,19 @@
 #pragma once
 
 # include <iostream>
+
 class AForm;
+
 
 class Intern
 {
+private:
+    typedef struct s_form
+    {
+        std::string name;
+        AForm *(*create)(const std::string &);
+    } t_form;
+
 public:
     Intern();
     Intern(Intern const &other);
