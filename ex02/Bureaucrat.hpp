@@ -7,6 +7,7 @@ class AForm;
 # define RED "\x1b[31;01m"
 # define RESET "\x1b[0m"
 # define BLUE "\x1b[34;01m"
+# define WHITE "\x1b[38;2;255;255;255;01m"
 
 # define GRADE_MIN 1
 # define GRADE_MAX 150
