@@ -2,6 +2,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "AForm.hpp"
 
 Intern::Intern()
 {
@@ -26,27 +27,40 @@ Intern::~Intern()
     std::cout << "Destructor called - (Intern)" << std::endl;
 }
 
-const char *Intern::FormNotFound::what() const throw()
+static AForm* createShrubberyForm(const std::string& target)
 {
-    return "Form not found";
+    return new ShrubberyCreationForm(target);
 }
 
-AForm *Intern::makeForm(std::string const &formName, std::string const &target)
+static AForm* createRobotomyForm(const std::string& target)
 {
+    return new RobotomyRequestForm(target);
+}
 
-    const std::string formNames[] = {"shrubbery creation", "robotomy request", "presidential pardon"};
-    AForm* (*formCreators[])(const std::string&) = {
-        [](const std::string& target) { return static_cast<AForm*>(new ShrubberyCreationForm(target)); },
+static AForm* createPresidentialPardonForm(const std::string& target)
+{
+    return new PresidentialPardonForm(target);
+}
 
-        [](const std::string& target) { return static_cast<AForm*>(new RobotomyRequestForm(target)); },
+const char *Intern::FormNotFound::what() const throw()
+{
+    return (RED "Form not found" RESET);
+}
 
-        [](const std::string& target) { return static_cast<AForm*>(new PresidentialPardonForm(target)); }
+AForm* Intern::makeForm(std::string const &formName, std::string const &target)
+{
+    static const t_form formTypes[] = {
+        {"shrubbery creation", createShrubberyForm},
+        {"robotomy request", createRobotomyForm},
+        {"presidential pardon", createPresidentialPardonForm}
     };
-    const size_t formCount = sizeof(formNames) / sizeof(formNames[0]);
+
+    const size_t formCount = sizeof(formTypes) / sizeof(formTypes[0]);
+
     for (size_t i = 0; i < formCount; ++i) {
-        if (formName == formNames[i]) {
-            std::cout << "Intern creates " << formName << " form" << std::endl;
-            return formCreators[i](target);
+        if (formName == formTypes[i].name) {
+            std::cout << PURPLE << "Intern creates " << formName << " form" << RESET << std::endl;
+            return formTypes[i].create(target);
         }
     }
     throw FormNotFound();
