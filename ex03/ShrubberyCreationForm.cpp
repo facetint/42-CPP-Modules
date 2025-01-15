@@ -48,7 +48,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
     }
 
     std::string filename = getTarget() + "_shrubbery";
-    std::ofstream outputFile(filename.c_str());
+    std::ofstream outputFile(filename.c_str(), std::ofstream::trunc);
 
     if (!outputFile.is_open()) {
         std::cerr << "Error: Could not create the output file." << std::endl;
