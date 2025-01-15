@@ -8,9 +8,9 @@ int main()
 {
     try 
     {
-        Bureaucrat bureaucrat1("user1", 50);
-        Bureaucrat bureaucrat2("user2", 140);
-        Bureaucrat bureaucrat3("user3", 1);
+        Bureaucrat bureaucrat1("user1", 4);
+        Bureaucrat bureaucrat2("user2", 42);
+        Bureaucrat bureaucrat3("user3", 120);
 
         std::cout << bureaucrat1 << std::endl;
         std::cout << bureaucrat2 << std::endl;
@@ -30,7 +30,7 @@ int main()
         std::cout << std::endl;
         std::cout << "~ - - Trying to execute forms - - ~" << std::endl;
 
-        
+    
         bureaucrat1.executeForm(pardonForm);
         bureaucrat2.executeForm(robotomyForm);
         bureaucrat3.executeForm(shrubberyForm);
