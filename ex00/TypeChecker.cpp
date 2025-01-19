@@ -37,11 +37,16 @@ static bool checkFloat(const std::string& input)
     size_t start = 0;
     if (input[0] == '-' || input[0] == '+')
         start = 1;
-    for (size_t i = start; i < input.size(); i++)
-    {
-        if (!isdigit(input[i]) && input[i] != '.') {
-            std::cerr << "Error: Invalid characters in float!" << std::endl;
-            return false;
+
+    bool pointFound = false;
+    for (size_t i = start; i < input.size(); i++) {
+        if (!isdigit(input[i])) {
+            if (input[i] == '.' && !pointFound)
+                pointFound = true;
+            else if (input[i] != 'f') {
+                std::cerr << "Error: Invalid characters in float!" << std::endl;
+                return false;
+            }
         }
     }
 
