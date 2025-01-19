@@ -19,14 +19,7 @@ ScalarConverter::~ScalarConverter()
 ScalarConverter & ScalarConverter::operator=(ScalarConverter const & other)
 {
     std::cout << "Assignation operator called" << std::endl;
-    if (this != &other)
-    {
-        this->_input = other._input;
-        this->_c = other._c;
-        this->_i = other._i;
-        this->_f = other._f;
-        this->_d = other._d;
-    }
+    (void)other;
     return *this;
 }
 
