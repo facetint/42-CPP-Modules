@@ -80,13 +80,6 @@ static void doubleConvert(std::string param)
     std::cout << "double: " << std::fixed << std::setprecision(2) << n << std::endl;
 }
 
-static void nanConvert()
-{
-    std::cout << "char: impossible" << std::endl;
-    std::cout << "int: 0" << std::endl;
-    std::cout << "float: nanf" << std::endl;
-    std::cout << "double: nan" << std::endl;
-}
 static void infConvert(std::string param)
 {
     if (param == "nan" || param == "nanf")
