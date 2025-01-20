@@ -41,7 +41,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
         if (!getSigned())
         {
             std::cout << RED << getName() << " is not signed, can't execute." << RESET << std::endl;
-            return;
+            throw AForm::GradeTooLowException();
         }
         std::cout << "*drilling noises* " << std::endl;
         srand(time(NULL));
@@ -53,4 +53,3 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
     else
         throw AForm::GradeTooLowException();
 }
-
