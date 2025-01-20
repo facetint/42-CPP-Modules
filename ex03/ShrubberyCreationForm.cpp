@@ -39,12 +39,12 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
     if (executor.getGrade() > getGradeToExecute()) {
         std::cout << executor.getName() << " couldn't execute " << getName()
                   << " because the grade is too low." << std::endl;
-        throw GradeTooLowException();
+        throw AForm::GradeTooLowException();
     }
 
     if (!getSigned()) {
         std::cout << RED << getName() << " is not signed, can't execute." << RESET << std::endl;
-        throw GradeTooLowException();
+        throw AForm::GradeTooLowException();
     }
 
     std::string filename = getTarget() + "_shrubbery";
@@ -52,7 +52,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 
     if (!outputFile.is_open()) {
         std::cerr << "Error: Could not create the output file." << std::endl;
-        throw GradeTooLowException();
+        throw AForm::GradeTooLowException();
     }
 
     outputFile << "       _-_" << std::endl;
