@@ -38,7 +38,7 @@ static void intConvert(std::string param)
 
     if (n < 0 || n > 127)
         std::cout << "char: impossible" << std::endl;
-    else if (n < 32 || n == 127)
+    else if (!isprint(n))
         std::cout << "char: non-displayable" << std::endl;
     else
         std::cout << "char: '" << static_cast<char>(n) << "'" << std::endl;
@@ -54,14 +54,14 @@ static void floatConvert(std::string param)
 
     if (n < 0 || n > 127)
         std::cout << "char: impossible" << std::endl;
-    else if (n < 32 || n == 127)
+    else if (!isprint(n))
         std::cout << "char: non-displayable" << std::endl;
     else
         std::cout << "char: '" << static_cast<char>(n) << "'" << std::endl;
 
     std::cout << "int: " << static_cast<int>(n) << std::endl;
-    std::cout << "float: " << std::fixed << std::setprecision(2) << n << "f" << std::endl;
-    std::cout << "double: " << std::fixed << std::setprecision(2) << static_cast<double>(n) << std::endl;
+    std::cout << "float: " << std::fixed << std::setprecision(1) << n << "f" << std::endl;
+    std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(n) << std::endl;
 }
 
 static void doubleConvert(std::string param)
@@ -70,14 +70,14 @@ static void doubleConvert(std::string param)
 
     if (n < 0 || n > 127)
         std::cout << "char: impossible" << std::endl;
-    else if (n < 32 || n == 127)
+    else if (!isprint(n))
         std::cout << "char: non-displayable" << std::endl;
     else
         std::cout << "char: '" << static_cast<char>(n) << "'" << std::endl;
 
     std::cout << "int: " << static_cast<int>(n) << std::endl;
-    std::cout << "float: " << std::fixed << std::setprecision(2) << static_cast<float>(n) << "f" << std::endl;
-    std::cout << "double: " << std::fixed << std::setprecision(2) << n << std::endl;
+    std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(n) << "f" << std::endl;
+    std::cout << "double: " << std::fixed << std::setprecision(1) << n << std::endl;
 }
 
 static void infConvert(std::string param)
