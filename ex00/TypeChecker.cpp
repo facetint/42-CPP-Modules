@@ -109,8 +109,8 @@ static bool checkPseudoLiterals(const std::string& input)
         input == "-inff" || input == "+inff") {
         return true;
     }
-
-    std::cerr << "Error: Invalid pseudo-literal!" << std::endl;
+    else
+        std::cerr << "Error: Invalid pseudo-literal!" << std::endl;
     return false;
 }
 
