@@ -41,5 +41,8 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor) const
     if (getSigned())
         std::cout << GREEN << _target << " has been pardoned by Zafod Beeblebrox." << RESET << std::endl;
     else
+    {
         std::cout << RED << "Form is not signed." << RESET << std::endl;
+        throw AForm::GradeTooLowException();
+    }
 }
