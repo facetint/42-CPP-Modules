@@ -2,18 +2,21 @@
 
 static bool checkChar(const std::string& input)
 {
-    if (input[0] != '\'' || input[2] != '\'' || !isprint(input[1]))
-        return false;
-    return true;
+    if (input.size() == 1 && isprint(input[0]) && !isdigit(input[0]))
+        return true;
+    return false;
 }
 
 static bool checkInt(const std::string& input)
 {
     size_t start = 0;
-    if (input[0] == '-' || input[0] == '+')
-        start = 1;
-    for (size_t i = start; i < input.size(); i++)
+    if (input.size() == 1 && (input[0] == '+' || input[0] == '-'))
     {
+    std::cerr << "Error: Invalid float format!" << std::endl;
+    return false;
+    }
+    start = 1;
+    for (size_t i = start; i < input.size(); i++) {
         if (!isdigit(input[i])) {
             std::cerr << "Error: Invalid characters in integer!" << std::endl;
             return false;
@@ -21,7 +24,11 @@ static bool checkInt(const std::string& input)
     }
 
     try {
-        std::stoi(input);
+        long n = std::stol(input);
+        if (n < std::numeric_limits<int>::min() || n > std::numeric_limits<int>::max()) {
+            std::cerr << "Error: Integer out of range!" << std::endl;
+            return false;
+        }
     } catch (const std::invalid_argument& e) {
         std::cerr << "Error: Invalid argument for integer conversion!" << std::endl;
         return false;
@@ -29,8 +36,10 @@ static bool checkInt(const std::string& input)
         std::cerr << "Error: Integer out of range!" << std::endl;
         return false;
     }
+
     return true;
 }
+
 
 static bool checkFloat(const std::string& input)
 {
@@ -109,12 +118,12 @@ ScalarType ScalarConverter::checkType(const std::string& input)
 {
     if (checkChar(input))
         return CHAR;
-    if (checkInt(input))
-        return INT;
     if (checkFloat(input))
         return FLOAT;
     if (checkDouble(input))
         return DOUBLE;
+    if (checkInt(input))
+        return INT;
     if (checkPseudoLiterals(input))
         return PSEUDO_LITERAL;
     return UNKNOWN;
