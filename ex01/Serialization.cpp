@@ -1,34 +1,34 @@
-#include "Serialization.hpp"
+#include "Serializer.hpp"
 
-Serialization::Serialization()
+Serializer::Serializer()
 {
     std::cout << "Default constructor called" << std::endl;
 }
 
-Serialization::Serialization(Serialization const & src)
+Serializer::Serializer(Serializer const & src)
 {
     std::cout << "Copy constructor called" << std::endl;
     *this = src;
 }
 
-Serialization::~Serialization()
+Serializer::~Serializer()
 {
     std::cout << "Destructor called" << std::endl;
 }
 
-Serialization & Serialization::operator=(Serialization const & other)
+Serializer & Serializer::operator=(Serializer const & other)
 {
     std::cout << "Assignation operator called" << std::endl;
     (void)other;
     return *this;
 }
 
-uintptr_t Serialization::serialize(Data *ptr)
+uintptr_t Serializer::serialize(Data *ptr)
 {
     return reinterpret_cast<uintptr_t>(ptr);
 }
 
-Data *Serialization::deserialize(uintptr_t raw)
+Data *Serializer::deserialize(uintptr_t raw)
 {
     return reinterpret_cast<Data *>(raw);
 }
