@@ -12,22 +12,25 @@ static bool checkInt(const std::string& input)
     size_t start = 0;
     if (input.size() == 1 && (input[0] == '+' || input[0] == '-'))
     {
-    std::cerr << "Error: Invalid float format!" << std::endl;
-    return false;
+        std::cerr << "Error: Invalid float format!" << std::endl;
+        return false;
     }
     start = 1;
-    for (size_t i = start; i < input.size(); i++) {
-        if (!isdigit(input[i])) {
+    for (size_t i = start; i < input.size(); i++)
+    {
+        if (!isdigit(input[i]))
+        {
             std::cerr << "Error: Invalid characters in integer!" << std::endl;
             return false;
         }
     }
     long n = 0;
     bool isNegative = (input[0] == '-');
-    for (size_t i = start; i < input.size(); i++) {
+    for (size_t i = start; i < input.size(); i++)
+    {
         n = n * 10 + (input[i] - '0');
-        if ((!isNegative && n > INT_MAX) ||
-            (isNegative && -n < INT_MIN)) {
+        if ((!isNegative && n > INT_MAX) || (isNegative && -n < INT_MIN))
+        {
             std::cerr << "Error: Integer out of range!" << std::endl;
             return false;
         }
@@ -46,13 +49,14 @@ static bool checkFloat(const std::string& input)
 
     for (size_t i = start; i < input.size(); i++)
     {
-        if (isdigit(input[i])) {
+        if (isdigit(input[i]))
             hasDigits = true;
-        } else if (input[i] == '.' && !pointFound)
+        else if (input[i] == '.' && !pointFound)
             pointFound = true;
         else if (input[i] == 'f' && i == input.size() - 1)
             continue;
-        else {
+        else
+        {
             std::cerr << "Error: Invalid characters in float!" << std::endl;
             return false;
         }
@@ -62,22 +66,20 @@ static bool checkFloat(const std::string& input)
 
 static bool checkDouble(const std::string &input)
 {
-    size_t i = 0;
     bool pointFound = false;
     int digitCount = 0;
 
     if (input[0] == '+' || input[0] == '-') i++;
 
-    for (; i < input.length(); i++) {
-        if (isdigit(input[i])) {
+    for (size_t i; < input.length(); i++)
+    {
+        if (isdigit(input[i]))
             digitCount++;
-        } else if (input[i] == '.' && !pointFound) {
+        else if (input[i] == '.' && !pointFound)
             pointFound = true;
-        } else {
+        else
             return false;
-        }
     }
-
     return pointFound && digitCount > 0;
 }
 
