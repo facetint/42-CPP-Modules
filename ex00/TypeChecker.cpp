@@ -22,24 +22,18 @@ static bool checkInt(const std::string& input)
             return false;
         }
     }
-
-    try {
-        long n = std::stol(input);
-        if (n < std::numeric_limits<int>::min() || n > std::numeric_limits<int>::max()) {
+    long n = 0;
+    bool isNegative = (input[0] == '-');
+    for (size_t i = start; i < input.size(); i++) {
+        n = n * 10 + (input[i] - '0');
+        if ((!isNegative && n > INT_MAX) ||
+            (isNegative && -n < INT_MIN)) {
             std::cerr << "Error: Integer out of range!" << std::endl;
             return false;
         }
-    } catch (const std::invalid_argument& e) {
-        std::cerr << "Error: Invalid argument for integer conversion!" << std::endl;
-        return false;
-    } catch (const std::out_of_range& e) {
-        std::cerr << "Error: Integer out of range!" << std::endl;
-        return false;
     }
-
     return true;
 }
-
 
 static bool checkFloat(const std::string& input)
 {
@@ -48,59 +42,43 @@ static bool checkFloat(const std::string& input)
         start = 1;
 
     bool pointFound = false;
-    for (size_t i = start; i < input.size(); i++) {
-        if (!isdigit(input[i])) {
-            if (input[i] == '.' && !pointFound)
-                pointFound = true;
-            else if (input[i] != 'f') {
-                std::cerr << "Error: Invalid characters in float!" << std::endl;
-                return false;
-            }
-        }
-    }
+    bool hasDigits = false;
 
-    if (input.back() == 'f') {
-        try {
-            std::stof(input);
-        } catch (const std::invalid_argument& e) {
-            std::cerr << "Error: Invalid argument for float!" << std::endl;
-            return false;
-        } catch (const std::out_of_range& e) {
-            std::cerr << "Error: Float out of range!" << std::endl;
+    for (size_t i = start; i < input.size(); i++)
+    {
+        if (isdigit(input[i])) {
+            hasDigits = true;
+        } else if (input[i] == '.' && !pointFound)
+            pointFound = true;
+        else if (input[i] == 'f' && i == input.size() - 1)
+            continue;
+        else {
+            std::cerr << "Error: Invalid characters in float!" << std::endl;
             return false;
         }
     }
     return true;
 }
 
-static bool checkDouble(const std::string& input)
+static bool checkDouble(const std::string &input)
 {
-    size_t start = 0;
-    if (input[0] == '-' || input[0] == '+')
-        start = 1;
-
+    size_t i = 0;
     bool pointFound = false;
-    for (size_t i = start; i < input.size(); i++) {
-        if (!isdigit(input[i])) {
-            if (input[i] == '.' && !pointFound)
-                pointFound = true;
-            else {
-                std::cerr << "Error: Invalid characters in double!" << std::endl;
-                return false;
-            }
+    int digitCount = 0;
+
+    if (input[0] == '+' || input[0] == '-') i++;
+
+    for (; i < input.length(); i++) {
+        if (isdigit(input[i])) {
+            digitCount++;
+        } else if (input[i] == '.' && !pointFound) {
+            pointFound = true;
+        } else {
+            return false;
         }
     }
 
-    try {
-        std::stod(input);
-    } catch (const std::invalid_argument& e) {
-        std::cerr << "Error: Invalid argument for double conversion!" << std::endl;
-        return false;
-    } catch (const std::out_of_range& e) {
-        std::cerr << "Error: Double out of range!" << std::endl;
-        return false;
-    }
-    return true;
+    return pointFound && digitCount > 0;
 }
 
 static bool checkPseudoLiterals(const std::string& input)
