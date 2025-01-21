@@ -39,7 +39,7 @@ static void intConvert(std::string param)
     if (n < 0 || n > 127)
         std::cout << "char: impossible" << std::endl;
     else if (!isprint(n))
-        std::cout << "char: non-displayable" << std::endl;
+        std::cout << "char: Non displayable" << std::endl;
     else
         std::cout << "char: '" << static_cast<char>(n) << "'" << std::endl;
 
@@ -55,7 +55,7 @@ static void floatConvert(std::string param)
     if (n < 0 || n > 127)
         std::cout << "char: impossible" << std::endl;
     else if (!isprint(n))
-        std::cout << "char: non-displayable" << std::endl;
+        std::cout << "char: Non displayable" << std::endl;
     else
         std::cout << "char: '" << static_cast<char>(n) << "'" << std::endl;
 
@@ -71,7 +71,7 @@ static void doubleConvert(std::string param)
     if (n < 0 || n > 127)
         std::cout << "char: impossible" << std::endl;
     else if (!isprint(n))
-        std::cout << "char: non-displayable" << std::endl;
+        std::cout << "char: Non displayable" << std::endl;
     else
         std::cout << "char: '" << static_cast<char>(n) << "'" << std::endl;
 
