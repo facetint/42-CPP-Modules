@@ -114,22 +114,22 @@ void ScalarConverter::convert(std::string input)
    ScalarType type = ScalarConverter::checkType(input);
     switch (type)
     {
-         case CHAR:
+        case CHAR:
               charConvert(input);
               break;
-         case INT:
-              intConvert(input);
-              break;
-         case FLOAT:
+        case FLOAT:
               floatConvert(input);
               break;
-         case DOUBLE:
+        case DOUBLE:
               doubleConvert(input);
               break;
-         case PSEUDO_LITERAL:
+        case INT:
+              intConvert(input);
+              break;
+        case PSEUDO_LITERAL:
               infConvert(input);
               break;
-         case UNKNOWN:
+        case UNKNOWN:
               std::cout << "Unknown type" << std::endl;
               break;
     }
