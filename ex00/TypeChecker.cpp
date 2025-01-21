@@ -68,11 +68,12 @@ static bool checkDouble(const std::string &input)
 {
     bool pointFound = false;
     int digitCount = 0;
+    size_t i = 0;
 
     if (input[0] == '+' || input[0] == '-')
         i++;
 
-    for (size_t i; < input.length(); i++)
+    for (; i < input.length(); i++)
     {
         if (isdigit(input[i]))
             digitCount++;
