@@ -8,23 +8,17 @@
 # define RESET "\x1b[0m"
 # define WHITE "\x1b[38;2;255;255;255;01m"
 
-template <typename T>
-void iter(T *arr, size_t len, void(f)(T &var))
+template <typename T , typename F>
+void iter(T *arr, size_t len, F f)
 {
     for (size_t i = 0; i < len; i++)
         f(arr[i]);
 }
 
 template <typename T>
-void print(T &var)
+void print(T arr)
 {
-    std::cout << WHITE << var << RESET << std::endl;
-}
-
-template <typename T>
-void print(T const &var)
-{
-    std::cout << WHITE << var << RESET << std::endl;
+    std::cout << WHITE << arr << RESET << std::endl;
 }
 
 #endif
