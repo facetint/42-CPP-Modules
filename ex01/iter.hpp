@@ -21,4 +21,10 @@ void print(T &var)
     std::cout << WHITE << var << RESET << std::endl;
 }
 
+template <typename T>
+void print(T const &var)
+{
+    std::cout << WHITE << var << RESET << std::endl;
+}
+
 #endif
