@@ -14,7 +14,7 @@ class Array
         Array(Array const &other);
         ~Array();
         Array &operator=(Array const &other);
-        T const &operator[](unsigned int i) const;
+        const T &operator[](unsigned int i) const;
         T &operator[](unsigned int i);
         unsigned int size() const;
 
