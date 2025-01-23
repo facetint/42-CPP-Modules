@@ -4,6 +4,10 @@
 
 #include <iostream>
 
+# define RED "\x1b[31;01m"
+# define RESET "\x1b[0m"
+# define WHITE "\x1b[38;2;255;255;255;01m"
+
 template <typename T>
 void iter(T *arr, size_t len, void(f)(T &var))
 {
@@ -14,7 +18,7 @@ void iter(T *arr, size_t len, void(f)(T &var))
 template <typename T>
 void print(T &var)
 {
-    std::cout << var << std::endl;
+    std::cout << WHITE << var << RESET << std::endl;
 }
 
 #endif
