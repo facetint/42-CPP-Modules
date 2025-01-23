@@ -25,7 +25,8 @@ Array<T> &Array<T>::operator=(Array const &other)
 {
     if (this != &other)
     {
-        delete[] _arr;
+        if (_arr != NULL)
+            delete[] _arr;
         _arr = new T[other._size];
         _size = other._size;
         for (unsigned int i = 0; i < _size; i++)
