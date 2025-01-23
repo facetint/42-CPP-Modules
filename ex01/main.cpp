@@ -8,13 +8,13 @@ int main()
     double arr4[] = {1.1, 2.2, 3.3, 4.4, 5.5};
 
     std::cout << RED <<  " **** int array ****" << RESET << std::endl;
-    iter(arr, 3, print);
+    iter(arr, 3, print<int>);
     std::cout << RED << "\n **** string array ****" << RESET << std::endl;
-    iter(arr2, 3, print);
+    iter(arr2, 3, print<std::string>);
     std::cout << RED << "\n **** float array **** " << RESET << std::endl;
-    iter(arr3, 5, print);
+    iter(arr3, 5, print<float>);
     std::cout << RED << "\n **** double array ****" << RESET << std::endl;
-    iter(arr4, 5, print);
-
+    iter(arr4, 5, print<double>);
+    
     return (0);
 }
