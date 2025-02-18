@@ -6,6 +6,11 @@
 #include <iterator>
 #include <exception>
 
+# define RED "\x1b[31;01m"
+# define RESET "\x1b[0m"
+# define PURPLE "\x1b[38;2;178;58;238;01m"
+# define WHITE "\x1b[37;01m"
+
 class Span
 {
     private:
