@@ -1,4 +1,7 @@
 #include "easyfind.hpp"
+#include <iostream>
+#include <algorithm>
+#include <iterator>
 
 const char *NotFoundException::what() const throw()
 {
