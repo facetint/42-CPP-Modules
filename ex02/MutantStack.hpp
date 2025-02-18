@@ -4,6 +4,10 @@
 #include <deque>
 #include <iterator>
 
+# define RESET "\x1b[0m"
+# define BLUE "\x1b[34;01m"
+# define WHITE "\x1b[37;01m"
+
 template <typename T>
 class MutantStack : public std::stack<T>
 {
