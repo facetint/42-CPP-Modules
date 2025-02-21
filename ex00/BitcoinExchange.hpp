@@ -12,6 +12,13 @@ class BitcoinExchange
     private:
         std::map<std::string, double> priceData; 
 
+        bool isValidDate(const std::string& date);
+        bool isValidValue(const std::string& value);
+        bool isValidFormat(const std::string& line);
+        bool isLeapYear(int year);
+        double findClosestPrice(const std::string& date);
+        void trim(std::string& str);
+        bool isDigitsOnly(const std::string& str);
 
     public:
         BitcoinExchange();
@@ -22,5 +29,5 @@ class BitcoinExchange
         bool loadDatabase(const std::string& filename);
         void processInputFile(const std::string& filename);
         void processArgsAndFiles(int ac, char **av);
-    
+
 };
