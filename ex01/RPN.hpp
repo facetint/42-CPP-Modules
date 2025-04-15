@@ -16,28 +16,28 @@ class RPN
 
     class InvalidOperatorException : public std::exception {
         public:
-            const char* what() const throw() {
+            virtual const char* what() const throw(){
                 return "Error: Invalid operator.";
             }
     };
 
     class InvalidTokenException : public std::exception {
         public:
-            const char* what() const throw(){
+            virtual const char* what() const throw(){
                 return "Error: Invalid token (must be a number or operator).";
             }
     };
 
     class DivisionByZeroException : public std::exception {
         public:
-            const char* what() const throw(){
+            virtual const char* what() const throw(){
                 return "Error: Division by zero.";
             }
     };
 
     class InvalidExpressionException : public std::exception {
         public:
-            const char* what() const throw() {
+            virtual const char* what() const throw() {
                 return "Error: Invalid expression.";
             }
     };
