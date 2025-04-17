@@ -1,29 +1,6 @@
 #include "PmergeMe.hpp"
 #include <typeinfo>
 
-// void FordJohnson<Container, Pair>::printContainer()
-// {
-//     size_t i = 0;
-//     typename Container::iterator it;
-//     for (it = numbers.begin(); it != numbers.end(); ++it , i++)
-//     {
-//         std::cout << "numbers[" << i << "]: " << *it << " ";
-//     }
-//     std::cout << std::endl;
-// }
-
-// template <class Container, class Pair>
-// void FordJohnson<Container, Pair>::printPairs(Pair &pairs)
-// {
-//     size_t i = 0;
-//     typename Pair::iterator it;
-//     for (it = pairs.begin(); it != pairs.end(); ++it , i++)
-//     {
-//         std::cout << "pairs[" << i << "] " << it->first << " " << it->second << std::endl;
-//     }
-//     std::cout << std::endl;
-// }
-
 template <class Container, class Pair>
 FordJohnson<Container, Pair>::FordJohnson()
 {
@@ -121,15 +98,12 @@ void FordJohnson<Container, Pair>::groupPairs(Pair &pairs)
             pairs.push_back(std::make_pair(first, second));
         }
     }
-    //printPairs(pairs);
 }
 
 template <class Container, class Pair>
 void FordJohnson<Container, Pair>::sortPairs(Pair &pairs)
 {
     mergeSort(pairs.begin(), pairs.end());
-    // std::cout << "after merge sort pairs: " << std::endl;
-    // printPairs(pairs);
 
     typename Pair::const_iterator it = pairs.begin();
 
@@ -139,18 +113,6 @@ void FordJohnson<Container, Pair>::sortPairs(Pair &pairs)
         sortedSequence.push_back(it->first);
         toInsert.push_back(it->second);
     }
-    // std::cout << "sortedSequence: ";
-    // for (typename Container::const_iterator it = sortedSequence.begin(); it != sortedSequence.end(); ++it)
-    // {
-    //     std::cout << *it << " ";
-    // }
-    // std::cout << std::endl;
-    // std::cout << "toInsert: ";
-    // for (typename Container::const_iterator it = toInsert.begin(); it != toInsert.end(); ++it)
-    // {
-    //     std::cout << *it << " ";
-    // }
-    // std::cout << std::endl;
 }
 
 template <class Container, class Pair>
@@ -267,7 +229,6 @@ Container FordJohnson<Container, Pair>::generateJacobsthalPositions(unsigned int
         j++;
     }
     return (positions);
-
 }
 
 template <class Container, class Pair>
