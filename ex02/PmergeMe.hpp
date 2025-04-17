@@ -9,38 +9,38 @@
 #include <cstdlib>
 #include <ctime>
 
-template <class NumberContainer, class Pair>
-class FordJhonson
+template <class Container, class Pair>
+class FordJohnson
 {
     private:
-        NumberContainer container;
-        NumberContainer pend;
-        NumberContainer mainChain;
-        NumberContainer positions;
+        Container numbers;
+        Container toInsert;
+        Container sortedSequence;
+        Container positions;
         Pair pairs;
 
     public:
-        FordJhonson();
-        ~FordJhonson();
-        FordJhonson(const FordJhonson &other);
-        FordJhonson &operator=(const FordJhonson &other);
+        FordJohnson();
+        ~FordJohnson();
+        FordJohnson(const FordJohnson &other);
+        FordJohnson &operator=(const FordJohnson &other);
 
         void printBefore();
         void printAfter();
-        void parseAndSetSequence(int ac, char **av);
-        void process(int ac, char **av);
+        void parseInputArguments(int ac, char **av);
+        void run(int ac, char **av);
         void fordJohnson();
         void groupPairs(Pair &pairs);
         void sortPairs(Pair &pairs);
-        NumberContainer const &getSequence() const;
+        Container const &getSequence() const;
         void printContainer();
         void printPairs(Pair &pairs);
         void mergeSort(typename Pair::iterator begin, typename Pair::iterator end);
         void merge(typename Pair::iterator begin, typename Pair::iterator mid, typename Pair::iterator end);
         void insertionSort();
-        NumberContainer generateJacobsthalNumbers(unsigned int n);
+        Container generateJacobsthalPositions(unsigned int n);
+        typename Container::iterator binarySearch(Container& numbers, int value);
         void printTime(size_t elementCount, clock_t end);
-        
 
     class InvalidInputException : public std::exception {
         const char* what() const throw() {
