@@ -1,66 +1,66 @@
 #include "PmergeMe.hpp"
 #include <typeinfo>
-template <class NumberContainer, class Pair>
-void FordJhonson<NumberContainer, Pair>::printContainer()
-{
-    size_t i = 0;
-    typename NumberContainer::iterator it;
-    for (it = container.begin(); it != container.end(); ++it , i++)
-    {
-        std::cout << "container[" << i << "]: " << *it << " ";
-    }
-    std::cout << std::endl;
-}
 
-template <class NumberContainer, class Pair>
-void FordJhonson<NumberContainer, Pair>::printPairs(Pair &pairs)
-{
-    size_t i = 0;
-    typename Pair::iterator it;
-    for (it = pairs.begin(); it != pairs.end(); ++it , i++)
-    {
-        std::cout << "pairs[" << i << "] " << it->first << " " << it->second << std::endl;
-    }
-    std::cout << std::endl;
-}
+// void FordJohnson<Container, Pair>::printContainer()
+// {
+//     size_t i = 0;
+//     typename Container::iterator it;
+//     for (it = numbers.begin(); it != numbers.end(); ++it , i++)
+//     {
+//         std::cout << "numbers[" << i << "]: " << *it << " ";
+//     }
+//     std::cout << std::endl;
+// }
 
-template <class NumberContainer, class Pair>
-FordJhonson<NumberContainer, Pair>::FordJhonson()
-{
-}
+// template <class Container, class Pair>
+// void FordJohnson<Container, Pair>::printPairs(Pair &pairs)
+// {
+//     size_t i = 0;
+//     typename Pair::iterator it;
+//     for (it = pairs.begin(); it != pairs.end(); ++it , i++)
+//     {
+//         std::cout << "pairs[" << i << "] " << it->first << " " << it->second << std::endl;
+//     }
+//     std::cout << std::endl;
+// }
 
-template <class NumberContainer, class Pair>
-FordJhonson<NumberContainer, Pair>::~FordJhonson()
+template <class Container, class Pair>
+FordJohnson<Container, Pair>::FordJohnson()
 {
 }
 
-template <class NumberContainer, class Pair>
-FordJhonson<NumberContainer, Pair>::FordJhonson(const FordJhonson &other)
+template <class Container, class Pair>
+FordJohnson<Container, Pair>::~FordJohnson()
 {
-    container = other.container;
+}
+
+template <class Container, class Pair>
+FordJohnson<Container, Pair>::FordJohnson(const FordJohnson &other)
+{
+    numbers = other.numbers;
    
 }
-template <class NumberContainer, class Pair>
-FordJhonson<NumberContainer, Pair> &FordJhonson<NumberContainer, Pair>::operator=(const FordJhonson &other)
+template <class Container, class Pair>
+FordJohnson<Container, Pair> &FordJohnson<Container, Pair>::operator=(const FordJohnson &other)
 {
     if (this != &other)
     {
-        container = other.container;
+        numbers = other.numbers;
       
     }
     return *this;
 }
 
-template <class NumberContainer, class Pair>
-NumberContainer const &FordJhonson<NumberContainer, Pair>::getSequence() const
+template <class Container, class Pair>
+Container const &FordJohnson<Container, Pair>::getSequence() const
 {
-    return container;
+    return numbers;
 }
 
-template <class NumberContainer, class Pair>
-void FordJhonson<NumberContainer, Pair>::printBefore()
+template <class Container, class Pair>
+void FordJohnson<Container, Pair>::printBefore()
 {
-    typename NumberContainer::const_iterator it;
+    typename Container::const_iterator it;
     std::cout << "Before : ";
     for (it = getSequence().begin(); it != getSequence().end(); ++it)
     {
@@ -69,20 +69,20 @@ void FordJhonson<NumberContainer, Pair>::printBefore()
     std::cout << std::endl;
 }
 
-template <class NumberContainer, class Pair>
-void FordJhonson<NumberContainer, Pair>::printAfter()
+template <class Container, class Pair>
+void FordJohnson<Container, Pair>::printAfter()
 {
-    typename NumberContainer::const_iterator it;
+    typename Container::const_iterator it;
     std::cout << "After : ";
-    for (it = mainChain.begin(); it != mainChain.end(); ++it)
+    for (it = sortedSequence.begin(); it != sortedSequence.end(); ++it)
     {
         std::cout << *it << " ";
     }
     std::cout << std::endl;
 }
 
-template <class NumberContainer, class Pair>
-void FordJhonson<NumberContainer, Pair>::parseAndSetSequence(int ac, char **av)
+template <class Container, class Pair>
+void FordJohnson<Container, Pair>::parseInputArguments(int ac, char **av)
 {
     int num;
     char *ptr;
@@ -99,34 +99,33 @@ void FordJhonson<NumberContainer, Pair>::parseAndSetSequence(int ac, char **av)
         {
             throw InvalidInputException();
         }
-        container.push_back(num);
+        numbers.push_back(num);
     }
 }
 
-template <class NumberContainer, class Pair>
-void FordJhonson<NumberContainer, Pair>::groupPairs(Pair &pairs)
+template <class Container, class Pair>
+void FordJohnson<Container, Pair>::groupPairs(Pair &pairs)
 {
-    typename NumberContainer::const_iterator it = container.begin();
-    while (it != container.end())
+    typename Container::const_iterator it = numbers.begin();
+    while (it != numbers.end())
     {
         int first = *it;
         ++it;
-        if (it != container.end())
+        if (it != numbers.end())
         {
             int second = *it;
             ++it;
 
             if (first < second)
                 std::swap(first, second);
-
             pairs.push_back(std::make_pair(first, second));
         }
     }
     //printPairs(pairs);
 }
 
-template <class NumberContainer, class Pair>
-void FordJhonson<NumberContainer, Pair>::sortPairs(Pair &pairs)
+template <class Container, class Pair>
+void FordJohnson<Container, Pair>::sortPairs(Pair &pairs)
 {
     mergeSort(pairs.begin(), pairs.end());
     // std::cout << "after merge sort pairs: " << std::endl;
@@ -137,25 +136,25 @@ void FordJhonson<NumberContainer, Pair>::sortPairs(Pair &pairs)
 
     for (; it != pairs.end(); ++it)
     {
-        mainChain.push_back(it->first);
-        pend.push_back(it->second);
+        sortedSequence.push_back(it->first);
+        toInsert.push_back(it->second);
     }
-    // std::cout << "mainChain: ";
-    // for (typename NumberContainer::const_iterator it = mainChain.begin(); it != mainChain.end(); ++it)
+    // std::cout << "sortedSequence: ";
+    // for (typename Container::const_iterator it = sortedSequence.begin(); it != sortedSequence.end(); ++it)
     // {
     //     std::cout << *it << " ";
     // }
     // std::cout << std::endl;
-    // std::cout << "pend: ";
-    // for (typename NumberContainer::const_iterator it = pend.begin(); it != pend.end(); ++it)
+    // std::cout << "toInsert: ";
+    // for (typename Container::const_iterator it = toInsert.begin(); it != toInsert.end(); ++it)
     // {
     //     std::cout << *it << " ";
     // }
     // std::cout << std::endl;
 }
 
-template <class NumberContainer, class Pair>
-void FordJhonson<NumberContainer, Pair>::merge(typename Pair::iterator begin, typename Pair::iterator mid, typename Pair::iterator end)
+template <class Container, class Pair>
+void FordJohnson<Container, Pair>::merge(typename Pair::iterator begin, typename Pair::iterator mid, typename Pair::iterator end)
 {
     Pair temp;
 
@@ -197,21 +196,22 @@ void FordJhonson<NumberContainer, Pair>::merge(typename Pair::iterator begin, ty
     }
 }
 
-template <class NumberContainer, class Pair>
-void FordJhonson<NumberContainer, Pair>::mergeSort(typename Pair::iterator begin, typename Pair::iterator end)
+template <class Container, class Pair>
+void FordJohnson<Container, Pair>::mergeSort(typename Pair::iterator begin, typename Pair::iterator end)
 {
-    if (std::distance(begin, end) < 1)
+    if (std::distance(begin, end) <= 1)
         return;
-    typename Pair::iterator mid = begin + std::distance(begin, end) / 2;
-    mergeSort(begin, mid);
-    mergeSort(mid + 1, end);
-    merge(begin, mid, end);
+
+    typename Pair::iterator mid = begin + (end - begin) / 2;
+    FordJohnson<Container, Pair>::mergeSort(begin, mid);
+    FordJohnson<Container, Pair>::mergeSort(mid, end);
+    FordJohnson<Container, Pair>::merge(begin, mid, end);
 }
 
-template <class NumberContainer, class Pair>
-void FordJhonson<NumberContainer, Pair>::fordJohnson()
+template <class Container, class Pair>
+void FordJohnson<Container, Pair>::fordJohnson()
 {
-    if (this->container.empty())
+    if (this->numbers.empty())
     {             
         throw EmptyContainerException();
     }
@@ -220,11 +220,11 @@ void FordJhonson<NumberContainer, Pair>::fordJohnson()
     insertionSort();
 }
 
-template <class NumberContainer, class Pair>
-NumberContainer FordJhonson<NumberContainer, Pair>::generateJacobsthalNumbers(unsigned int size)
+template <class Container, class Pair>
+Container FordJohnson<Container, Pair>::generateJacobsthalPositions(unsigned int size)
 {
-    NumberContainer retVal;
-    NumberContainer jacobsthalList;
+    Container positions;
+    Container jacobsthalBase;
     unsigned int j = 2;
 
     if (size < 3)
@@ -232,96 +232,107 @@ NumberContainer FordJhonson<NumberContainer, Pair>::generateJacobsthalNumbers(un
         j = 0;
         while (j < size)
         {
-            retVal.push_back(j);
+            positions.push_back(j);
             j++;
         }
-        return (retVal);
+        return (positions);
     }
-    retVal.push_back(1);
-    retVal.push_back(3);
-    jacobsthalList.push_back(1);
-    jacobsthalList.push_back(3);
+    positions.push_back(1);
+    positions.push_back(3);
+    jacobsthalBase.push_back(1);
+    jacobsthalBase.push_back(3);
 
     while (true)
     {
-        unsigned int val = (retVal[j - 1]) + (retVal[j - 2] * 2); // retval[2 -1] = retval[1] = 3 retvsl[0] = 1 *2 2, 2 + 3 = 5
-        if (val > size)
+        unsigned int nextValue = (positions[j - 1]) + (positions[j - 2] * 2);
+        if (nextValue > size)
             break;
-        jacobsthalList.push_back(val);
-        retVal.push_back(val);
-        std::cout << val << std::endl;
+        jacobsthalBase.push_back(nextValue);
+        positions.push_back(nextValue);
         j++;
     }
     j = 0;
-    while (j < jacobsthalList.size())
+    while (j < jacobsthalBase.size())
     {
-        jacobsthalList[j] -= 1;
-        retVal[j] -= 1;
+        jacobsthalBase[j] -= 1;
+        positions[j] -= 1;
         j++;
     }
     
     j = 0;
     while (j < size)
     {
-        if (std::find(jacobsthalList.begin(), jacobsthalList.end(), j) == jacobsthalList.end())
-            retVal.push_back(j);
+        if (std::find(jacobsthalBase.begin(), jacobsthalBase.end(), j) == jacobsthalBase.end())
+            positions.push_back(j);
         j++;
     }
-    return (retVal);
+    return (positions);
 
 }
 
-template <class NumberContainer, class Pair>
-void FordJhonson<NumberContainer, Pair>::insertionSort()
+template <class Container, class Pair>
+typename Container::iterator FordJohnson<Container, Pair>::binarySearch(Container& numbers, int value)
 {
-    if (container.size() % 2 != 0)
+    typename Container::iterator left = numbers.begin();
+    typename Container::iterator right = numbers.end();
+
+    while (left < right)
     {
-        pend.push_back(container.back());
+        typename Container::iterator mid = left + (right - left) / 2;
+        if (value < *mid)
+            right = mid;
+        else
+            left = mid + 1;
     }
-    this->positions = generateJacobsthalNumbers(pend.size());
+    return left;
+}
 
-    for (typename NumberContainer::iterator it = positions.begin(); it != positions.end(); ++it)
+template <class Container, class Pair>
+void FordJohnson<Container, Pair>::insertionSort()
+{
+    if (this->toInsert.empty())
+        return;
+
+    this->positions = generateJacobsthalPositions(toInsert.size());
+
+    for (typename Container::iterator posIt = positions.begin(); posIt != positions.end(); ++posIt)
     {
-        //std::cout << "position: " << *it << std::endl;  // 
-        if (*it >= (int)pend.size())
-            continue;
-    
-        int value = pend[*it];
-        int left = 0;
-        int right = mainChain.size();
+        unsigned int index = *posIt;
 
-        //std::cout << "value: " << value << std::endl;
-        while (left < right)
-        {
-            int mid = left + (right - left) / 2;
-            if (value < mainChain[mid])
-                right = mid;
-            else
-                left = mid + 1;
-        }
-    
-        mainChain.insert(mainChain.begin() + left, value);
+        if (index >= toInsert.size())
+            continue;
+
+        int valueToInsert = toInsert[index];
+
+        typename Container::iterator insertPos = binarySearch(sortedSequence, valueToInsert);
+        sortedSequence.insert(insertPos, valueToInsert);
+    }
+    if (numbers.size() % 2 != 0)
+    {
+        int lastValue = getSequence().back();
+        typename Container::iterator insertPos = binarySearch(sortedSequence, lastValue);
+        sortedSequence.insert(insertPos, lastValue);
     }
 }
 
-template <class NumberContainer, class Pair>
-void FordJhonson<NumberContainer, Pair>::printTime(size_t elementCount, clock_t end)
+template <class Container, class Pair>
+void FordJohnson<Container, Pair>::printTime(size_t elementCount, clock_t duration)
 {
     std::string containerType;
 
-    if (typeid(NumberContainer) == typeid(std::vector<int>))
+    if (typeid(Container) == typeid(std::vector<int>))
         containerType = "std::vector";
-    else if (typeid(NumberContainer) == typeid(std::deque<int>))
+    else if (typeid(Container) == typeid(std::deque<int>))
         containerType = "std::deque";
-    std::cout << "Time to process a range of " << elementCount << " elements with " << containerType << " : " << (float)end * 1000 / CLOCKS_PER_SEC << " ms" << std::endl;
+    std::cout << "Time to process a range of " << elementCount << " elements with " << containerType << " : " << (float)duration * 1000 / CLOCKS_PER_SEC << " ms" << std::endl;
 }
 
-template <class NumberContainer, class Pair>
-void FordJhonson<NumberContainer, Pair>::process(int ac, char **av)
+template <class Container, class Pair>
+void FordJohnson<Container, Pair>::run(int ac, char **av)
 {
-    parseAndSetSequence(ac, av);
+    parseInputArguments(ac, av);
     clock_t start = clock();
     fordJohnson();
-    clock_t end = clock() - start;
-    printTime(ac - 1, end);
+    clock_t duration = clock() - start;
+    printTime(ac - 1, duration);
 }
