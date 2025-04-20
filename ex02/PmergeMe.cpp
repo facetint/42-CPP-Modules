@@ -1,21 +1,41 @@
 #include "PmergeMe.hpp"
 
-PmergeMe::PmergeMe() {}
+Vector::Vector() {}
 
-PmergeMe::PmergeMe(const PmergeMe& other)
+Vector::Vector(int ac, char **av) : FordJohnson()
 {
-    *this = other;
+    parseInputArguments(ac, av);
 }
 
-PmergeMe& PmergeMe::operator=(const PmergeMe& other)
+Vector::~Vector() {}
+
+Vector::Vector(const Vector &other) : FordJohnson(other) {}
+
+Vector &Vector::operator=(const Vector &other)
 {
     if (this != &other)
     {
-        _vec = other._vec;
-        _deq = other._deq;
+        FordJohnson::operator=(other);
     }
     return *this;
 }
 
-PmergeMe::~PmergeMe() {}
+Deque::Deque() {}
 
+Deque::Deque(int ac, char **av) : FordJohnson()
+{
+    parseInputArguments(ac, av);
+}
+
+Deque::~Deque() {}
+
+Deque::Deque(const Deque &other) : FordJohnson(other) {}
+
+Deque &Deque::operator=(const Deque &other)
+{
+    if (this != &other)
+    {
+        FordJohnson::operator=(other);
+    }
+    return *this;
+}
