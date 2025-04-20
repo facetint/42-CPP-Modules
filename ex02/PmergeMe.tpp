@@ -2,28 +2,23 @@
 #include <typeinfo>
 
 template <class Container, class Pair>
-FordJohnson<Container, Pair>::FordJohnson()
-{
-}
+FordJohnson<Container, Pair>::FordJohnson() {}
 
 template <class Container, class Pair>
-FordJohnson<Container, Pair>::~FordJohnson()
-{
-}
+FordJohnson<Container, Pair>::~FordJohnson() {}
 
 template <class Container, class Pair>
 FordJohnson<Container, Pair>::FordJohnson(const FordJohnson &other)
 {
     numbers = other.numbers;
-   
 }
+
 template <class Container, class Pair>
 FordJohnson<Container, Pair> &FordJohnson<Container, Pair>::operator=(const FordJohnson &other)
 {
     if (this != &other)
     {
         numbers = other.numbers;
-      
     }
     return *this;
 }
@@ -66,7 +61,7 @@ void FordJohnson<Container, Pair>::parseInputArguments(int ac, char **av)
 
     if (ac < 2)
     {
-        throw EmptyContainerException();
+        throw InvalidInputException();
     }
 
     for (int i = 1; i < ac; i++)
@@ -170,17 +165,6 @@ void FordJohnson<Container, Pair>::mergeSort(typename Pair::iterator begin, type
     FordJohnson<Container, Pair>::merge(begin, mid, end);
 }
 
-template <class Container, class Pair>
-void FordJohnson<Container, Pair>::fordJohnson()
-{
-    if (this->numbers.empty())
-    {             
-        throw EmptyContainerException();
-    }
-    groupPairs(pairs);
-    sortPairs(pairs);
-    insertionSort();
-}
 
 template <class Container, class Pair>
 Container FordJohnson<Container, Pair>::generateJacobsthalPositions(unsigned int size)
@@ -188,7 +172,7 @@ Container FordJohnson<Container, Pair>::generateJacobsthalPositions(unsigned int
     Container positions;
     Container jacobsthalBase;
     unsigned int j = 2;
-
+    
     if (size < 3)
     {
         j = 0;
@@ -203,12 +187,12 @@ Container FordJohnson<Container, Pair>::generateJacobsthalPositions(unsigned int
     positions.push_back(3);
     jacobsthalBase.push_back(1);
     jacobsthalBase.push_back(3);
-
+    
     while (true)
     {
         unsigned int nextValue = (positions[j - 1]) + (positions[j - 2] * 2);
         if (nextValue > size)
-            break;
+        break;
         jacobsthalBase.push_back(nextValue);
         positions.push_back(nextValue);
         j++;
@@ -225,7 +209,7 @@ Container FordJohnson<Container, Pair>::generateJacobsthalPositions(unsigned int
     while (j < size)
     {
         if (std::find(jacobsthalBase.begin(), jacobsthalBase.end(), j) == jacobsthalBase.end())
-            positions.push_back(j);
+        positions.push_back(j);
         j++;
     }
     return (positions);
@@ -236,14 +220,14 @@ typename Container::iterator FordJohnson<Container, Pair>::binarySearch(Containe
 {
     typename Container::iterator left = numbers.begin();
     typename Container::iterator right = numbers.end();
-
+    
     while (left < right)
     {
         typename Container::iterator mid = left + (right - left) / 2;
         if (value < *mid)
-            right = mid;
+        right = mid;
         else
-            left = mid + 1;
+        left = mid + 1;
     }
     return left;
 }
@@ -255,16 +239,16 @@ void FordJohnson<Container, Pair>::insertionSort()
         return;
 
     this->positions = generateJacobsthalPositions(toInsert.size());
-
+        
     for (typename Container::iterator posIt = positions.begin(); posIt != positions.end(); ++posIt)
     {
         unsigned int index = *posIt;
-
+        
         if (index >= toInsert.size())
             continue;
-
+        
         int valueToInsert = toInsert[index];
-
+            
         typename Container::iterator insertPos = binarySearch(sortedSequence, valueToInsert);
         sortedSequence.insert(insertPos, valueToInsert);
     }
@@ -277,23 +261,36 @@ void FordJohnson<Container, Pair>::insertionSort()
 }
 
 template <class Container, class Pair>
-void FordJohnson<Container, Pair>::printTime(size_t elementCount, clock_t duration)
+void FordJohnson<Container, Pair>::printTime(size_t elementCount)
 {
     std::string containerType;
-
+    
     if (typeid(Container) == typeid(std::vector<int>))
-        containerType = "std::vector";
+    containerType = "std::vector";
     else if (typeid(Container) == typeid(std::deque<int>))
-        containerType = "std::deque";
-    std::cout << "Time to process a range of " << elementCount << " elements with " << containerType << " : " << (float)duration * 1000 / CLOCKS_PER_SEC << " ms" << std::endl;
+    containerType = "std::deque";
+    std::cout << WHITE <<  "Time to process a range of " << elementCount << " elements with " << containerType << " : " << time << " ms" << RESET <<std::endl;
 }
 
 template <class Container, class Pair>
-void FordJohnson<Container, Pair>::run(int ac, char **av)
+void FordJohnson<Container, Pair>::fordJohnson()
 {
-    parseInputArguments(ac, av);
     clock_t start = clock();
-    fordJohnson();
-    clock_t duration = clock() - start;
-    printTime(ac - 1, duration);
+    if (this->numbers.empty())
+    {             
+        throw InvalidInputException();
+    }
+    if (this->numbers.size() == 1)
+    {
+        sortedSequence.push_back(numbers[0]);
+        time = (double)(clock() - start) * 1000 / CLOCKS_PER_SEC;
+        return;
+    }
+    else
+    {
+        groupPairs(pairs);
+        sortPairs(pairs);
+        insertionSort();
+        time = (double)(clock() - start) * 1000 / CLOCKS_PER_SEC;
+    }
 }
