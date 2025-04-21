@@ -33,24 +33,24 @@ template <class Container, class Pair>
 void FordJohnson<Container, Pair>::printBefore()
 {
     typename Container::const_iterator it;
-    std::cout << "Before : ";
+    std::cout << PURPLE << "Before : " << RESET;
     for (it = getSequence().begin(); it != getSequence().end(); ++it)
     {
-        std::cout << *it << " ";
+        std::cout << WHITE << *it << " ";
     }
-    std::cout << std::endl;
+    std::cout << RESET << std::endl;
 }
 
 template <class Container, class Pair>
 void FordJohnson<Container, Pair>::printAfter()
 {
     typename Container::const_iterator it;
-    std::cout << "After : ";
+    std::cout << PURPLE << "After : " << RESET;
     for (it = sortedSequence.begin(); it != sortedSequence.end(); ++it)
     {
-        std::cout << *it << " ";
+        std::cout << WHITE << *it << " ";
     }
-    std::cout << std::endl;
+    std::cout << RESET << std::endl;
 }
 
 template <class Container, class Pair>
