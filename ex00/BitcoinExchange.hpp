@@ -7,6 +7,8 @@
 #include <sstream>
 #include <exception>
 
+# define RED "\x1b[31;01m"
+
 class BitcoinExchange
 {
     private:
@@ -33,25 +35,25 @@ class BitcoinExchange
         class InvalidDateException : public std::exception 
         {
         public:
-            const char* what() const throw() { return "Error: Invalid date format."; }
+            const char* what() const throw() { return RED "Error: Invalid date format."; }
         };
 
         class InvalidValueException : public std::exception 
         {
         public:
-            const char* what() const throw() { return "Error: Value must be between 0 and 1000."; }
+            const char* what() const throw() { return RED "Error: Value must be between 0 and 1000."; }
         };
 
         class FileOpenException : public std::exception
         {
         public:
-            const char* what() const throw() { return "Error: Could not open file."; }
+            const char* what() const throw() { return RED "Error: Could not open file."; }
         };
 
         class BadInputFormatException : public std::exception
         {
         public:
-            const char* what() const throw() { return "Error: Bad input format."; }
+            const char* what() const throw() { return RED "Error: Bad input format."; }
         };
 
 };

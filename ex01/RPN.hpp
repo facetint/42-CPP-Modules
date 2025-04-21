@@ -6,6 +6,7 @@
 #include <sstream>
 #include <exception>
 
+# define RED "\x1b[31;01m"
 
 class RPN
 {
@@ -17,28 +18,28 @@ class RPN
     class InvalidOperatorException : public std::exception {
         public:
             virtual const char* what() const throw(){
-                return "Error: Invalid operator.";
+                return RED "Error: Invalid operator.";
             }
     };
 
     class InvalidTokenException : public std::exception {
         public:
             virtual const char* what() const throw(){
-                return "Error: Invalid token (must be a number or operator).";
+                return RED "Error: Invalid token (must be a number or operator).";
             }
     };
 
     class DivisionByZeroException : public std::exception {
         public:
             virtual const char* what() const throw(){
-                return "Error: Division by zero.";
+                return RED "Error: Division by zero.";
             }
     };
 
     class InvalidExpressionException : public std::exception {
         public:
             virtual const char* what() const throw() {
-                return "Error: Invalid expression.";
+                return RED "Error: Invalid expression.";
             }
     };
 };
