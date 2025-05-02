@@ -45,15 +45,11 @@ int RPN::evaluate(const std::string& expression)
         }
         else
         {
-            try {
-                if (token.size() != 1 || !std::isdigit(token[0])) {
-                    throw InvalidTokenException();
-                }
-                int num = token[0] - '0';
-                stack.push(num);
-            } catch (const std::invalid_argument& e) {
+            if (token.size() != 1 || !std::isdigit(token[0])) {
                 throw InvalidTokenException();
             }
+            int num = token[0] - '0';
+            stack.push(num);
         }
     }
     if (stack.size() != 1) {
