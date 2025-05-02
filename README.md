@@ -165,11 +165,14 @@ int& y = const_cast<int&>(x); // Dangerous!
 
 **Upcasting** refers to the process of casting a derived class type to its base class type. This type of casting is safe and doesn't require any checks because a derived class is inherently a base class. It is often used when we need to handle objects of derived types as objects of their base types, allowing for generalized operations.
 
-- **Characteristics**:
+- ***Characteristics***:
+
   - **Safe and implicit**: Upcasting is implicitly safe, as every object of a derived class is also an instance of its base class.
+
   - **Loss of derived class information**: After upcasting, the specific details of the derived class may not be accessible. The base class pointer/reference can only access base class members.
 
-- **Example**:
+
+-  **Example**:
 
 ```cpp
 class Base {
@@ -197,13 +200,13 @@ int main() {
 
 Downcasting refers to casting a base class type to a derived class type. It should be done with caution, as it can lead to undefined behavior if the object being cast is not actually of the derived type. Typically, downcasting is used when you need to access derived class-specific features, but only if you are sure of the object's actual type.
 
-Characteristics:
+- ***Characteristics:***
 
-Unsafe: Downcasting can lead to runtime errors if not done carefully. It should only be done when you're certain the base class object is actually pointing to an instance of the derived class.
+- **Unsafe:** Downcasting can lead to runtime errors if not done carefully. It should only be done when you're certain the base class object is actually pointing to an instance of the derived class.
 
-Requires a runtime check: The C++ dynamic_cast operator is used to safely perform downcasting with runtime checks.
+- **Requires a runtime check:** The C++ dynamic_cast operator is used to safely perform downcasting with runtime checks.
 
-Polymorphism is involved: Downcasting is typically used in conjunction with polymorphism, where you need to access methods or members specific to the derived class.
+- **Polymorphism is involved:** Downcasting is typically used in conjunction with polymorphism, where you need to access methods or members specific to the derived class.
 
 - **Example**:
 
