@@ -163,7 +163,7 @@ int& y = const_cast<int&>(x); // Dangerous!
 
 ### Upcasting
 
-**Upcasting** refers to the process of casting a derived class type to its base class type. This type of casting is safe and doesn't require any checks because a derived class is inherently a base class. It is often used when we need to handle objects of derived types as objects of their base types, allowing for generalized operations.
+    Refers to the process of casting a derived class type to its base class type. This type of casting is safe and doesn't require any checks because a derived class is inherently a base class. It is often used when we need to handle objects of derived types as objects of their base types, allowing for generalized operations.
 
 - ***Characteristics***:
 
@@ -198,7 +198,7 @@ int main() {
 ### Downcasting
 
 
-Downcasting refers to casting a base class type to a derived class type. It should be done with caution, as it can lead to undefined behavior if the object being cast is not actually of the derived type. Typically, downcasting is used when you need to access derived class-specific features, but only if you are sure of the object's actual type.
+  Downcasting refers to casting a base class type to a derived class type. It should be done with caution, as it can lead to undefined behavior if the object being cast is not actually of the derived type. Typically, downcasting is used when you need to access derived class-specific features, but only if you are sure of the object's actual type.
 
 - ***Characteristics:***
 
