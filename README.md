@@ -22,8 +22,8 @@ This document provides a deep dive into scalar type conversions and C++ casting 
   - [3.2 `dynamic_cast`](#32-dynamic_cast)
   - [3.3 `reinterpret_cast`](#33-reinterpret_cast)
   - [3.4 `const_cast`](#34-const_cast)
-- [4. Upcasting vs Downcasting](#4-upcasting-vs-downcasting)
-- [5. Comparison Table](#5-comparison-table)
+- [4. Comparison Table](#4-comparison-table)
+- [5. Upcasting vs Downcasting](#5-upcasting-vs-downcasting)
 - [6. Best Practices](#6-best-practices)
 
 ---
@@ -146,6 +146,19 @@ int& y = const_cast<int&>(x); // Dangerous!
 
 
 
+## Comparison Table
+
+| **Cast Type**       | **Safe?**  | **Use Case**                                 | **Runtime Check?** | **Notes**                                                |
+|---------------------|------------|----------------------------------------------|--------------------|----------------------------------------------------------|
+| `static_cast`       | ✅ Yes     | Numeric types, upcasting                     | ❌ No              | Does not perform type checking                           |
+| `dynamic_cast`      | ✅ Yes     | Downcasting polymorphic base → derived       | ✅ Yes             | Requires virtual function in base class                  |
+| `reinterpret_cast`  | ❌ No      | Low-level casting                            | ❌ No              | Use with extreme caution; can lead to undefined behavior |
+| `const_cast`        | ✅ (with caution) | Remove constness                        | ❌ No              | Modifying const object = undefined behavior              |
+
+
+
+
+
 ## 4. Upcasting vs Downcasting
 
 ### Upcasting
@@ -231,21 +244,6 @@ int main() {
 | **Polymorphism**                 | Yes (Base pointer can call derived class methods via virtual functions) | Yes, but only if downcast is successful         |
 | **Usage**                        | Used when handling derived class objects as base class objects | Used when you need to access derived class-specific members or functions |
 | **Casting Method**               | Implicit or explicit (`static_cast`)         | Explicit (`dynamic_cast` with runtime check)     |
-
-
-
-
-
-
-## Type Casting Comparison Table
-
-| **Cast Type**       | **Safe?**  | **Use Case**                                 | **Runtime Check?** | **Notes**                                                |
-|---------------------|------------|----------------------------------------------|--------------------|----------------------------------------------------------|
-| `static_cast`       | ✅ Yes     | Numeric types, upcasting                     | ❌ No              | Does not perform type checking                           |
-| `dynamic_cast`      | ✅ Yes     | Downcasting polymorphic base → derived       | ✅ Yes             | Requires virtual function in base class                  |
-| `reinterpret_cast`  | ❌ No      | Low-level casting                            | ❌ No              | Use with extreme caution; can lead to undefined behavior |
-| `const_cast`        | ✅ (with caution) | Remove constness                        | ❌ No              | Modifying const object = undefined behavior              |
-
 
 
 ## 8. Best Practices
