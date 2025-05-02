@@ -8,6 +8,7 @@
 #include <exception>
 
 # define RED "\x1b[31;01m"
+# define RESET "\x1b[0m"
 
 class BitcoinExchange
 {
@@ -35,25 +36,25 @@ class BitcoinExchange
         class InvalidDateException : public std::exception 
         {
         public:
-            const char* what() const throw() { return RED "Error: Invalid date format."; }
+            const char* what() const throw() { return RED "Error: Invalid date format." RESET; }
         };
 
         class InvalidValueException : public std::exception 
         {
         public:
-            const char* what() const throw() { return RED "Error: Value must be between 0 and 1000."; }
+            const char* what() const throw() { return RED "Error: Value must be between 0 and 1000." RESET; }
         };
 
         class FileOpenException : public std::exception
         {
         public:
-            const char* what() const throw() { return RED "Error: Could not open file."; }
+            const char* what() const throw() { return RED "Error: Could not open file." RESET; }
         };
 
         class BadInputFormatException : public std::exception
         {
         public:
-            const char* what() const throw() { return RED "Error: Bad input format."; }
+            const char* what() const throw() { return RED "Error: Bad input format." RESET; }
         };
 
 };
