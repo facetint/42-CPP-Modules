@@ -40,8 +40,7 @@ try {
 
 
 
-<img width="542" alt="Ekran Resmi 2025-05-03 00 04 33" src="https://github.com/user-attachments/assets/ee22688a-342c-4390-a94b-6900db2d4150" />
-
+![try-catch structure visualization](https://github.com/user-attachments/assets/ee22688a-342c-4390-a94b-6900db2d4150)
 
 
 
@@ -121,6 +120,42 @@ Below is a simplified hierarchy of standard C++ exceptions, showing the inherita
 > 🧠 **Tip:** Always catch exceptions by reference (e.g., `const std::exception&`) to avoid slicing and ensure polymorphic behavior.
 
 
+## 🧰 Defining Custom Exceptions in C++
+
+The C++ Standard Library provides a rich set of exception classes like `std::runtime_error` and `std::invalid_argument`. However, in real-world projects, these may not always be descriptive or specific enough for your application’s domain.
+
+### ✅ Why Create Custom Exceptions?
+
+Creating your own exception classes allows you to:
+
+- Provide **more meaningful error messages**
+- Handle **specific error types** using dedicated `catch` blocks
+- Organize your error handling in a **clean, object-oriented way**
+- Extend with custom data (e.g., error codes, file names)
+
+
+```cpp
+class MyCustomException : public std::exception {
+public:
+    const char* what() const throw() {
+        return "A custom error occurred!";
+    }
+};
+
+```
+
+
+### 💡 Key Points
+
+- `std::exception` is the base class for all standard exceptions.
+
+- We override the `what()` method to return a meaningful error message.
+
+- You can use a `std::string` member to store dynamic error content.
+
+---
+
+
 
 ## 🔚 Conclusion & Best Practices
 
@@ -135,32 +170,21 @@ Exception handling in C++ allows you to write robust and maintainable programs b
 
 ✅ **Avoid throwing from destructors**: Doing so can lead to undefined behavior if another exception is already active.  
 
-✅ **Create custom exceptions**: When standard exceptions don't convey enough meaning, define your own:
-
-
-
-```cpp
-class MyCustomException : public std::exception {
-public:
-    const char* what() const throw() {
-        return "A custom error occurred!";
-    }
-};
-
-```
+✅ **Create custom exceptions**: When standard exceptions don't convey enough meaning, define your own.
 
 
 ## 📎 Recommended Resources
-Here are some trusted resources to deepen your understanding of exception handling in C++:
 
-📚 cppreference.com – Exception Handling
-Comprehensive and up-to-date reference for C++ exception syntax and semantics.
+- 📚 [cppreference.com – Exception Handling](https://en.cppreference.com/w/cpp/language/try_catch)  
+  Comprehensive and up-to-date reference for C++ exception syntax and semantics.
 
-📘 The C++ Programming Language by Bjarne Stroustrup
-A foundational text by the creator of C++, covering exception safety and best practices in depth.
+- 📘 *The C++ Programming Language* by **Bjarne Stroustrup**  
+  A foundational text by the creator of C++, covering exception safety and best practices in depth.
 
-💡 GeeksForGeeks: Exception Handling in C++
-Beginner-friendly explanations with code examples and diagrams.
+- 💡 [GeeksForGeeks: Exception Handling in C++](https://www.geeksforgeeks.org/exception-handling-c/)  
+  Beginner-friendly explanations with code examples and diagrams.
+
+
 
 
 
