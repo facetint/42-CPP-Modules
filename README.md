@@ -37,11 +37,18 @@ try {
 }
 ```
 
+
+
+
 <img width="542" alt="Ekran Resmi 2025-05-03 00 04 33" src="https://github.com/user-attachments/assets/ee22688a-342c-4390-a94b-6900db2d4150" />
 
 
 
+
+
 ## 💥 The throw Keyword
+
+
 You use throw to signal that something has gone wrong.
 
 ```
@@ -52,6 +59,7 @@ void divide(int a, int b) {
 }
 
 ```
+
 
 ## 🧲 try-catch Structure
 
@@ -70,6 +78,7 @@ try block: Contains code that might cause an exception.
 catch block: Catches exceptions of a specific type.
 
 
+
 ## 🪄 Multiple catch Blocks & Exception Types
 
 ```
@@ -86,15 +95,19 @@ catch (...): Catches all exceptions (fallback case).
 
 ```
 
+
+
 ## 🧵 Standard Exception Hierarchy
 
+
 Below is a simplified hierarchy of standard C++ exceptions, showing the inheritance structure and purpose of each exception type:
+
 
 | 🔗 **Exception Class**        | 🧬 **Inheritance**         | 📋 **Description**                                      |
 |------------------------------|----------------------------|---------------------------------------------------------|
 | `std::exception`             | —                          | Base class for all standard exceptions                  |
 | ├── `std::logic_error`       | `std::exception`           | Errors in program logic (e.g., preconditions violated)  |
-| │   ├── `std::invalid_argument` | `std::logic_error`       | Function received invalid argument                      |
+| │   ├── `std::invalid_argument` | `std::logic_error`      | Function received invalid argument                      |
 | │   ├── `std::out_of_range`  | `std::logic_error`         | Access outside valid range (e.g., vector index)         |
 | └── `std::runtime_error`     | `std::exception`           | Errors that happen during program execution             |
 |     ├── `std::range_error`   | `std::runtime_error`       | Value out of allowed range (but not index-related)      |
@@ -103,18 +116,28 @@ Below is a simplified hierarchy of standard C++ exceptions, showing the inherita
 |     └── `std::ios_base::failure` | `std::runtime_error`   | Input/output operation failed                           |
 | `std::bad_alloc`             | `std::exception`           | Memory allocation failure (e.g., `new` fails)           |
 
+
+
 > 🧠 **Tip:** Always catch exceptions by reference (e.g., `const std::exception&`) to avoid slicing and ensure polymorphic behavior.
+
 
 
 ## 🔚 Conclusion & Best Practices
 
+
 Exception handling in C++ allows you to write robust and maintainable programs by cleanly separating error-handling code from regular logic. Here's a summary of best practices:
 
 ✅ **Separate concerns**: Use exceptions to handle errors, not control flow. Keep your business logic clean and focused.  
+
 ✅ **Catch specific exceptions first**: Always handle known exception types before falling back to a generic `catch (...)`.  
+
 ✅ **Use `const` references in catch blocks**: Prevent object slicing and maintain polymorphism using `catch (const std::exception& e)`.  
+
 ✅ **Avoid throwing from destructors**: Doing so can lead to undefined behavior if another exception is already active.  
+
 ✅ **Create custom exceptions**: When standard exceptions don't convey enough meaning, define your own:
+
+
 
 ```cpp
 class MyCustomException : public std::exception {
