@@ -8,14 +8,15 @@ git clone -b CPP-Module-05 https://github.com/facetint/42-CPP-Modules.git
 
 ## 📘 Table of Contents
 
+- [🚨 C++ `try-catch` Mechanism](#-c-try-catch-mechanism)
 - [🔧 Basic Concepts](#-basic-concepts)
 - [💥 The `throw` Keyword](#-the-throw-keyword)
 - [🧲 `try-catch` Structure](#-try-catch-structure)
 - [🪄 Multiple `catch` Blocks & Exception Types](#-multiple-catch-blocks--exception-types)
 - [🧵 Standard Exception Hierarchy](#-standard-exception-hierarchy)
-- [📊 Visualizing `try-catch`](#-visualizing-try-catch)
-- [🧪 Real-World Example](#-real-world-example)
-- [🔚 Conclusion & Tips](#-conclusion--tips)
+- [🧰 Defining Custom Exceptions in C++](#-defining-custom-exceptions-in-c)
+- [🔚 Conclusion & Best Practices](#-conclusion--best-practices)
+- [📎 Recommended Resources](#-recommended-resources)
 
 ---
 
@@ -28,6 +29,7 @@ In C++, the `try-catch` mechanism is the primary structure for detecting and han
 ## 🔧 Basic Concepts
 
 In C++, when an error occurs (e.g., invalid input, file not found, memory allocation failure), the program can throw an exception instead of crashing.
+
 
 ```cpp
 try {
@@ -173,6 +175,7 @@ Exception handling in C++ allows you to write robust and maintainable programs b
 ✅ **Create custom exceptions**: When standard exceptions don't convey enough meaning, define your own.
 
 
+
 ## 📎 Recommended Resources
 
 - 📚 [cppreference.com – Exception Handling](https://en.cppreference.com/w/cpp/language/try_catch)  
@@ -183,9 +186,6 @@ Exception handling in C++ allows you to write robust and maintainable programs b
 
 - 💡 [GeeksForGeeks: Exception Handling in C++](https://www.geeksforgeeks.org/exception-handling-c/)  
   Beginner-friendly explanations with code examples and diagrams.
-
-
-
 
 
 
