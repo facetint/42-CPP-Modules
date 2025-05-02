@@ -7,7 +7,7 @@ git clone -b CPP-Module-05 https://github.com/facetint/42-CPP-Modules.git
 ```
 
 
-# 🚨 C++ `try-catch` Mechanism – Mastering Exception Handling
+# 🚨 C++ `try-catch` Mechanism
 
 In C++, the `try-catch` mechanism is the primary structure for detecting and handling runtime errors. It provides a clean, structured way to prevent crashes and handle unexpected behaviors. This guide dives into the `try-catch` mechanism from basics to best practices, enriched with diagrams and practical code samples.
 
